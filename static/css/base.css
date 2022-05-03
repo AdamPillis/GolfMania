@@ -1,0 +1,8 @@
+@keyframes fade-inout {
+    0%{ opacity: 1;}
+    100%{ opacity: 0;}
+}
+
+.fade-in-out {
+    animation: fade-inout 5s infinite alternate;
+}
