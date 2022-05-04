@@ -1,0 +1,35 @@
+<li class="list-inline-item dropdown">
+    <button class="btn dropdown-toggle d-block d-lg-none nav-link" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        <div><i class="fas fa-user fa-lg"></i></div>
+        <p class="my-0">My Account</p>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <li><a href="#" class="dropdown-item">Product Management</a></li>
+            {% endif %}
+            <li><a class="dropdown-item" href="#">My Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+        {% else %}
+            <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</li>
+
+<li class="list-inline-item">
+    <!-- highlighting shopping bag when bag is not empty -->
+    <a class="d-block d-lg-none nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+        <div class="text-center">
+            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <!-- displaying total cost when product added to the bag -->
+            <p class="my-0">
+                {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                {% else %}
+                    €0.00
+                {% endif %}
+            </p>
+        </div>
+    </a>
+</li>
