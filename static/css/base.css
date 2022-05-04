@@ -1,3 +1,61 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+/* setting font styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gideon Roman', cursive;
+  }
+p, button, a {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: #46AB21;
+}
+
+/* setting general button design */
+/* design idea from 'Animated CSS Buttons'  */
+.bttn{
+  position: relative;
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #ff7675;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.bttn::before{
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+/* general button hover effect */
+.bttn-hover::before{
+  width: 0%;
+  height: 100%;
+}
+.bttn-hover:hover::before{
+  width: 100%;
+}
+
 .navbar-nav .dropdown-menu {
     border: none;
 }
@@ -9,4 +67,27 @@
 
 .fade-in-out {
     animation: fade-inout 5s infinite alternate;
+}
+
+.landing-image {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.landing-image .container-fluid {
+  background: url('/media/landing-image.jpg') no-repeat fixed;
+  background-size: cover;
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+.landing-image .container-fluid .text-center {
+  background-color: rgba(0, 0, 0, 0.6);
 }
