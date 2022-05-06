@@ -21,6 +21,12 @@ a:hover {
   color: #46AB21;
 }
 
+header {
+  position: relative;
+  z-index: 1000; 
+  background-color: rgba(0, 0, 0, 0.6);
+  }
+
 /* setting general button design */
 /* design idea from 'Animated CSS Buttons'  */
 .btn{
@@ -87,9 +93,39 @@ a:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .landing-image .container-fluid .text-center {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* footer section in base.html */
+footer .container-fluid {
+  position: relative;
+  z-index: 1000;
+}
+
+.display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+i {
+  font-size: 2rem;
+}
+
+.payment-img {
+  height: 70px;
+  margin: 10px auto;
+}
+
+.payment-img .img {
+  background: url('/media/payment-image.JPG') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
 }

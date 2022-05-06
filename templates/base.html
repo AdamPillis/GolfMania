@@ -78,10 +78,10 @@
                         </li>
                     {% else %}
                         <li class="list-inline-item">
-                            <a href="{% url 'account_signup' %}" class="py-3">Register</a>
+                            <a href="{% url 'account_signup' %}" class="btn btn1">Register</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="{% url 'account_login' %}" class="py-3">Log In</a>
+                            <a href="{% url 'account_login' %}" class="btn btn1">Log In</a>
                         </li>
                     {% endif %}
                     <li class="list-inline-item">
@@ -149,37 +149,49 @@
         <h2 class="text-white text-center">Sign Up to our newsletter now!</h2>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 text-center mx-sm-auto">
-                    <input class="input-text required" type="email" id="" name="" placeholder="Enter your email address">
-                    <button class="btn btn1" type="submit">Sign Up</button>
+                <div class="col-12 text-center my-2 mx-sm-auto">
+                    <input class="input-text my-auto px-3 required" type="email" id="" name="" placeholder="Enter your email address">
+                    <button class="btn btn1 my-auto" type="submit">Sign Up</button>
+                </div>
+                <div class="col-12 text-center p-2">
+                    <small class="text-muted">
+                        By Entering you email, you agree to receive emails on behalf of Golf Mania
+                        including promotions. You can unsubscribe at any time!
+                    </small>
                 </div>
             </div>
-        </div>
-                <!-- <div class="col-lg-12 display text-center mb-2 text-white">
-                    <a class="footer-link" href="https://www.facebook.com" target="_blank" rel="noopener" 
+            <h2 class="text-white text-center mt-3">Connect with us online!</h2>
+            <div class="row">
+                <div class="col-lg-12 display text-center my-2 text-white">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" 
                         aria-label="visit our Facebook page (opens in a new tab)">
                             <i class="fab fa-facebook-square"></i>
                     </a>
                     
-                    <a class="footer-link" href="https://twitter.com" target="_blank" rel="noopener" 
+                    <a href="https://twitter.com" target="_blank" rel="noopener" 
                         aria-label="visit our Twitter page (opens in a new tab)">
                             <i class="fab fa-twitter-square"></i>
                     </a>
                     
-                    <a class="footer-link" href="https://www.instagram.com" target="_blank" rel="noopener" 
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" 
                         aria-label="visit our Instagram page (opens in a new tab)">
                             <i class="fab fa-instagram-square"></i>
                     </a>
 
-                    <a class="footer-link" href="https://www.youtube.com" target="_blank" rel="noopener" 
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" 
                         aria-label="visit our Youtube channel (opens in a new tab)">
                             <i class="fab fa-youtube-square"></i> 
                     </a>
                          
-                </div> -->
+                </div>
             </div>
-            <p class="m-0 text-capitalize text-center text-white py-2">&copy; Golf Mania | Designed by Adam Pillis</p>
+            <h2 class="text-white text-center mt-3">Accepted Payment Methods</h2>
+            <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 payment-img">
+                <div class="img"></div>
+            </div>
         </div>
+            <p class="m-0 text-capitalize text-center text-white py-2">&copy; Golf Mania | Designed by Adam Pillis</p>
     </footer>
 
     {% block postloadjs %}
