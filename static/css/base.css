@@ -77,29 +77,6 @@ header {
     animation: fade-inout 5s infinite alternate;
 }
 
-.landing-image {
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  
-}
-
-.landing-image .container-fluid {
-  background: url('/media/landing-image.jpg') no-repeat fixed;
-  background-size: cover;
-  margin: 0px auto;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  z-index: 1000;
-}
-
-.landing-image .container-fluid .text-center {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 /* footer section in base.html */
 footer .container-fluid {
   position: relative;
@@ -125,6 +102,56 @@ i {
   background-size: cover;
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+/* index.html */
+.landing-image {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.landing-image .container-fluid {
+  background: url('/media/landing-image.jpg') no-repeat fixed;
+  background-size: cover;
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+.landing-image .container-fluid .text-center {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.showcase {
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+  
+}
+.latest-img {
+  background: url('/media/brand-image.jpg') no-repeat center center;
+  background: cover;
+  height: 60%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+.tips-img {
+  background: url('/media/golfers-used-clubs-guide.webp') no-repeat center center;
+  background: cover;
+  height: 70%;
+  min-width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 1000;
