@@ -11,16 +11,16 @@
 
 {% block content %}
 <div class="landing-image">
-    <div class="container-fluid col-lg-6">
+    <div class="container-fluid col-lg-12">
         <div class="row justify-content-end">
-            <div class="col-sm-8 col-md-6">
+            <div class="col-sm-6 col-md-4">
                 <div class="text-center">
                     <!-- Darkend box to include clear content and button style-->
-                    <h1 class="mb-2 p-2 text-white">Welcome Golfers!</h1>
-                    <h2 class="mb-2 p-2 text-white">Easter rates are now available at €50.00 PP until 30th of April. Sign In above to request a tee time now!</h2>
-                    <h4 class="p-2 text-white">Not a member with our site? Sign up below in less than 2 minutes! Our only requirement is that you are over 16!</h4>
+                    <h1 class="mb-2 p-2 text-white">Welcome to Golf Mania!</h1>
+                    <h3 class="mb-2 p-2 text-white">Browse all our products and get ready for this season!</h3>
+                    <h4 class="p-2 text-white"></h4>
                     
-                    <a class="btn btn1" href="">Browse Now</a>                 
+                    <a class="btn btn1 mb-3" href="">Browse Now</a>                 
                 </div>
             </div>
         </div>
@@ -42,11 +42,11 @@
             </div>
             <!-- View Guide Tips -->
             <div class="col-lg-6 order-lg-2 my-auto showcase">
-                <h2 class="text-center p-2 mt-2 mx-2">Ready to do some research!</h2>
+                <h2 class="text-center p-2 mt-3 mx-2">Ready to do some research!</h2>
 
                 <div class="tips-img"></div>
                 
-                <div class="col-12 mt-3 text-center">
+                <div class="col-12 mt-3 mb-3 text-center">
                     <a class="btn btn1" href="https://www.todaysgolfer.co.uk/equipment/best/used-golf-clubs/">Tips Guide</a>
                 </div>
             </div>
@@ -55,6 +55,53 @@
 </section>
 
 <!-- View reviews section -->
+<!-- Reviews and comments section for visitors to see -->
+<!-- feedback app is linked with this section so users can interact with reviews available -->
+<!-- each review is linked with its own comments -->
+<div class="container-fluid mb-5 mt-5">
+    <div class="row">
+        <hr class="">
+        <h2 class="mt-3 text-center">Check out some of our recent reviews from previous customers!</h2>
 
+        <!-- Review Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for review in reviews %}
+                <div class="col-md-6 mx-auto">
+                    <div class="card mb-sm-4">
+                        <div class="card-body">                  
+                            <h3 class="card-title">{{ review.title }}</h3>
+                            <br>
+                            <p class="card-text">{{ review.excerpt }}</p>
+                            <hr />
+                            <!-- to display number of likes on each review -->
+                            <p class="card-text text-muted h6">{{ review.created_on}} | Written by: {{ review.member }} </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:2 %} 
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <!-- if more than three reviews are available, paginate -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 {% endblock %}

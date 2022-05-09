@@ -23,7 +23,7 @@ a:hover {
 
 header {
   position: relative;
-  z-index: 1000; 
+  z-index: 50;
   background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -31,7 +31,6 @@ header {
 /* design idea from 'Animated CSS Buttons'  */
 .btn{
   position: relative;
-  
   color: black;
   font-size: 14px;
   font-family: "montserrat";
@@ -124,7 +123,7 @@ i {
   width: 100%;
   overflow: hidden;
   position: relative;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .landing-image .container-fluid .text-center {
@@ -138,8 +137,8 @@ i {
   
 }
 .latest-img {
-  background: url('/media/brand-image.jpg') no-repeat center center;
-  background: cover;
+  background: url('/media/golf-brands-image.png') no-repeat center center;
+  background-size: cover;
   height: 60%;
   width: 100%;
   overflow: hidden;
@@ -149,9 +148,9 @@ i {
 
 .tips-img {
   background: url('/media/golfers-used-clubs-guide.webp') no-repeat center center;
-  background: cover;
-  height: 70%;
-  min-width: 100%;
+  background-size: cover;
+  height: 60%;
+  width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 1000;
