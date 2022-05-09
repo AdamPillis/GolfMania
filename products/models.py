@@ -6,6 +6,24 @@ TYPE_STATUS = (
     )
 
 
+class Brand(models.Model):
+    """
+    Class to list all golf brands available
+    on the site which will link to all products
+    via foreign key
+    """
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        """returns category name as string"""
+        return self.name
+
+    def get_friendly_name(self):
+        """returns friendly name of category"""
+        return self.friendly_name
+
+
 class Category(models.Model):
     """
     Class to categorise GolfMania's products
@@ -34,6 +52,7 @@ class Product(models.Model):
     Each need to include essential data such as name, description,
     category type, price and rest is optional.
     """
+    brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
