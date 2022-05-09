@@ -64,11 +64,9 @@ class Product(models.Model):
     type = models.CharField(
     choices=TYPE_STATUS, default=False, max_length=20
     )
-    hand = models.CharField(
-    choices=HAND_TYPE, default=False, max_length=20
-    )
     description = models.TextField()
     features = models.TextField(null=True, blank=True)
+    has_hand = models.BooleanField(default=False, null=True, blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     has_quality = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
