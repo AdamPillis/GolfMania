@@ -155,3 +155,10 @@ i {
   position: relative;
   z-index: 1000;
 }
+
+/* products.html page */
+.star-color {
+  color: gold;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
