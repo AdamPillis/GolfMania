@@ -173,3 +173,8 @@ i {
 .sort-select-wrapper {
   width: 100%;
 }
+
+/* product_details.html */
+#more {
+  display: none;
+}
