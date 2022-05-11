@@ -21,12 +21,12 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Putters</a></li>
-              <li><a class="dropdown-item" href="#">Irons</a></li>
-              <li><a class="dropdown-item" href="#">Sandwedges</a></li>
-              <li><a class="dropdown-item" href="#">Woods</a></li>
-              <li><a class="dropdown-item" href="#">Drivers</a></li>
-              <li><a class="dropdown-item" href="#">All Clubs</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=putters">Putters</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=irons">Irons</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=sandwedges">Sandwedges</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=woods">Woods</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=drivers">Drivers</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=putters,irons,sandwedges,woods,drivers">All Clubs</a></li>
             </ul>
         </div>
 
@@ -36,11 +36,11 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Tees</a></li>
-              <li><a class="dropdown-item" href="#">Gloves</a></li>
-              <li><a class="dropdown-item" href="#">Golf Balls</a></li>
-              <li><a class="dropdown-item" href="#">Caps</a></li>
-              <li><a class="dropdown-item" href="#">All Accessories</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=tees">Tees</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=gloves">Gloves</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=golf_balls">Golf Balls</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=caps">Caps</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=tees,gloves,golf_balls,caps">All Accessories</a></li>
             </ul>
         </div>
 
@@ -50,10 +50,10 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">New In</a></li>
-              <li><a class="dropdown-item" href="#">Deals</a></li>
-              <li><a class="dropdown-item" href="#">Clearance</a></li>
-              <li><a class="dropdown-item" href="#">All Offers</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=new_in">New In</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=deals">Deals</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=clearance">Clearance</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=new_in,deals,clearance">All Offers</a></li>
             </ul>
         </div>
     </ul>
