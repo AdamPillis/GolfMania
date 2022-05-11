@@ -47,7 +47,7 @@
             </div>
         
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-2" type="text" name="search" placeholder="Search GolfMania">
                         <div class="input-group-append">
@@ -115,7 +115,7 @@
             </nav>
         </div>
         <div class="col-12 col-md-8 mx-auto py-1 d-block d-lg-none">
-            <form method="GET" action="">
+            <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-black rounded-2" type="text" name="search" placeholder="Search GolfMania">
                     <div class="input-group-append">
