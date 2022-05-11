@@ -35,6 +35,7 @@ header {
   color: black;
   font-size: 14px;
   font-family: "montserrat";
+  margin-top: 5px;
   text-decoration: none;
   border: 1px solid #ff7675;
   text-transform: uppercase;
@@ -167,4 +168,8 @@ i {
 .tag-icon {
   font-size: 1.4rem;
   margin-right: 0.5rem
+}
+
+.sort-select-wrapper {
+  width: 100%;
 }
