@@ -92,8 +92,8 @@
                                 <div><i class="fas fa-shopping-basket fa-lg"></i></div>
                                 <!-- displaying total cost when product added to the bag -->
                                 <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                    {% if order_total %}
+                                        ${{ order_total|floatformat:2 }}
                                     {% else %}
                                         Your basket is empty
                                     {% endif %}
@@ -130,7 +130,7 @@
         </div>
         <div id="delivery-banner" class="row text-center bg-black">
             <div class="col text-white">
-                <h4 class="logo-font my-1 fade-in-out">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+                <h4 class="logo-font my-1 fade-in-out">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
             </div>
         </div>
     </header>

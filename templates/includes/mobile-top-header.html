@@ -25,8 +25,8 @@
             <div><i class="fas fa-shopping-basket fa-lg"></i></div>
             <!-- displaying total cost when product added to the bag -->
             <p class="my-0">
-                {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
+                {% if order_total %}
+                    ${{ order_total|floatformat:2 }}
                 {% else %}
                     €0.00
                 {% endif %}
