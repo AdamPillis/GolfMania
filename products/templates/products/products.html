@@ -139,15 +139,23 @@
             </div>
         </div>
     </div>
+     <!-- back to the top button -->
+    <!-- js to scroll page back to the top -->
+    <!-- css to fix position in bottom right corner -->
+    <div class="btt-button shadow-sm">
+        <a class="top-btt d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
+    </div>
 {% endblock %}
 {% block postloadjs %}
     {{ block.super }}
     <!-- to scroll back to the top if clicked -->
-    <!-- <script type="text/javascript">
-        $('.btt-link').click(function(e) {
+    <script type="text/javascript">
+        $('.top-btt').click(function(e) {
             window.scrollTo(0,0)
         })
-    </script> -->
+    </script>
     <!-- using javascriptcurrent URL's sorting values
     are taken and replaced with value equal to clicked sorting
     method. -->

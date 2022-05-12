@@ -17,6 +17,7 @@ p, button, a {
 
 a {
   color: black;
+  text-decoration: none;
 }
 a:hover {
   color: #46AB21;
@@ -177,4 +178,43 @@ i {
 /* product_details.html */
 #more {
   display: none;
+}
+
+.card-img-top {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.zoom-btns {
+  width: 115px;
+  margin: 10px auto;
+}
+
+.zoom-btns p {
+  font-size: 0.9rem;
+}
+
+.zoom-btns i {
+  font-size: 1.5rem;
+}
+
+/* setting position of back to the top button in products.html */
+.btt-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 25%;
+  right: 10px;
+  z-index: 5000;
+}
+
+.top-btt,
+.update-link,
+.remove-item {
+  cursor: pointer;
 }
