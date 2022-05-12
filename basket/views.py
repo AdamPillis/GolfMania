@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+def view_basket(request):
+    """
+    View to render basket.html template
+    containing items added by user
+    """
+
+    return render(request, 'basket/basket.html')
