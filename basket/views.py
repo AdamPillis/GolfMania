@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def view_basket(request):
     """
     View to render basket.html template
