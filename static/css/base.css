@@ -69,6 +69,12 @@ header {
 .navbar-nav .dropdown-menu {
     border: none;
 }
+/* setting general icons size across application */
+.icon {
+  justify-content: center;
+  height: 0.5rem;
+  width: 0.5rem;
+}
 
 @keyframes fade-inout {
     0%{ opacity: 1;}
