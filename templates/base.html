@@ -91,13 +91,13 @@
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-basket fa-lg"></i></div>
                                 <!-- displaying total cost when product added to the bag -->
-                                <p class="my-0">
-                                    {% if order_total %}
-                                        ${{ order_total|floatformat:2 }}
-                                    {% else %}
+                                <small class="my-0">
+                                    {% if total == 0 %}
                                         Your basket is empty
+                                    {% else %}
+                                        €{{ order_total|floatformat:2 }}
                                     {% endif %}
-                                </p>
+                                </small>
                             </div>
                         </a>
                     </li>
