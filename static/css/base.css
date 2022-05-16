@@ -227,3 +227,9 @@ i {
 .remove-item {
   cursor: pointer;
 }
+
+/* basket.html styling */
+.basket-img {
+  max-width: 70%;
+  height: auto;
+}

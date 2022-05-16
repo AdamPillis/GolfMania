@@ -11,7 +11,7 @@ def view_basket(request):
 
 
 def add_to_basket(request, item_id):
-    """ 
+    """
     Add a quantity of a specific type of product
     to the shopping basket
     """
@@ -27,5 +27,5 @@ def add_to_basket(request, item_id):
         basket[item_id] = quantity
 
     request.session['basket'] = basket
-    
+
     return redirect(redirect_url)
