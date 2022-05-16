@@ -175,7 +175,7 @@ i {
   width: 100%;
 }
 
-/* product_details.html */
+/* product_detail.html */
 #more {
   display: none;
 }
@@ -183,6 +183,10 @@ i {
 .card-img-top {
   width: 100%;
   margin: 0 auto;
+}
+
+.img-fluid {
+  max-width: 130%;
 }
 
 .image-container {
