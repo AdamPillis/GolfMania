@@ -22,7 +22,9 @@
             <div class="col-12 col-md-8 mx-auto">
                 <h2>Your Shopping Cart</h2>
                 <p class="mt-2"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
-                <div class="table-responsive rounded"></div>
+                <div class="table-responsive rounded">
+                    {{ basket_items }}
+                </div>
             </div>
             <div class="col-12 col-md-4 mx-auto">
                 <h3>Your Order Summary</h3>

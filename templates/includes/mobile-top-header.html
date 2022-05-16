@@ -20,17 +20,17 @@
 
 <li class="list-inline-item">
     <!-- highlighting shopping bag when bag is not empty -->
-    <a class="d-block d-lg-none text-decoration-none" href="{% url 'view_basket' %}">
+    <a class="d-block d-lg-none text-decoration-none {% if total > 0 %}text-info font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_basket' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-basket fa-lg"></i></div>
             <!-- displaying total cost when product added to the bag -->
-            <p class="my-0">
+            <small class="my-0">
                 {% if order_total %}
-                    ${{ order_total|floatformat:2 }}
+                    €{{ order_total|floatformat:2 }}
                 {% else %}
                     €0.00
                 {% endif %}
-            </p>
+            </small>
         </div>
     </a>
 </li>
