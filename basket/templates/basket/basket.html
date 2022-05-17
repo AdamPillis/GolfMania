@@ -43,16 +43,28 @@
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    <p class="my-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    <!-- if product has hand size option -->
+                                    {% if item.product.has_hand %}
+                                        <p class="my-2 small text-muted">Hand Size: {{ item.product.sku|upper }}</p>
+                                    {% endif %}
+                                    <!-- if produce has size option-->
+                                    {% if item.product.has_size %}
+                                        <p class="my-2 small text-muted">Size: {{ item.product.sku|upper }}</p>
+                                    {% endif %}
+                                    <!-- if product has quality option -->
+                                    {% if item.product.has_quality %}
+                                        <p class="my-2 small text-muted">Quality: {{ item.product.sku|upper }}</p>
+                                    {% endif %}
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">${{ item.product.price }}</p>
+                                    <p class="my-0"><strong>€{{ item.product.price }}</strong></p>
                                 </td>
                                 <td class="py-3 w-25">
-                                    <p class="my-0">{{ item.quantity }}</p>
+                                    <p class="my-0"><strong>{{ item.quantity }}</strong></p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">${{ item.product.price }}</p>
+                                    <p class="my-0">€{{ item.product.price }}</p>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -67,15 +79,27 @@
                         </div>
                         <div class="col-12 col-sm-6 d-md-none">
                             <p class="d-none d-sm-block"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                        
-                            <p class="my-0">${{ item.product.price }}</p>
-                        
-                        
-                            <p class="my-0">{{ item.quantity }}</p>
-                        
-                        
-                            <p class="my-0">${{ item.product.price }}</p>
+
+                            <p class="my-0">Item Price: <strong>€{{ item.product.price }}</strong></p>
+
+                            <p class="mt-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+
+                            <!-- if product has hand size option -->
+                            {% if item.product.has_hand %}
+                                <p class="mt-1 small text-muted">Hand Size: {{ item.product.sku|upper }}</p>
+                            {% endif %}
+                            <!-- if produce has size option-->
+                            {% if item.product.has_size %}
+                                <p class="mt-1 small text-muted">Size: {{ item.product.sku|upper }}</p>
+                            {% endif %}
+                            <!-- if product has quality option -->
+                            {% if item.product.has_quality %}
+                                <p class="mt-1 small text-muted">Quality: {{ item.product.sku|upper }}</p>
+                            {% endif %}
+
+                            <p class="mt-2">Quantity: <strong>{{ item.quantity }}</strong></p>
+
+                            <p class="mt-2">Total: <strong>€{{ item.product.price }} + quantity</strong></p>
                         </div>
                     </div>   
                 
