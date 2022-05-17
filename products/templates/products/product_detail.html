@@ -64,7 +64,50 @@
                     {% endif %}
                     <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
-                        <div class="form-row">
+                        <div class="form-row mt-2">
+                             <!-- only with has_sizes products -->
+                             {% with product.has_sizes as has_size %}
+                             {% if has_size %}
+                                 <div class="col-12 mt-2">
+                                     <p><strong>Hand Size</strong></p>
+                                     <!-- form controlling 5 different size options -->
+                                     <select class="form-control rounded-0 w-50" name="product_size" id="id_product_size">
+                                         <option value="xs">XS</option>
+                                         <option value="s">S</option>
+                                         <option value="m" selected>M</option>
+                                         <option value="l">L</option>
+                                         <option value="xl">XL</option>
+                                     </select>
+                                 </div>
+                             {% endif %}
+                             {% endwith %}
+                             <!-- only with has_hand products -->
+                             {% with product.has_hand as has_hand %}
+                             {% if has_hand %}
+                                 <div class="col-12 mt-2">
+                                     <p><strong>Hand Type</strong></p>
+                                     <!-- form controlling 5 different size options -->
+                                     <select class="form-control rounded-0 w-50" name="product_hand" id="id_product_hand">
+                                         <option value="left-hand">Left-Hand</option>
+                                         <option value="right-hand" selected>Right-Hand</option>
+                                     </select>
+                                 </div>
+                             {% endif %}
+                             {% endwith %}
+                             <!-- only with has_quality products -->
+                             {% with product.has_quality as has_quality %}
+                             {% if has_quality %}
+                                 <div class="col-12 mt-2">
+                                     <p><strong>Quality</strong></p>
+                                     <!-- form controlling 5 different size options -->
+                                     <select class="form-control rounded-0 w-50" name="product_quality" id="id_product_quality">
+                                         <option value="a">A</option>
+                                         <option value="b" selected>B</option>
+                                         <option value="c">C</option>
+                                     </select>
+                                 </div>
+                             {% endif %}
+                             {% endwith %}
                             <div class="col-12">
                                 <h6 class="mt-3 text-uppercase"><strong>Quantity</strong></h6>
                                 <div class="form-group w-50">
