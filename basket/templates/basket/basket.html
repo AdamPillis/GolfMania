@@ -19,11 +19,12 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-8 mx-auto">
+            <div class="col-12 col-lg-8 mx-auto">
                 {% if basket_items %}
                 <h2>Your Shopping Cart</h2>
                 <p class="mt-2"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
-                <div class="table-responsive rounded">
+                <!-- only visible up to medium sized screens -->
+                <div class="table-responsive rounded d-none d-md-block">
                     <table class="table table-sm table-borderless">
                         <thead class="text-black">
                             <tr>
@@ -57,25 +58,47 @@
                         {% endfor %}
                     </table>
                 </div>
+                <!-- only visible up to smaller sized screens -->
+                {% for item in basket_items %}
+                    <div class="row mt-3">
+                        <h4 class="col-sm-12 text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h4>
+                        <div class="col-12 col-sm-6 d-md-none mt-2">
+                            <img class="basket-img" src="{{ item.product.image.url }}">
+                        </div>
+                        <div class="col-12 col-sm-6 d-md-none">
+                            <p class="d-none d-sm-block"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                        
+                            <p class="my-0">${{ item.product.price }}</p>
+                        
+                        
+                            <p class="my-0">{{ item.quantity }}</p>
+                        
+                        
+                            <p class="my-0">${{ item.product.price }}</p>
+                        </div>
+                    </div>   
+                
+                {% endfor %}
             </div>
-            <div class="col-12 col-md-4 mx-auto">
+            <div class="col-12 col-lg-4 mx-auto">
                 <h3>Your Order Summary</h3>
                 <!-- Basket total -->
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-12">
-                        <span class="float-sm-start">
+                        <span class="float-start">
                             <h5 class="text-left">Basket Total</h5>
                         </span>
-                        <span class="float-sm-end">€{{ total|floatformat:2 }}</span>
+                        <span class="float-end">€{{ total|floatformat:2 }}</span>
                     </div>
                 </div>
                 <!-- Delivery total -->
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-12">
-                        <span class="float-sm-start">
+                        <span class="float-start">
                             <h5>Delivery</h5>
                         </span>
-                        <span class="float-sm-end">€{{ delivery|floatformat:2 }}</span>
+                        <span class="float-end">€{{ delivery|floatformat:2 }}</span>
                     </div>
                 </div>
                 {% if free_delivery_difference > 0 %}
@@ -87,24 +110,44 @@
                     </div>
                 </div>
                 {% else %}
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-12">
-                        <p class="mb-1">
+                        <small class="mb-1">
                             You have qualified for <strong>free delivery!</strong>
-                        </p>
+                        </small>
                     </div>
                 </div>
                 {% endif %}
                 <!-- Order total -->
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-12">
-                        <span class="float-sm-start">
+                        <span class="float-start">
                             <h4><strong>Order Total</strong></h4>
                         </span>
-                        <span class="float-sm-end"><strong>€{{ order_total|floatformat:2 }}</strong></span>
+                        <span class="float-end fs-4"><strong>€{{ order_total|floatformat:2 }}</strong></span>
                     </div>
                 </div>
-
+                <!-- button to continue shopping -->
+                <div class="row mt-3 mb-4">
+                    <div class="col-6 col-sm-6 text-center">
+                        <a href="{% url 'products' %}" class="btn btn1">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-6 text-center">
+                        <!-- button to securily check out and pay for items-->
+                        <a href="" class="btn btn1">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
             </div>
         </div>
         {% else %}

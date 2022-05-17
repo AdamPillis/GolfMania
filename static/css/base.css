@@ -69,12 +69,6 @@ header {
 .navbar-nav .dropdown-menu {
     border: none;
 }
-/* setting general icons size across application */
-.icon {
-  justify-content: center;
-  height: 0.5rem;
-  width: 0.5rem;
-}
 
 @keyframes fade-inout {
     0%{ opacity: 1;}
@@ -85,6 +79,10 @@ header {
     animation: fade-inout 5s infinite alternate;
 }
 
+/* setting size of icons */
+i {
+  font-size: 1rem;
+}
 /* footer section in base.html */
 footer .container-fluid {
   position: relative;
@@ -94,10 +92,6 @@ footer .container-fluid {
 .display {
   display: flex;
   justify-content: space-evenly;
-}
-
-i {
-  font-size: 2rem;
 }
 
 .payment-img {
