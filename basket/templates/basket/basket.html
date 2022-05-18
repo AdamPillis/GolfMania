@@ -48,10 +48,6 @@
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    <!-- if product has hand size option -->
-                                    {% if item.product.has_hand %}
-                                        <p class="my-2 small text-muted">Hand Size: {{ item.hand|upper }}</p>
-                                    {% endif %}
                                     <!-- if produce has size option-->
                                     {% if item.product.has_sizes %}
                                         <p class="my-2 small text-muted">Size: {{ item.size|upper }}</p>
@@ -65,7 +61,7 @@
                                     <p class="my-0"><strong>€{{ item.product.price }}</strong></p>
                                 </td>
                                 <td class="py-3 w-25">
-                                    <p class="my-0"><strong>{{ item.quantity }}</strong></p>
+                                    {% include "basket/quantity_post_form.html" %}
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">€{{ item.product.price }}</p>
@@ -192,4 +188,33 @@
         </div>
         {% endif %}
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <!-- including the parent block -->
+    {{ block.super }}
+    <!-- Importing quantity_input_js.html to handle
+    quantity input in basket.html also -->
+    {% include 'products/includes/quantity_input_js.html' %}
+    <script type="text/javascript">
+        // Update quantity on click
+        $('.update-item').click(function(e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
+    
+        // Remove item and reload on click
+        $('.remove-item').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var size = $(this).data('product_size');
+            var url = `/basket/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+    
+            $.post(url, data)
+             .done(function() {
+                 location.reload();
+             });
+        })
+    </script>
 {% endblock %}

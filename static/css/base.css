@@ -235,3 +235,7 @@ footer .container-fluid {
   max-width: 70%;
   height: auto;
 }
+
+.update-item, .remove-item {
+  cursor: pointer;
+}
