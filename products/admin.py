@@ -6,6 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     """To customise products view via admin panel"""
     list_display = (
         'brand',
+        'hand_type',
         'type',
         'sku',
         'name',
