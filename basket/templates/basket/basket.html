@@ -21,10 +21,6 @@
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto">
                 {% if basket_items %}
-                    {{ basket_items }}
-                    <br>
-                    <br>
-                    {{ request.session.basket }}
                 <h2>Your Shopping Cart</h2>
                 <p class="mt-2"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
                 <!-- only visible up to medium sized screens -->

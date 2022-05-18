@@ -1,4 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+    )
+
+from products.models import Product
 
 
 def view_basket(request):
@@ -48,7 +52,43 @@ def add_to_basket(request, item_id):
         else:
             basket[item_id] = quantity
 
-
     request.session['basket'] = basket
 
     return redirect(redirect_url)
+
+
+def adjust_basket(request, item_id):
+    """
+    Adjust the quantity of a specified product
+    within the basket.
+    """
+    # product stored in variable in order to be used
+    # for messaging
+    product = get_object_or_404(Product, pk=item_id)
+
+    quantity = int(request.POST.get('quantity'))
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    basket = request.session.get('basket', {})
+
+    if size:
+        if quantity > 0:
+            basket[item_id]['items_by_size'][size] = quantity
+            # messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}')
+        else:
+            del basket[item_id]['items_by_size'][size]
+            # if item id/size is not in bag, remove
+            if not basket[item_id]['items_by_size']:
+                basket.pop(item_id)
+                # messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
+    else:
+        if quantity > 0:
+            basket[item_id] = quantity
+            # messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        else:
+            basket.pop(item_id)
+            # messages.success(request, f'Removed {product.name} from your bag')
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
