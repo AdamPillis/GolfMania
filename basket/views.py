@@ -92,3 +92,36 @@ def adjust_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
+
+
+def remove_basket_item(request, item_id):
+    """
+    Remove a specific item from the shopping
+    basket, depending on size.
+    """
+    # product stored in variable in order to be used
+    # for messaging
+    product = get_object_or_404(Product, pk=item_id)
+    # using a try block to catch any exceptions and
+    # if so, return a status 500 page.
+    try:
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        basket = request.session.get('basket', {})
+
+        if size:
+            del basket[item_id]['items_by_size'][size]
+            if not basket[item_id]['items_by_size']:
+                basket.pop(item_id)
+                # messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
+        else:
+            basket.pop(item_id)
+            # messages.success(request, f'Removed {product.name} from your bag')
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        # messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
