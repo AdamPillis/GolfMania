@@ -207,6 +207,14 @@ footer .container-fluid {
   font-size: 1.5rem;
 }
 
+.input-group button {
+  height: 55px;
+  margin: 0px;
+}
+
+.input-group input {
+  height: 55px;
+}
 /* setting position of back to the top button in products.html */
 .btt-button {
   height: 42px;

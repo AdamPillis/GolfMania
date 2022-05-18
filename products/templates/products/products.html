@@ -81,21 +81,13 @@
                                             <p class="lead mb-0 text-center font-weight-bold">{% if product.old_price %}<small class="text-muted text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</p>
                                             <p class="">
                                                 Options to select: 
-                                                <small>{% if product.has_hand %}<strong>Hand</strong>{% endif %}</small>
                                                 <small>{% if product.has_sizes %}<strong>Hand Size</strong>{% endif %}</small>
                                                 <small>{% if product.has_quality %}<strong>Quality</strong>{% endif %}</small>
 
                                             </p>
-                                            
-                                            <!-- {% if product.has_hand %}
-                                                <p class="text-muted text-left">Hand selection</p>
+                                            {% if product.hand_type %}
+                                                <p class="text-muted mb-2 small">Hand Type: <strong>{{ product.hand_type }}</strong></p>
                                             {% endif %}
-                                            {% if product.has_sizes %}
-                                                <p class="text-muted text-left">Size selection</p>
-                                            {% endif %}
-                                            {% if product.has_quality %}
-                                                <p class="text-muted text-left">Quality selection</p>
-                                            {% endif %} -->
                                             {% if product.rating %}
                                                 <!-- if product's rating is higher than 4, show highly recommended message -->
                                                 <small class="text-muted"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
