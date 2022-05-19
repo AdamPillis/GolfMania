@@ -84,11 +84,30 @@ i {
   font-size: 1rem;
 }
 /* setting position of message container containing toasts */
+.message-container {
+  position: fixed;
+  background-color: white;
+  top: 80px;
+  right: 15px;
+  z-index: 1111111;
+}
+
+.message-container button {
+  z-index: 1111111111;
+}
 .custom-toast {
   overflow: visible;
+  max-width: 350px;
+  width: 100%;
 }
 .toast-capper {
   height: 2px;
+}
+
+.basket-toast-container {
+  height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 /* footer section in base.html */
 footer .container-fluid {
