@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'reviews',
     'products',
     'basket',
+    'checkout',
+    'phonenumber_field',
+    'django_countries',
 ]
 
 MIDDLEWARE = [

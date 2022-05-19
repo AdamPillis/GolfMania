@@ -92,7 +92,7 @@ i {
   z-index: 1111111;
 }
 
-.message-container button {
+.message-container a {
   z-index: 1111111111;
 }
 .custom-toast {
