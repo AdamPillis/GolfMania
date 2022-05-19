@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}"
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Your Basket</h2>
+                <hr class="w-50 my-4 mx-auto">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 text-center mx-auto">
+            </div>
+        </div>
+    </div>
+{% endblock %}
