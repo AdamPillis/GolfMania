@@ -2,7 +2,7 @@ from django import forms
 from .models import Order
 
 
-class OrderForm(forms.ModelForm):
+class CheckoutForm(forms.ModelForm):
     """
     Generates the order form using the
     imported Order model. Defining fields
