@@ -76,12 +76,19 @@ header {
 }
 
 .fade-in-out {
-    animation: fade-inout 5s infinite alternate;
+    animation: fade-inout 4s;
 }
 
 /* setting size of icons */
 i {
   font-size: 1rem;
+}
+/* setting position of message container containing toasts */
+.custom-toast {
+  overflow: visible;
+}
+.toast-capper {
+  height: 2px;
 }
 /* footer section in base.html */
 footer .container-fluid {
