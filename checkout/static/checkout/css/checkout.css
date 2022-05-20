@@ -3,14 +3,55 @@
 #delivery-form textarea {
     width: 100%;
     margin: 5px auto;
+    border: 1px solid black;
+    border-radius: 5px;
     padding: 2px;
     color: black;
   }
+#delivery-form .form-check-input {
+  width: 5%;
+}
+/* stripe default element styling taken from strip documentation */
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
 
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+/* Right hand side of checkout.html */
+/* container 1 */
 .shopping-basket {
   background-color: rgba(169, 174, 169, 0.4);
 }
-
+/* container 1 */
 .shopping-summary {
   background-color: rgba(169, 174, 169, 0.4);
 }
+
