@@ -105,7 +105,7 @@ i {
 }
 
 .basket-toast-container {
-  height: 150px;
+  height: 100px;
   overflow-x: hidden;
   overflow-y: auto;
 }

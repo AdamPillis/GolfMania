@@ -8,7 +8,7 @@ def checkout(request):
     """X"""
     basket = request.session.get('basket', {})
     if not basket:
-        messages.error(request, "There's nothing in your bag at the moment")
+        messages.error(request, "There's nothing in your basket at the moment")
         return redirect(reverse('products'))
 
     checkout_form = CheckoutForm()

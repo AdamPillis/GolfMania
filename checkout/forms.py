@@ -29,6 +29,7 @@ class CheckoutForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # dictionary of placeholders for order form
         placeholders = {
+            'title': 'Title',
             'first_name': 'First Name',
             'last_name': 'Last Name',
             'email': 'Email Address',
@@ -36,14 +37,14 @@ class CheckoutForm(forms.ModelForm):
             'house_number': 'House No.',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'town_or_city': 'Town or City',
+            'town_city': 'Town or City',
             'county': 'County, State or Locality',
             'postcode': 'Postal Code',
         }
 
-        self.fields['first_name'].widget.attrs['autofocus'] = True
+        self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country' and 'title':
+            if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
