@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 
 from .forms import CheckoutForm
+from basket.contexts import basket_contents
+
+import stripe
 
 
 def checkout(request):
@@ -10,6 +14,12 @@ def checkout(request):
     if not basket:
         messages.error(request, "There's nothing in your basket at the moment")
         return redirect(reverse('products'))
+
+    # to get the current total of session bag for stripe payment
+    current_basket = basket_contents(request)
+    total = current_basket['order_total']
+    # stripe requires amount to be charged as integer so *100
+    stripe_total = round(total * 100)
 
     checkout_form = CheckoutForm()
     template = 'checkout/checkout.html'
