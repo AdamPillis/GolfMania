@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -23,11 +24,11 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-8 text-center mx-auto">
+            <div class="col-12 col-md-6 col-lg-7 text-center mx-auto">
                 <h4 class="logo-font">Delivery</h4>
                 <hr class="w-75 my-4 mx-auto">
 
-                <div class="col-12- col-lg-6 mx-auto">
+                <div class="col-12- col-lg-8 mx-auto">
                 <form action="{% url 'checkout' %}" method="POST" id="delivery-form">
                     {% csrf_token %}
                     <fieldset class="px-3 mb-5 w-100">
@@ -47,8 +48,9 @@
                         {{ checkout_form.county | as_crispy_field }}
                         {{ checkout_form.country | as_crispy_field }}
                         {{ checkout_form.postcode | as_crispy_field }}
-                        <div class="my-2 text-start">
-                        <small><strong>*</strong> indicates a required field</small>
+                        {{ checkout_form.delivery_instructions | as_crispy_field }}
+                        <div class="mt-1 mb-3 text-start">
+                            <small><strong>*</strong> indicates a required field</small>
                         </div>
                         <div class="form-check form-check-inline float-right mr-0">
                             {% if user.is_authenticated %}
@@ -56,8 +58,9 @@
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                             {% else %}
                                 <label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                    <h5>Not signed in yet?</h5>
+                                    <a class="" href="{% url 'account_signup' %}">Create an account</a> or
+                                    <a class="" href="{% url 'account_login' %}">login</a> to save your information for less hassle next time!
                                 </label>
                             {% endif %}
                         </div>
@@ -86,7 +89,7 @@
                                 <i class="fas fa-lock"></i>
                             </span>
                         </button>
-                        <p class="small text-danger my-0">
+                        <p class="small text-danger my-1">
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
@@ -96,8 +99,52 @@
                 </form>
             </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <p>Hello</p>
+            <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                <div class="col-12 container-fluid shopping-basket">
+                <p class="text-muted">Shopping Basket ({{ product_count }})
+                    <span class="float-end">
+                        <a href="{% url 'view_basket' %}">Edit Basket</a>
+                    <span>
+                </p>
+                <hr class="w-100 my-4 mx-auto">
+                {% for item in basket_items %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-7">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr class="my-0">
+            </div>
+            <div class="col-12">
+                <div class="row text-black text-right">
+                    <div class="col-7 offset-2">
+                        <p class="my-0">Order Total:</p>
+                        <p class="my-0">Delivery:</p>
+                        <p class="my-0">Grand Total:</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="my-0">${{ total | floatformat:2 }}</p>
+                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    </div>
+                </div>
+            </div>
+                
             </div>
         </div>
         

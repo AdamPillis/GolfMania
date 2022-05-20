@@ -40,14 +40,19 @@
                         {% for item in basket_items %}
                             <tr>
                                 <td class="p-3 w-25">
-                                    <img class="basket-img rounded" src="{{ item.product.image.url }}">
+                                    <a href="{% url 'product_detail' item.product.id %}">
+                                        <img class="basket-img rounded" src="{{ item.product.image.url }}">
+                                    </a>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     <!-- if produce has size option-->
                                     {% if item.product.has_sizes %}
-                                        <p class="my-2 small text-muted">Size: {{ item.size|upper }}</p>
+                                        <p class="my-2 small text-muted">Size: <strong>{{ item.size|upper }}</strong></p>
+                                    {% endif %}
+                                    {% if item.product.hand_type %}
+                                        <p class="my-0 small">Hand Type: <strong>{{ item.product.hand_type }}</strong></p>
                                     {% endif %}
                                     <!-- if product has quality option -->
                                     {% if item.product.has_quality %}
@@ -72,7 +77,9 @@
                     <div class="row mt-3">
                         <h4 class="col-sm-12 text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h4>
                         <div class="col-12 col-sm-6 d-md-none mt-2">
-                            <img class="basket-img" src="{{ item.product.image.url }}">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="basket-img" src="{{ item.product.image.url }}">
+                            </a>
                         </div>
                         <div class="col-12 col-sm-6 d-md-none">
                             <p class="d-none d-sm-block"><strong>{{ item.product.name }}</strong></p>

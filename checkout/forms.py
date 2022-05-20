@@ -18,7 +18,8 @@ class CheckoutForm(forms.ModelForm):
         fields = ('title', 'first_name', 'last_name',
                   'email', 'phone_number', 'house_number',
                   'street_address1', 'street_address2',
-                  'town_city', 'county', 'country', 'postcode'
+                  'town_city', 'county', 'country', 'postcode',
+                  'delivery_instructions'
               )
 
     def __init__(self, *args, **kwargs):
@@ -40,6 +41,7 @@ class CheckoutForm(forms.ModelForm):
             'town_city': 'Town or City',
             'county': 'County, State or Locality',
             'postcode': 'Postal Code',
+            'delivery_instructions': 'Please supply a door code if required to access your address and/or preferred alternative delivery location if no answer e.g. under the car',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
