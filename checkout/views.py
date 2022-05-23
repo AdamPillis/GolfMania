@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.conf import settings
 
@@ -36,7 +36,7 @@ def checkout(request):
         }
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
-            checkout_form.save()
+            order = checkout_form.save()
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -58,21 +58,22 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "We're sorry, but there is an issue with a basket item"
+                        f"No payment has been accepted for {order.order_number}"
+                        "We will empty your basket, please try again!")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_confirm', args=[order.order_number]))
         else:
             messages.error(request, 'There is an error with your form. \
                 Please try again.')
     else:
         basket = request.session.get('basket', {})
     if not basket:
-        messages.error(request, "There's nothing in your basket at the moment")
+        messages.error(request, "There's nothing in your basket, search our newest products!")
         return redirect(reverse('products'))
 
 
@@ -101,3 +102,26 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
+
+def checkout_confirm(request, order_number):
+    """
+    To display final confirmation page with
+    the order details and a customised message
+    for each customer with successfull payment
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Thank you for your order {order.title}. \
+        {order.last_name}! We are currently working on your order \
+            {order_number}. An email will be sent shortly to {order.email}.')
+
+    # deleting bag in session as it is no longer needed
+    if 'basket' in request.session:
+        del request.session['basket']
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'checkout/checkout_confirm.html', context)
