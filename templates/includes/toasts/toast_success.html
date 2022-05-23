@@ -13,7 +13,7 @@
               <hr class="mt-1 mb-1">
             </div>
         </div>
-        {% if basket_items > 0 %}
+        {% if order_total > 10 %}
             <p class="mt-1 fs-6"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
             <div class="basket-toast-container">
                 {% for item in basket_items %}
