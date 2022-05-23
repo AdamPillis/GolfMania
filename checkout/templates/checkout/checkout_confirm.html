@@ -16,20 +16,252 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Thank you for your order!</h2>
-                <hr class="w-50 my-4 mx-auto">
+            <div class="col-12 text-center mt-3">
+                <h2 class="logo-font">Thank you for your order {{ order.first_name }}! <i class="fas fa-check-circle confirm-icon"></i></h2>
+                <small>Order: <strong>{{ order.order_number }}</strong></small>
+                <hr class="w-50 mb-2 mt-3 mx-auto">
+            </div>
+            <div class="col-12 text-center mt-4">
+                <p>Thanks for being awesome, we hope you enjoy your purchase!</p>
+            </div>
+            <div class="col-12 col-lg-6 text-center mx-auto mt-4">
+                <h5>Please find your order details below. A confirmation email has also
+                    been sent to <strong>{{ order.email }}</strong>.
+                </h5>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-7 text-center mx-auto">
-                
-        </div>
-            <!-- Shipping Basket Summary on the right of checkout.html -->
-            <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                
-            </div>                
+            <div class="col-12 col-lg-6 text-center mx-auto">
+                <div class="order-info-container p-3 my-3 border">
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Ordering Date:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.date }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row order-number">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Order Number:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.order_number }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5>Order Summary:</h5>
+                        </div>
+                    </div>
+                    <!-- product section displaying item.product details for 
+                    each product in the order -->
+                    {% for item in order.lineitems.all %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">
+                                    <strong>{{ item.quantity }}</strong> x {{ item.product.name }}
+                                    {% if item.product_size %}
+                                        (Size: <strong> {{ item.product_size|upper }} </strong>)
+                                    {% endif%}
+                                </p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ item.product.price }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5>Delivery Details:</h5>
+                        </div>
+                    </div>
+                    <!-- Personal Details -->
+                    <p class="text-muted text-start text-decoration-underline">Personal Details:<p>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Name:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.title }}. {{ order.first_name }} {{ order.last_name }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Email:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.email }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Contact No:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.phone_number }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Delivery Details -->
+                    <p class="text-muted text-start text-decoration-underline">Address Details:<p>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Line 1:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {% if order.house_number %}
+                                            {{ order.house_number }}
+                                        {% endif %}, {{ order.street_address1 }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% if order.street_address2 %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Line 2:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {{ order.street_address2 }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Town/City:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {{ order.town_city }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% if order.county %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">County:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {{ order.county }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Country:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {{ order.country }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% if order.postcode %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">POSTCODE:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6">
+                                    <strong>
+                                        {{ order.postcode }}
+                                    </strong>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if order.delivery_instructions %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span>
+                                <p class="fs-6">Delivery Instructions:</p>
+                            </span>
+                            <span>
+                                <p class="fs-6"> 
+                                    {{ order.delivery_instructions }}
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5>Cost Summary:</h5>
+                        </div>
+                    </div>
+                    <!-- Total cost displayed -->
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Subtotal:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.sub_total }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Delivery:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-6"><strong>{{ order.delivery_cost }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="float-start">
+                                <p class="fs-6">Order Total:</p>
+                            </span>
+                            <span class="float-end">
+                                <p class="fs-5"><strong>{{ order.order_total }}</strong></p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>              
         </div>
     </div>
 {% endblock %}

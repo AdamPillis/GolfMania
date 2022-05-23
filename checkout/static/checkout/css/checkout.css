@@ -55,3 +55,14 @@
   background-color: rgba(169, 174, 169, 0.4);
 }
 
+/* checkout_confirm.html */
+.confirm-icon {
+  font-size: 3rem !important;
+  color: green;
+}
+
+/* fixed top navbar only on medium and up */
+@media (max-width: 508px) {
+  .order-number {
+      display: none;
+  }
