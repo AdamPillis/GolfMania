@@ -12,7 +12,7 @@ import json
 import time
 
 
-class Stripe_webhook_handler:
+class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
@@ -33,7 +33,7 @@ class Stripe_webhook_handler:
         intent = event.data.object
         print(intent)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

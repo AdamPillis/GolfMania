@@ -64,21 +64,17 @@ form.addEventListener('submit', function(ev) {
     
     var url = '/checkout/save_checkout_data/';
 
-    // posting data to url using jquery and calling stripe confirm payment once form data is okay
+    // post form data to checkout view and if its valid
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
-                // retrieve form data
-                // trim method used to get rid of whitespace
+                // retrieve form data 
                 billing_details: {
-                    title: $.trim(form.title.value),
-                    fname: $.trim(form.full_name.value),
-                    lname: $.trim(form.full_name.value),
+                    name: $.trim(form.last_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
                     address:{
-                        house: $.trim(form.house_number.value),
                         line1: $.trim(form.street_address1.value),
                         line2: $.trim(form.street_address2.value),
                         city: $.trim(form.town_city.value),
@@ -87,25 +83,20 @@ form.addEventListener('submit', function(ev) {
                     }
                 }
             },
-            shipping_details: {
-                title: $.trim(form.title.value),
-                fname: $.trim(form.full_name.value),
-                lname: $.trim(form.full_name.value),
+            // shipping excludes email and includes post code
+            shipping: {
+                name: $.trim(form.last_name.value),
                 phone: $.trim(form.phone_number.value),
-                email: $.trim(form.email.value),
                 address:{
-                    house: $.trim(form.house_number.value),
                     line1: $.trim(form.street_address1.value),
                     line2: $.trim(form.street_address2.value),
                     city: $.trim(form.town_city.value),
                     country: $.trim(form.country.value),
                     state: $.trim(form.county.value),
-                    postcode: $.trim(form.postcode.value),
+                    postal_code: $.trim(form.postcode.value),
                 }
-            },
+            }
         }).then(function(result) {
-            // if there is an error with submission, display error
-            // submit button re-enabled for new submission and loading overlay spinner set to display: none;
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
@@ -114,7 +105,7 @@ form.addEventListener('submit', function(ev) {
                     </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
-                // fading payment form and loading spinner overlay (1)
+                // fading payment form and loading spinner overlay (2)
                 $('#delivery-form').fadeToggle(100);
                 $('#overlay-screen').fadeToggle(100);
                 card.update({ 'disabled': false});
