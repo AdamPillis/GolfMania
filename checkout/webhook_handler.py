@@ -80,6 +80,8 @@ class StripeWH_Handler:
                     postcode__iexact=shipping_details.address.postal_code,
                     town_city__iexact=shipping_details.address.city,
                     county__iexact=shipping_details.address.state,
+                    original_basket=basket,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 # break while loop if order is found
@@ -109,6 +111,10 @@ class StripeWH_Handler:
                     county=shipping_details.address.state,
                     country=shipping_details.address.country,
                     postcode=shipping_details.address.postal_code,
+                    # trying to find an order with the same basket items
+                    # as well as payment_intent and try 5 times
+                    original_basket=basket,
+                    stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(basket).items():
                     product = Product.objects.get(id=item_id)

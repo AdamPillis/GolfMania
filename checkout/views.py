@@ -59,7 +59,12 @@ def checkout(request):
         }
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
-            order = checkout_form.save()
+            order = checkout_form.save(commit=False)
+            # ensure each order is unique using strip pid
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)

@@ -23,7 +23,7 @@ class Order(models.Model):
     details and total charges
     """
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    # setting on delete to null if the profile is deleted so order history 
+    # setting on delete to null if the profile is deleted so order history
     # remains in admin and allow users to make purchases without profile
     title = models.CharField(null=False, blank=False, choices=TITLE_OPT, default=False, max_length=20)
     first_name = models.CharField(max_length=50, null=False, blank=False)
