@@ -91,8 +91,11 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_confirm', args=[order.order_number]))
         else:
-            messages.error(request, 'There is an error with your form. \
-                Please try again.')
+            if checkout_form.errors:
+                for field in checkout_form:
+                    for error in field.errors:
+                        messages.error(request, f'There is an error with your form. \
+                            Please try again. {error}')
     else:
         basket = request.session.get('basket', {})
     if not basket:
