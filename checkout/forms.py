@@ -34,14 +34,14 @@ class CheckoutForm(forms.ModelForm):
             'first_name': 'First Name',
             'last_name': 'Last Name',
             'email': 'Email Address',
-            'phone_number': 'Phone Number',
+            'phone_number': 'Phone Number with +(area-code)',
             'house_number': 'House No.',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'town_city': 'Town or City',
             'county': 'County, State or Locality',
             'postcode': 'Postal Code',
-            'delivery_instructions': 'Please supply a door code if required to access your address and/or preferred alternative delivery location if no answer e.g. under the car',
+            'delivery_instructions': 'Please supply a door code if required to access your address and/or preferred alternative delivery location if no answer e.g. leave with neighbour',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True

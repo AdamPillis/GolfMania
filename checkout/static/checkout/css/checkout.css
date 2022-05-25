@@ -8,6 +8,9 @@
     padding: 2px;
     color: black;
   }
+#delivery-form textarea {
+  min-height: 120px;
+}
 #delivery-form .form-check-input {
   width: 5%;
 }
@@ -45,6 +48,18 @@
     border: 1px solid #000;
     border-radius: 5px;
 }
+
+/* styling select option colors (country field) */
+select,
+select option {
+  color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #aab7c4 !important;
+}
+
 /* Right hand side of checkout.html */
 /* container 1 */
 .shopping-basket {
