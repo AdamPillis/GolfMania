@@ -21,6 +21,19 @@
                 <hr class="w-50 my-4 mx-auto">
             </div>
         </div>
-        {{ profile }}
+        <div class="row">
+            <div class="col-12 col-lg-7 text-center">
+                <p class="text-muted">Default Delivery Information</p>
+                <form action="{% url 'profile' %}" method="POST" id="default-profile-form">
+                    {% csrf_token %}
+                    {{ profile_form|crispy }}
+                    <a href="{% url 'products' %}" class="btn btn1 my-3 me-4">Shop Now</a>
+                    <button type="submit" class="btn btn1 my-3">Update Profile</button>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                {{ orders }}
+            </div>
+        </div>
     </div>
 {% endblock %}

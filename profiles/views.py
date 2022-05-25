@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import Profile
-# from .forms import UserProfileForm
+from .forms import ProfileForm
 
 from checkout.models import Order
 
@@ -14,9 +14,12 @@ def profile(request):
     Display the user's profile
     """
     profile = get_object_or_404(Profile, user=request.user)
+    profile_form = ProfileForm(instance=profile)
+    orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
-        'profile': profile
+        'profile_form': profile_form,
+        'orders': orders,
     }
     return render(request, template, context)
