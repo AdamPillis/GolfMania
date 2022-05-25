@@ -265,3 +265,24 @@ footer .container-fluid {
 .update-item, .remove-item {
   cursor: pointer;
 }
+
+/* allauth html file styling */
+#div_id_password {
+  margin: 15px auto;
+}
+
+#div_id_email2 {
+  margin: 15px auto;
+}
+
+#div_id_username {
+  margin: 15px auto;
+}
+
+#div_id_password1 {
+  margin: 15px auto;
+}
+
+#div_id_password2 {
+  margin: 15px auto;
+}
