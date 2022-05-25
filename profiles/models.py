@@ -34,12 +34,12 @@ class Profile(models.Model):
 
 # receiver event (signal) to automatically add or 
 # update profile when form is saved
-# @receiver(post_save, sender=User)
-# def create_or_update_user_profile(sender, instance, created, **kwargs):
-#     """
-#     Create or update user profile
-#     """
-#     if created:
-#         Profile.objects.create(user=instance)
-#     # Existing users: just save the profile
-#     instance.profile.save()
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update user profile
+    """
+    if created:
+        Profile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.profile.save()

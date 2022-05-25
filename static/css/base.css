@@ -286,3 +286,17 @@ footer .container-fluid {
 #div_id_password2 {
   margin: 15px auto;
 }
+
+.allauth-inner-content .signup input {
+  width: 100%;
+}
+
+/* hiding all labels except the remember me checkbox
+given that all other inputs already have labels */
+.allauth-inner-content label:not([for='id_remember']) {
+  display: none;
+}
+
+.allauth-inner-content input::placeholder {
+  color: #aab7c4;
+}
