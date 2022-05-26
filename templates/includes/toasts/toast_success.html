@@ -13,7 +13,7 @@
               <hr class="mt-1 mb-1">
             </div>
         </div>
-        {% if order_total > 10 %}
+        {% if order_total > 10 and not on_profile_page %}
             <p class="mt-1 fs-6"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
             <div class="basket-toast-container">
                 {% for item in basket_items %}

@@ -27,9 +27,9 @@
                 <form action="{% url 'profile' %}" method="POST" id="default-profile-form">
                     {% csrf_token %}
                     {{ profile_form|crispy }}
-                    <a href="{% url 'products' %}" class="btn btn1 my-3 me-4">Shop Now</a>
                     <button type="submit" class="btn btn1 my-3">Update Profile</button>
                 </form>
+                <a href="{% url 'products' %}" class="btn btn1 my-3 me-4">Shop Now</a>
             </div>
             <div class="col-lg-5">
                 {{ orders }}
