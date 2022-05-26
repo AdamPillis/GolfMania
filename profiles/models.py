@@ -21,6 +21,7 @@ class Profile(models.Model):
     default_first_name = models.CharField(max_length=50, null=True, blank=True)
     default_last_name = models.CharField(max_length=50, null=True, blank=True)
     default_phone_number = PhoneNumberField(null=True, blank=True, max_length=20)
+    default_house_number = models.IntegerField(null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
     default_town_city = models.CharField(max_length=40, null=True, blank=True)

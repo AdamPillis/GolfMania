@@ -26,6 +26,7 @@ class ProfileForm(forms.ModelForm):
             'default_first_name': 'First Name',
             'default_last_name': 'Last Name',
             'default_phone_number': 'Phone Number',
+            'default_house_number': 'House Number',
             'default_postcode': 'Postal Code',
             'default_town_city': 'Town or City',
             'default_street_address1': 'Street Address 1',

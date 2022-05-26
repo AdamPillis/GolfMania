@@ -7,6 +7,9 @@ from .forms import CheckoutForm
 from .models import Order, OrderLineItem
 from products.models import Product
 
+from profiles.models import Profile
+from profiles.forms import ProfileForm
+
 from basket.contexts import basket_contents
 
 import stripe
@@ -142,6 +145,32 @@ def checkout_confirm(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_title': order.title,
+                'default_first_name': order.first_name,
+                'default_last_name': order.last_name,
+                'default_phone_number': order.phone_number,
+                'default_house_number': order.house_number,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_town_city': order.town_city,
+                'default_county': order.county,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+            }
+            profile_form = ProfileForm(profile_data, instance=profile)
+            if profile_form.is_valid():
+                profile_form.save()
+
     messages.success(request, f'Thank you for your order {order.title}. \
         {order.last_name}! We are currently working on your order \
             {order_number}. An email will be sent shortly to {order.email}.')
