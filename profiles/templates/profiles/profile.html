@@ -32,8 +32,6 @@
                         <button type="submit" class="btn btn1 my-3">Update Profile</button>
                     </form>
                 </div>
-                
-                <a href="{% url 'products' %}" class="btn btn1 my-3 me-4">Shop Now</a>
             </div>
             <!-- Order History Section -->
             <div class="col-12 col-lg-5">
@@ -53,8 +51,8 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
+                                        title="{{ order.order_number }}" class="text-decoration-underline">
+                                            {{ order.order_number|truncatechars:8 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
@@ -62,9 +60,10 @@
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
+                                                    <strong>{{ item.quantity }}</strong> x {{ item.product.name }}
                                                     {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                        (Size <strong>{{ item.product_size|upper }}</strong>)
+                                                    {% endif %}
                                                 </li>
                                             {% endfor %}
                                         </ul>
@@ -75,6 +74,15 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="col-12 text-center">
+                    <a href="{% url 'products' %}" class="btn btn1">
+                        <span class="text-uppercase me-1">Shop Again</span>
+                        <span class="">
+                            <i class="fas fa-shopping-bag"></i>
+                        </span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>

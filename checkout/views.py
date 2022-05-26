@@ -120,8 +120,31 @@ def checkout(request):
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
+    # to check if user is authenticated and has a profile to prefill
+    if request.user.is_authenticated:
+        try:
+            profile = Profile.objects.get(user=request.user)
+            checkout_form = CheckoutForm(initial={
+                'title': profile.default_title,
+                'first_name': profile.default_first_name,
+                'last_name': profile.default_last_name,
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+                'house_number': profile.default_house_number,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'town_city': profile.default_town_city,
+                'county': profile.default_county,
+                'country': profile.default_country,
+                'postcode': profile.default_postcode,
+            })
+        # else if profile does not exist
+        except Profile.DoesNotExist:
+            checout_form = CheckoutForm()
+    # if user is not authenticated
+    else:
+        checout_form = CheckoutForm()
 
-    checkout_form = CheckoutForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
