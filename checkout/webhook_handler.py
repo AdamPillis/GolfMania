@@ -17,7 +17,30 @@ class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
-        self.request = request  
+        self.request = request
+    
+    def _send_confirmation_email(self, order):
+        """
+        Send the user a confirmation email.
+        send_mail function called in handle_payment_intent_succeeded
+        if order exists
+        """
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order}
+        )
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'golfmania_email': settings.DEFAULT_FROM_EMAIL}
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
 
     def handle_event(self, event):
         """
@@ -95,7 +118,7 @@ class StripeWH_Handler:
                 time.sleep(1)
         if order_exists:
             # sending email if order exists
-            # self._send_confirmation_email(order)
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -143,7 +166,7 @@ class StripeWH_Handler:
                 status=500)
 
         # sending email if order created by webhook handler
-        # self._send_confirmation_email(order)
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
