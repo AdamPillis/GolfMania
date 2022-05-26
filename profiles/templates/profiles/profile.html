@@ -37,3 +37,9 @@
         </div>
     </div>
 {% endblock %}
+
+{% block postloadjs %}
+        {{ block.super }}
+        <!-- to change the color of the country field if selected/not selected -->
+        <script type="text/javascript" src="{% static 'profiles/js/countryoption.js' %}"></script>
+{% endblock %}
