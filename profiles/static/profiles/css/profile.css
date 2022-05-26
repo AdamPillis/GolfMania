@@ -21,3 +21,9 @@
 #id_default_country option:not(:first-child) {
     color: #000;
 }
+/* setting max height of order history section - 
+same as profile form on other side */
+.order-history-section {
+    max-height: 437px;
+    overflow-y: auto;
+}

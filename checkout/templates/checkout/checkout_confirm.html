@@ -263,5 +263,20 @@
                 </div>
             </div>              
         </div>
+        {% if from_profile_page %}
+            <a href="{% url 'profile' %}" class="btn btn1">
+                <span class="text-uppercase">Back to My Profile</span>
+                <span class="">
+                    <i class="fas fa-address-card"></i>
+                </span>
+            </a>
+        {% else %}
+            <a href="{% url 'products' %}" class="btn btn1">
+                <span class="text-uppercase">Shop Again</span>
+                <span class="">
+                    <i class="fas fa-shopping-bag"></i>
+                </span>
+            </a>
+        {% endif %}
     </div>
 {% endblock %}

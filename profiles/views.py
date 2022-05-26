@@ -31,3 +31,26 @@ def profile(request):
         'on_profile_page': True,
     }
     return render(request, template, context)
+
+
+def order_history(request, order_number):
+    """
+    Function to get all orders linked with request.user
+    and display each within the table of profile.html
+    through context
+    """
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        f'A confirmation email was sent on the {order.date} to {order.email}'
+    ))
+
+    template = 'checkout/checkout_confirm.html'
+    context = {
+        'order': order,
+        # to check if user is coming from profile page
+        'from_profile_page': True,
+    }
+
+    return render(request, template, context)
