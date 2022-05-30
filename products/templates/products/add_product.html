@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Golf Mania Product Management</h2>
+                <hr class="w-50 my-4 mx-auto">       
+                <h5>Welcome back {{ request.user.username}}! </h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}

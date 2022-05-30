@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category
-from .form import ProductForm
+from .forms import ProductForm
 
 
 def all_products(request):
