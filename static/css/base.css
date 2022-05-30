@@ -272,6 +272,10 @@ footer .container-fluid {
     color: black;
   }
 
+#product-form input[type='checkbox'] {
+  width: 5% !important;
+}
+
 #product-form label {
   margin-top: 10px;
 }
