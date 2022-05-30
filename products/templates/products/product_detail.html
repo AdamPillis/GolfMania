@@ -47,6 +47,13 @@
                             </a>
                         </p>
                     {% endif %}
+                    <!-- if user is superuser, display edit and delete options -->
+                    {% if request.user.is_superuser %}
+                        <p class="ml-3">
+                            <a class="text-info fs-6" href="{% url 'update_product' product.id %}">Update</a> |
+                            <a class="text-danger fs-6" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </p>
+                    {% endif %}
                     {% if product.rating %}
                         <small class="text-muted mt-3"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
                     {% else %}
