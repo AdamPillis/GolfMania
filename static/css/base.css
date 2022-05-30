@@ -280,6 +280,15 @@ footer .container-fluid {
   margin-top: 20px;
 }
 
+.errorField {
+  font-size: 90%;
+  color: #d81125;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 10px;
+  display: block;
+}
+
 /* basket.html styling */
 .basket-img {
   max-width: 70%;
