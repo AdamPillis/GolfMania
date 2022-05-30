@@ -76,8 +76,11 @@ def product_detail(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
 
+    products = Product.objects.all()
+
     context = {
         'product': product,
+        'products': products,
     }
 
     return render(request, 'products/product_detail.html', context)

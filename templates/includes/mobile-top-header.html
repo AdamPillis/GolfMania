@@ -6,7 +6,7 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
                 <li><a href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
             {% endif %}
             <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
@@ -25,10 +25,10 @@
             <div><i class="fas fa-shopping-basket fa-lg"></i></div>
             <!-- displaying total cost when product added to the bag -->
             <small class="my-0">
-                {% if order_total %}
-                    €{{ order_total|floatformat:2 }}
-                {% else %}
+                {% if total == 0 %}
                     €0.00
+                {% else %}
+                    €{{ order_total|floatformat:2 }}
                 {% endif %}
             </small>
         </div>

@@ -148,6 +148,40 @@
                 </div>
             </div>
         </div>
+        <!-- Newest products advertising area under product description -->
+        <div class="row">
+            {% for product in products %}
+                {% if product.category.name == 'new_in' %}
+                    <div class="col-12 text-center">
+                        <p class="fs-2">Check out our newest products!</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card border-0">
+                            <div class="card-body pb-0">
+                                
+                                <h5 class="text-center">{{ product.name }}</h5>                     
+                            </div>
+                            {% if product.rating %}
+                                <!-- if product's rating is higher than 4, show highly recommended message -->
+                                <small class="text-muted text-center"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
+                            {% endif %}
+                            <h5 class="lead mb-0 text-center mt-2 font-weight-bold">{% if product.old_price %}<small class="text-muted text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
+
+                            {% if product.image %}
+                            <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
     
 {% endblock %}

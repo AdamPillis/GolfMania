@@ -68,14 +68,14 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     {% if request.user.is_authenticated %}
-                        <li class="list-inline-item dropdown">
+                        <li class="list-inline-item dropdown me-5">
                             <a class="text-decoration-none" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0 fs-6">My Account</p>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                                 {% if request.user.is_superuser %}
-                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
+                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
                                     <li><a href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
                                 {% endif %}
                                 <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
@@ -92,14 +92,14 @@
                     {% endif %}
                     <li class="list-inline-item">
                         <!-- highlighting shopping bag when bag is not empty -->
-                        <a class="text-decoration-none {% if total > 0 %}text-info font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_basket' %}">
+                        <a href="{% url 'view_basket' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-basket fa-lg"></i></div>
                                 <!-- displaying total cost when product added to the bag -->
                                     {% if total == 0 %}
                                         <p class="my-0 fs-6">Your basket is empty</p>
                                     {% else %}
-                                        <p class="my-0 fs-5">€{{ order_total|floatformat:2 }}</p>
+                                        <p class="my-0 fs-5"><strong>€{{ order_total|floatformat:2 }}</strong></p>
                                     {% endif %}
                             </div>
                         </a>
