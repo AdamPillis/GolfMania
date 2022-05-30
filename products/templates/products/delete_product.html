@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Delete Booking{% endblock title %}
+
+{% block content%}
+{% load static %}
+<!-- This page is created as a layer of defence to ensure user
+really wants to delete from database -->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 mt-3 offset-md-2">
+
+            <h4 class="text-center">
+                Are you sure you want to delete "<strong>{{ product.name }}</strong>"
+                (<strong>SKU:</strong>{{ product.sku }}) ?
+            </h4>
+        
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 my-3 offset-md-2 text-center">
+            <!-- form is linked with booking using its id and submit button set to delete booking if clicked -->
+            <form action="{% url 'delete_product' product.id %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn1" type="submit" name="Confirm">Submit</button>
+                <a class="text-decoration-none btn btn1 ms-2" href="{% url 'products' %}">
+                    Cancel
+                </a>
+            </form>
+                      
+        </div>
+    </div>
+</div>         
+{% endblock%} 

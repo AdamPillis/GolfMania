@@ -101,11 +101,19 @@
                                                     </a>
                                                 </p>
                                             {% endif %}
+                                            <!-- if user is superuser, display edit and delete options -->
+                                            {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a class="text-info fs-6" href="{% url 'update_product' product.id %}">Update</a> |
+                                                    <a class="text-danger fs-6" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                </small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- full width for each product on smaller screen -->
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
