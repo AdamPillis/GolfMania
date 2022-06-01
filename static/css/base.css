@@ -35,8 +35,9 @@ header {
 .logo-font i {
   color: rgba(255, 215, 0, 1);
 }
-.navbar {
-  background-color: rgba(0, 114, 0, 1);
+.navbar,
+.reviews-section {
+  background-color: rgba(0, 114, 0, 0.6);
 }
 
 .navbar .dropdown-toggle {
@@ -47,9 +48,13 @@ header {
 
 #delivery-banner,
 .new-products {
-  background-color: rgba(0, 114, 0, 0.6);
+  background-color: rgba(0, 114, 0, 0.4);
 }
 
+.mobile-icon {
+  color: white;
+  font-size: 1rem;
+}
 .new-products h2 {
   color: white;
 }
@@ -189,10 +194,13 @@ footer i {
 }
 
 .landing-image .container-fluid .text-center {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* products.html page */
+.product-container {
+  background-color: rgba(0, 114, 0, 0.1);
+}
 .star-color {
   color: gold;
   font-size: 1.4rem;

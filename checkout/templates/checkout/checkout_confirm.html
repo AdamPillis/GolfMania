@@ -22,6 +22,14 @@
                     <small>For Order: <strong>{{ order.order_number }}</strong></small>
                     <hr class="w-50 mb-2 mt-3 mx-auto">
                 </div>
+                <div class="col-12 text-center">
+                    <a href="{% url 'profile' %}" class="btn btn1">
+                        <span class="text-uppercase">Back to My Profile</span>
+                        <span class="">
+                            <i class="fas fa-address-card"></i>
+                        </span>
+                    </a>
+                </div>
                 <div class="col-12 text-center mt-4">
                     <p>Please find details of your previous order below! Thanks again for being awesome!</p>
                 </div>
@@ -35,6 +43,14 @@
                 </div>
                 <div class="col-12 text-center mt-4">
                     <p>Thanks for being awesome, we hope you enjoy your purchase!</p>
+                </div>
+                <div class="col-12 text-center">
+                    <a href="{% url 'products' %}" class="btn btn1">
+                        <span class="text-uppercase">Shop Again</span>
+                        <span class="">
+                            <i class="fas fa-shopping-bag"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="col-12 col-lg-6 text-center mx-auto mt-4">
                     <h5>Please find your order details below. A confirmation email has also
@@ -276,20 +292,5 @@
                 </div>
             </div>              
         </div>
-        {% if from_profile_page %}
-            <a href="{% url 'profile' %}" class="btn btn1">
-                <span class="text-uppercase">Back to My Profile</span>
-                <span class="">
-                    <i class="fas fa-address-card"></i>
-                </span>
-            </a>
-        {% else %}
-            <a href="{% url 'products' %}" class="btn btn1">
-                <span class="text-uppercase">Shop Again</span>
-                <span class="">
-                    <i class="fas fa-shopping-bag"></i>
-                </span>
-            </a>
-        {% endif %}
     </div>
 {% endblock %}

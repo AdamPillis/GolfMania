@@ -1,18 +1,14 @@
-<div class="toast custom-toast mt-3 show" id="messages">
-    <div class="arrow-up arrow-success"></div>
-    <div class="w-100 toast-capper bg-success"></div>
-
+<div class="toast custom-toast show" id="messages">
     <div class="toast-header">
-        <strong class="mr-auto">Success!</strong>
-        <button type="button" class="btn-close ml-2 mb-1" style="float: right;" data-bs-dismiss="toast"></button>
-    </div>
-    <div class="toast-body">
         <div class="row">
             <div class="col">
               {{ message }}
-              <hr class="mt-1 mb-1">
             </div>
         </div>
+        <button type="button" class="btn-close ml-2 mb-1" style="float: right;" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body">
+        
         {% if order_total > 10 and not on_profile_page %}
             <p class="mt-1 fs-6"><strong>{{ basket_items|length }}</strong> item(s) in your bag currently.</p>
             <div class="basket-toast-container">

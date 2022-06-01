@@ -99,7 +99,7 @@
                                     {% if total == 0 %}
                                         <p class="my-0 fs-6">Your basket is empty</p>
                                     {% else %}
-                                        <p class="my-0 fs-5"><strong>€{{ order_total|floatformat:2 }}</strong></p>
+                                        <p class="text-info my-0 fs-5"><strong>€{{ order_total|floatformat:2 }}</strong></p>
                                     {% endif %}
                             </div>
                         </a>
@@ -111,7 +111,7 @@
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="mobile-icon fas fa-bars"></i>
                  </button>
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
@@ -133,7 +133,7 @@
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col text-white">
-                <h4 class="my-1 fade-in-out">Next Day Delivery Guaranteed over €{{ free_delivery_threshold }}.00!</h4>
+                <h4 class="my-1 fade-in-out">Next Day Delivery Guaranteed over €{{ free_delivery_threshold|floatformat:2 }}!</h4>
             </div>
         </div>
     </header>

@@ -7,7 +7,7 @@ Order Date: {{ order.date }}
 
 Sub Total: €{{ order.order_total }}
 Delivery: €{{ order.delivery_cost }}
-Order Total: €{{ order.grand_total }}
+Order Total: €{{ order.order_total }}
 
 We're currently getting your ordered items together and ready to be shipped to the address below.
 
@@ -25,6 +25,6 @@ If you have any questions, don't hesitate to contact us via {{ golfmania_email }
 
 Thank you for shopping with us and for being awesome!
 
-Warmest Regards,
+Warm Regards,
 
 The Gold Mania Team
