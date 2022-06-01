@@ -26,28 +26,42 @@
         </div>
     </div>
 </div>
-<!-- View latest products and guiding tips link sections -->
 <section class="mx-auto">
     <div class="container-fluid">
-        <!-- View Latest Products -->
+        <!-- Clearance products advertising area under landing image to catch user's attention with best deals -->
         <div class="row">
-            <h2 class="text-center">Check our latest products!</h2>
-            <div class="col-12-col-md-4-col-lg-3 mx-auto">
-                
+            <div class="col-12 text-center">
+                <h3 class="fs-2">Check out our newest products!</h3>
             </div>
-        </div>
-        <!-- View Guide Tips -->
-        <div class="row">
-            <div class="col-lg-6 order-lg-2 my-auto showcase">
-                <h2 class="text-center p-2 mt-3 mx-2">Ready to do some research?</h2>
+                {% for product in products %}
+                    {% if product.category.name == 'clearance' %}
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mx-auto">
+                            <div class="card border-0">
+                                <div class="card-body pb-0">
+                                    
+                                    <h5 class="text-center">{{ product.name }}</h5>                     
+                                </div>
+                                {% if product.rating %}
+                                    <!-- if product's rating is higher than 4, show highly recommended message -->
+                                    <small class="text-muted text-center"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
+                                {% endif %}
+                                <h5 class="lead mb-0 text-center mt-2 font-weight-bold">{% if product.old_price %}<small class="text-muted text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
 
-                <div class="tips-img"></div>
-                
-                <div class="col-12 mt-3 mb-3 text-center">
-                    <a class="btn btn1" href="https://www.todaysgolfer.co.uk/equipment/best/used-golf-clubs/" target="_blank" rel="noopener">Tips Guide</a>
-                </div>
-            </div>
-        </div>    
+                                {% if product.image %}
+                                <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
     </div>
 </section>
 
