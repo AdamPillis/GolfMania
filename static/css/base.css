@@ -20,14 +20,39 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #46AB21;
+  color: rgba(0, 114, 0, 1);
 }
 
 header {
   position: relative;
   z-index: 50;
-  background-color: rgba(0, 0, 0, 0.6);
   }
+
+.logo-font {
+  color: rgba(0, 114, 0, 1);
+}
+
+.logo-font i {
+  color: rgba(255, 215, 0, 1);
+}
+.navbar {
+  background-color: rgba(0, 114, 0, 1);
+}
+
+.navbar .dropdown-toggle {
+  color: white;
+  border: none;
+  margin-right: 20px;
+}
+
+#delivery-banner,
+.new-products {
+  background-color: rgba(0, 114, 0, 0.6);
+}
+
+.new-products h2 {
+  color: white;
+}
 
 /* setting general button design */
 /* design idea from 'Animated CSS Buttons'  */
@@ -38,13 +63,13 @@ header {
   font-family: "montserrat";
   margin-top: 5px;
   text-decoration: none;
-  border: 1px solid #ff7675;
+  border: 1px solid #38B000;
   text-transform: uppercase;
   overflow: hidden;
   transition: 1s all ease;
 }
 .btn::before{
-  background: #ff7675;
+  background: #38B000;
   color: white;
   content: "";
   position: absolute;
@@ -52,7 +77,7 @@ header {
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: -1;
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
 }
 /* general button hover effect */
 .btn1:hover {
@@ -115,6 +140,14 @@ footer .container-fluid {
   z-index: 1000;
 }
 
+footer a {
+  color: white;
+}
+
+footer i {
+  font-size: 2rem;
+}
+
 .display {
   display: flex;
   justify-content: space-evenly;
@@ -157,32 +190,6 @@ footer .container-fluid {
 
 .landing-image .container-fluid .text-center {
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.showcase {
-  height: 60vh;
-  overflow: hidden;
-  position: relative;
-  
-}
-.latest-img {
-  background: url('/media/golf-brands-image.png') no-repeat center center;
-  background-size: cover;
-  height: 60%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  z-index: 1000;
-}
-
-.tips-img {
-  background: url('/media/golfers-used-clubs-guide.webp') no-repeat center center;
-  background-size: cover;
-  height: 60%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  z-index: 1000;
 }
 
 /* products.html page */
