@@ -167,6 +167,7 @@ def checkout_confirm(request, order_number):
     for each customer with successfull payment
     """
     save_info = request.session.get('save_info')
+    products = Product.objects.all()
     order = get_object_or_404(Order, order_number=order_number)
     
     if request.user.is_authenticated:
@@ -204,6 +205,7 @@ def checkout_confirm(request, order_number):
 
     context = {
         'order': order,
+        'products': products,
     }
 
     return render(request, 'checkout/checkout_confirm.html', context)

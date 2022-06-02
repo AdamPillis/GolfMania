@@ -56,12 +56,8 @@
                                     {% if item.product.has_sizes %}
                                         <p class="my-2 small text-muted">Size: <strong>{{ item.size|upper }}</strong></p>
                                     {% endif %}
-                                    {% if item.product.hand_type != 'False' %}
+                                    {% if item.product.hand_type %}
                                         <p class="my-0 small">Hand Type: <strong>{{ item.product.hand_type }}</strong></p>
-                                    {% endif %}
-                                    <!-- if product has quality option -->
-                                    {% if item.product.has_quality %}
-                                        <p class="my-2 small text-muted">Quality: {{ item.quality|upper }}</p>
                                     {% endif %}
                                 </td>
                                 <td class="py-3">

@@ -24,15 +24,11 @@ def add_to_basket(request, item_id):
     # converting string request data to integer
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-
+    
     # setting size to none and checking if size is requested
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    # setting quality to none and checking if requested
-    quality = None
-    if 'product_quality' in request.POST:
-        quality = request.POST['product_quality']
 
     # create var for basket if doesn't already exist
     basket = request.session.get('basket', {})

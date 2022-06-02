@@ -12,3 +12,8 @@ def index(request):
         'reviews': Review.objects.filter(status=1).order_by('-created_on')
     }
     return render(request, 'home/index.html', context)
+
+
+def error_404(request, exception):
+    """Renders custom 404.html"""
+    return render(request, '404.html')

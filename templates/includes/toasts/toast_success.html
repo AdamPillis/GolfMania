@@ -31,7 +31,9 @@
                             {% if item.product.hand_type %}
                                 <p class="my-0 small">Hand Type: <strong>{{ item.product.hand_type }}</strong></p>
                             {% endif %}
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}<strong>{{ item.size|upper }}</strong>{% else %}N/A{% endif %}</p>
+                            {% if item.product.has_sizes %}
+                            <p class="my-0 small">Size: <strong>{{ item.size|upper }}</strong></p>
+                            {% endif %}
                             <p class="my-0 small text-muted">Qty: <strong>{{ item.quantity }}</strong></p>
                         </div>
                     </div>
