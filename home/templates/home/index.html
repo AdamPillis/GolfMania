@@ -82,7 +82,10 @@
                     <div class="card mb-sm-4">
                         <div class="card-body">                  
                             <h3 class="card-title">{{ review.title }}</h3>
-                            <br>
+                            {% if review.rating %}
+                                <!-- if product's rating is higher than 4, show highly recommended message -->
+                                <p class="text-muted"><i class="fas fa-star mr-1 star-color"></i>{{ review.rating }} / 10.00</p>
+                                {% endif %}
                             <p class="card-text">{{ review.excerpt }}</p>
                             <hr />
                             <!-- to display number of likes on each review -->

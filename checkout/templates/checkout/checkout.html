@@ -102,11 +102,11 @@
             <!-- Shipping Basket Summary on the right of checkout.html -->
             <div class="col-12 col-md-6 col-lg-4 mx-auto">
                 <div class="col-12 container-fluid shopping-basket mt-3">
-                    <p class="text-muted pt-2">Shopping Basket ({{ product_count }})
+                    <h4 class="text-muted logo-font pt-2">Shopping Basket ({{ product_count }})
                         <span class="float-end">
-                            <a href="{% url 'view_basket' %}">Edit Basket</a>
+                            <a href="{% url 'view_basket' %}"><small class="text-decoration-underline">Edit Basket</small></a>
                         <span>
-                    </p>
+                        </h4>
                     <hr class="w-100 my-3 mx-auto">
                     {% for item in basket_items %}
                         <div class="row">
@@ -141,31 +141,31 @@
                 </div>
                 <!-- Order Summary Section including subtotal, delivery and order total -->
                 <div class="col-12 container-fluid shopping-summary mt-5 mb-4">
-                    <p class="text-muted pt-2">Order Summary</p>
+                    <h4 class="text-muted logo-font pt-2">Order Summary</h4>
                     <hr class="w-100 my-3 mx-auto">
                     
                     <!-- Order total -->
                     <div class="row mt-3">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Subtotal:</p>
+                                <h5 class="logo-font">Subtotal:</h5>
                             </span>
-                            <span class="float-end"><p class="fs-6"><strong>€{{ total|floatformat:2 }}</strong></p></span>
+                            <span class="float-end"><p class="fs-5 logo-font"><strong>€{{ total|floatformat:2 }}</strong></p></span>
                         </div>
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Delivery:</p>
+                                <h5 class="logo-font">Delivery:</h5>
                             </span>
-                            <span class="float-end"><p class="fs-6"><strong>€{{ delivery|floatformat:2 }}</strong></p></span>
+                            <span class="float-end"><p class="fs-5 logo-font"><strong>€{{ delivery|floatformat:2 }}</strong></p></span>
                         </div>
 
                         <hr class="w-100 my-3 mx-auto">
 
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6"><strong>Order Total:</strong></p>
+                                <h4 class="logo-font"><strong>Order Total:</strong></h4>
                             </span>
-                            <span class="float-end"><p class="fs-4"><strong>€{{ order_total|floatformat:2 }}</strong></p></span>
+                            <span class="float-end"><p class="fs-4 logo-font"><strong>€{{ order_total|floatformat:2 }}</strong></p></span>
                         </div>
                     </div>
                 </div>

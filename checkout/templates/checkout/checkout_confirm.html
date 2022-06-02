@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid product-container">
         {% if from_profile_page %}
             <div class="row">
                 <div class="col-12 text-center mt-3">
@@ -37,8 +37,8 @@
         {% else %}
             <div class="row">
                 <div class="col-12 text-center mt-3">
-                    <h2 class="logo-font">Thank you for your order {{ order.first_name }}! <i class="fas fa-check-circle confirm-icon"></i></h2>
-                    <small>Order: <strong>{{ order.order_number }}</strong></small>
+                    <h2 class="logo-font">Thank you for your order {{ order.first_name }}! <i id="confirm-icon" class="fas fa-check-circle"></i></h2>
+                    <small>Order: <strong id="order-data">{{ order.order_number }}</strong></small>
                     <hr class="w-50 mb-2 mt-3 mx-auto">
                 </div>
                 <div class="col-12 text-center mt-4">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-12 col-lg-6 text-center mx-auto mt-4">
                     <h5>Please find your order details below. A confirmation email has also
-                        been sent to <strong>{{ order.email }}</strong>.
+                        been sent to <small><strong id="email-data" class="logo-font">{{ order.email }}</strong></small>.
                     </h5>
                 </div>
             </div>
@@ -62,29 +62,29 @@
 
         <div class="row">
             <div class="col-12 col-lg-6 text-center mx-auto">
-                <div class="order-info-container p-3 my-3 border">
+                <div class="order-info-container p-3 my-3">
                     <div class="row">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Ordering Date:</p>
+                                <h5 class="logo-font">Ordering Date:</h5>
                             </span>
                             <span class="float-end">
                                 <p class="fs-6"><strong>{{ order.date }}</strong></p>
                             </span>
                         </div>
                     </div>
-                    <div class="row order-number">
+                    <div class="row">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Order Number:</p>
+                                <h5 class="logo-font">Order Number:</h5>
                             </span>
                             <span class="float-end">
-                                <p class="fs-6"><strong>{{ order.order_number }}</strong></p>
+                                <small><strong id="order-data">{{ order.order_number }}</strong></small>
                             </span>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-12 my-2 text-center">
                             <h5>Order Summary:</h5>
                         </div>
                     </div>
@@ -102,18 +102,13 @@
                                 </p>
                             </span>
                             <span class="float-end">
-                                <p class="fs-6"><strong>{{ item.product.price }}</strong></p>
+                                <p class="fs-6"><strong>€{{ item.product.price }}</strong></p>
                             </span>
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <h5>Delivery Details:</h5>
-                        </div>
-                    </div>
                     <!-- Personal Details -->
-                    <p class="text-muted text-start text-decoration-underline">Personal Details:<p>
+                    <h5 class="logo-font text-center text-decoration-underline mb-3"><strong>Personal Details:</strong><h5>
 
                     <div class="row">
                         <div class="col-12">
@@ -131,7 +126,7 @@
                                 <p class="fs-6">Email:</p>
                             </span>
                             <span class="float-end">
-                                <p class="fs-6"><strong>{{ order.email }}</strong></p>
+                                <p class="fs-6"><strong id="email-data">{{ order.email }}</strong></p>
                             </span>
                         </div>
                     </div>
@@ -146,7 +141,7 @@
                         </div>
                     </div>
                     <!-- Delivery Details -->
-                    <p class="text-muted text-start text-decoration-underline">Address Details:<p>
+                    <h5 class="logo-font text-center text-decoration-underline mb-3"><strong>Delivery Details:</strong><h5>
                     <div class="row">
                         <div class="col-12">
                             <span class="float-start">
@@ -242,12 +237,12 @@
                     {% if order.delivery_instructions %}
                     <div class="row">
                         <div class="col-12">
-                            <span>
+                            <span class="float-start">
                                 <p class="fs-6">Delivery Instructions:</p>
                             </span>
-                            <span>
-                                <p class="fs-6"> 
-                                    {{ order.delivery_instructions }}
+                            <span class="float-end">
+                                <p class="fs-6" id="instructions"> 
+                                    "<strong>{{ order.delivery_instructions }}</strong>"
                                 </p>
                             </span>
                         </div>
@@ -255,37 +250,37 @@
                     {% endif %}
                     <div class="row">
                         <div class="col-12 text-center">
-                            <h5>Cost Summary:</h5>
+                            <h5 class="logo-font text-center text-decoration-underline mb-3"><strong>Cost Summary:</strong><h5>
                         </div>
                     </div>
                     <!-- Total cost displayed -->
                     <div class="row">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Subtotal:</p>
+                                <h5 class="logo-font">Subtotal:</h5>
                             </span>
                             <span class="float-end">
-                                <p class="fs-6"><strong>{{ order.sub_total }}</strong></p>
+                                <p class="fs-5 logo-font"><strong>€{{ order.sub_total }}</strong></p>
                             </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Delivery:</p>
+                                <h5 class="logo-font">Delivery:</h5>
                             </span>
                             <span class="float-end">
-                                <p class="fs-6"><strong>{{ order.delivery_cost }}</strong></p>
+                                <p class="fs-5 logo-font"><strong>€{{ order.delivery_cost }}</strong></p>
                             </span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <span class="float-start">
-                                <p class="fs-6">Order Total:</p>
+                                <h4 class="logo-font">Order Total:</h4>
                             </span>
                             <span class="float-end">
-                                <p class="fs-5"><strong>{{ order.order_total }}</strong></p>
+                                <p class="fs-4 logo-font"><strong>€{{ order.order_total }}</strong></p>
                             </span>
                         </div>
                     </div>

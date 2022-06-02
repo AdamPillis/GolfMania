@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 mx-lg-auto">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <h3 class="mt-3 text-center">{{ product.name }}</h3>
+                    <h3 class="mt-3 logo-font text-center">{{ product.name }}</h3>
                     {% if product.category %}
                         <p class="small mt-2 mb-2">
                             <a class="text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -63,9 +63,9 @@
                         <p class="text-muted mt-3 small">Hand Type: <strong>{{ product.hand_type }}</strong></p>
                     {% endif %}
 
-                    <p class="mb-0 mt-3 text-left font-weight-bold">Our price: <strong>€{{ product.price }}</strong> {% if product.old_price %}| was <small class="text-muted text-decoration-line-through fs-5">€{{ product.old_price }}</small>{% endif %}</p>
+                    <p class="mb-0 mt-3 text-left font-weight-bold">Our price: <strong class="logo-font">€{{ product.price }}</strong> {% if product.old_price %}| was <small class="text-muted text-decoration-line-through fs-5">€{{ product.old_price }}</small>{% endif %}</p>
 
-                    <h5 class="mt-3 text-decoration-underline">Product Description</h5>
+                    <h5 class="mt-3 logo-font text-decoration-underline">Product Description</h5>
                     <p class="mt-1">{{ product.description }}</p>
                     {% if product.features %}
                         <button onclick="readMore()" class="btn btn1" id="features-btn">Read more</button>
@@ -150,8 +150,8 @@
         </div>
         <!-- Newest products advertising area under product description -->
         <div class="row product-container">
-            <div class="col-12 text-center">
-                <p class="fs-2">Check out our newest products!</p>
+            <div class="col-12 my-4 text-center">
+                <h3 class="fs-2 logo-font">Check out our newest products!</h3>
             </div>
                 {% for product in products %}
                     {% if product.category.name == 'new_in' %}

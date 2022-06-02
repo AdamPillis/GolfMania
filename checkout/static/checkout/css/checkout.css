@@ -64,18 +64,8 @@ select option[value=""] {
   color: #aab7c4 !important;
 }
 
-/* Right hand side of checkout.html */
-/* container 1 */
-.shopping-basket {
-  background-color: rgba(169, 174, 169, 0.4);
-}
-/* container 1 */
-.shopping-summary {
-  background-color: rgba(169, 174, 169, 0.4);
-}
-
 /* checkout_confirm.html */
-.confirm-icon {
+#confirm-icon {
   font-size: 3rem !important;
   color: rgba(0, 114, 0, 1) !important;
 }
@@ -109,3 +99,21 @@ select option[value=""] {
   .order-number {
       display: none;
   }
+}
+@media (max-width: 310px) {
+  #email-data {
+      font-size: 13px;
+      text-align: center;
+  }
+  #order-data {
+    font-size: 12px !important;
+    text-align: center !important;
+    
+  }
+  #confirm-icon {
+    font-size: 2rem !important;
+  }
+  #instructions {
+    float: none;
+  }
+ }
