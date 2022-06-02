@@ -21,6 +21,8 @@ class Review(models.Model):
         )
     content = models.TextField()
     excerpt = models.TextField(blank=True)
+    rating = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=REVIEW_STATUS, default=0)
     likes = models.ManyToManyField(

@@ -145,6 +145,10 @@ footer .container-fluid {
   z-index: 1000;
 }
 
+footer .container-fluid input {
+  min-width: 200px;
+}
+
 footer a {
   color: white;
 }
@@ -195,6 +199,10 @@ footer i {
 
 .landing-image .container-fluid .text-center {
   background-color: rgba(0, 0, 0, 0.4);
+}
+/* styling review section */
+.reviews-section {
+  background-color: rgba(0, 114, 0, 0.1);
 }
 
 /* products.html page */

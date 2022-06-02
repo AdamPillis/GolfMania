@@ -78,7 +78,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col my-3">
-                                            <p class="lead mb-0 text-center font-weight-bold">{% if product.old_price %}<small class="text-muted text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</p>
+                                            <p class="lead mb-0 text-center font-weight-bold">{% if product.old_price %}<small class="text-decoration-line-through me-3 text-danger fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</p>
                                             <p class="">
                                                 Options to select: 
                                                 <small>{% if product.has_sizes %}<strong>Hand Size</strong>{% endif %}</small>
