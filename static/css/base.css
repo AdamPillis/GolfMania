@@ -127,8 +127,9 @@ i {
 }
 .custom-toast {
   overflow: visible;
-  max-width: 350px;
+  max-width: 270px;
   width: 100%;
+  font-size: 14px;
 }
 .toast-capper {
   height: 2px;
@@ -266,11 +267,11 @@ footer i {
 }
 /* setting position of back to the top button in products.html */
 .btt-button {
-  height: 42px;
-  width: 42px;
+  height: 50px;
+  width: 50px;
   position: fixed;
-  bottom: 25%;
-  right: 10px;
+  bottom: 10%;
+  right: 15px;
 }
 
 .top-btt,
@@ -387,4 +388,10 @@ custom_clearable_file_input.html */
   background-color: #dc3545;
   border-color: #dc3545;
   border-radius: 0;
+}
+
+@media (max-width: 310px) {
+  .custom-toast {
+      font-size: 12px;
+ }
 }
