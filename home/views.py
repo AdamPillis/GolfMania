@@ -15,5 +15,10 @@ def index(request):
 
 
 def error_404(request, exception):
-    """Renders custom 404.html"""
+    """Renders custom 404.html when error code is 404"""
     return render(request, '404.html')
+
+
+def error_500(request):
+    """Renders custom 500.html when error code is 500"""
+    return render(request, '500.html')

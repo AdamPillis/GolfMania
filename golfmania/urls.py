@@ -29,5 +29,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+# handlers to render url patterns for 404 and 500 code issues
 handler404 = 'home.views.error_404'
+handler500 = 'home.views.error_500'
