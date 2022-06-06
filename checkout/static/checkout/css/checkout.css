@@ -16,7 +16,7 @@
   min-height: 120px;
 }
 #delivery-form .form-check-input {
-  width: 5%;
+  width: 8%;
 }
 /* stripe default element styling taken from strip documentation */
 .StripeElement,

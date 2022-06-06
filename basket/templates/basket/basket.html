@@ -102,7 +102,7 @@
                                 <p class="mt-1 small text-muted">Quality: {{ item.product.quality|upper }}</p>
                             {% endif %}
 
-                            <p class="mt-2">Quantity: <strong>{{ item.quantity }}</strong></p>
+                            <p class="mt-2">{% include "basket/quantity_post_form.html" %}</p>
 
                             <h5 class="mt-2 logo-font">Total: <strong>€{{ item.product.price }}</strong></h5>
                         </div>

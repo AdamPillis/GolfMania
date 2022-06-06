@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid checkout-container">
+    <div class="container product-container">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Secure Checkout</h2>
@@ -25,13 +25,13 @@
 
         <div class="row">
             <div class="col-12 col-md-6 col-lg-7 text-center mx-auto order-2 order-md-1">
-                <h4 class="logo-font">Delivery</h4>
+                <h3 class="logo-font">Delivery</h3>
                 <hr class="w-75 my-4 mx-auto">
 
                 <div class="col-12- col-lg-8 mx-auto">
                 <form action="{% url 'checkout' %}" method="POST" id="delivery-form">
                     {% csrf_token %}
-                    <fieldset class="px-3 mb-5 w-100">
+                    <fieldset class="px-1 mb-5 w-100">
                         <legend class="fieldset-label w-auto"><h5 class="text-black">Personal Details</h5></legend>
                         {{ checkout_form.title | as_crispy_field }}
                         {{ checkout_form.first_name | as_crispy_field }}
@@ -169,7 +169,8 @@
                         </div>
                     </div>
                 </div>
-            </div>                
+            </div>
+        </div>                
     </div>
     <!-- loading screen overlay checkout.html -->
     <div id="overlay-screen">
