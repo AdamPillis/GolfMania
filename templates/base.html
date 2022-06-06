@@ -39,9 +39,12 @@
     <header class="container-fluid sticky">
         <!-- Website name only displayed at the top in the middle on medium/small screens -->
         <div class="row d-block d-lg-none">
-            <div class="col-12">
-                <h2 class="logo-font mt-2 text-center">Golf|<i class="fas fa-coins"></i>|Mania</h2>
-            </div>
+                <div class="col-12">
+                    <a href="{% url 'home' %}">
+                        <h2 class="logo-font mt-2 text-center">Golf|<i class="fas fa-coins"></i>|Mania</h2>
+                    </a>
+                </div>
+            
         </div>
         <!-- top header on larger screens -->
         <div class="row pt-lg-2 d-none d-lg-flex">

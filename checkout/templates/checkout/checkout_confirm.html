@@ -84,8 +84,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 my-2 text-center">
-                            <h5>Order Summary:</h5>
+                        <div class="col-12 mt-3 mb-2 text-center">
+                            <h4 class="logo-font">Order Summary:</h4>
                         </div>
                     </div>
                     <!-- product section displaying item.product details for 
@@ -289,22 +289,22 @@
         </div>
         <!-- Newest products advertising area under product description -->
         <div class="row">
-            <div class="col-12 my-4 text-center">
+            <div class="col-12 mb-4 mt-2 text-center">
                 <h3 class="fs-2 logo-font">Check out our newest editions {{ order.first_name}}!</h3>
             </div>
                 {% for product in products %}
                     {% if product.category.name == 'new_in' %}
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mx-auto">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mx-auto">
                             <div class="card border-0">
                                 <div class="card-body pb-0">
                                     
-                                    <h5 class="text-center">{{ product.name }}</h5>                     
+                                    <h5 class="text-center logo-font">{{ product.name }}</h5>                     
                                 </div>
                                 {% if product.rating %}
                                     <!-- if product's rating is higher than 4, show highly recommended message -->
                                     <small class="text-muted text-center"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
                                 {% endif %}
-                                <h5 class="lead mb-0 text-center mt-2 font-weight-bold">{% if product.old_price %}<small class="text-danger text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
+                                <h5 class="lead mb-0 text-center mt-3 mb-0 logo-font font-weight-bold">{% if product.old_price %}<small class="text-danger text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
 
                                 {% if product.image %}
                                 <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">

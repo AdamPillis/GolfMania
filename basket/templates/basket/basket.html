@@ -76,7 +76,7 @@
                 <!-- only visible up to smaller sized screens -->
                 {% for item in basket_items %}
                     <div class="row mt-3">
-                        <h4 class="col-sm-12 text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h4>
+                        <h4 class="col-sm-12 logo-font text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h4>
                         <div class="col-12 col-sm-6 d-md-none mt-2">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 <img class="basket-img" src="{{ item.product.image.url }}">
@@ -85,7 +85,7 @@
                         <div class="col-12 col-sm-6 d-md-none">
                             <p class="d-none d-sm-block"><strong>{{ item.product.name }}</strong></p>
 
-                            <p class="my-0">Item Price: <strong>€{{ item.product.price }}</strong></p>
+                            <p class="my-0 logo-font">Our Price: {% if item.product.old_price %}<small class="text-danger text-decoration-line-through me-3 fs-5">€{{ item.product.old_price }}</small>{% endif %}<strong>€{{ item.product.price }}</strong></p>
 
                             <p class="mt-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
 
@@ -104,13 +104,13 @@
 
                             <p class="mt-2">Quantity: <strong>{{ item.quantity }}</strong></p>
 
-                            <p class="mt-2">Total: <strong>€{{ item.product.price }} + quantity</strong></p>
+                            <h5 class="mt-2 logo-font">Total: <strong>€{{ item.product.price }}</strong></h5>
                         </div>
                     </div>   
                 
                 {% endfor %}
             </div>
-            <div class="col-12 col-lg-4 mx-auto">
+            <div class="col-12 col-lg-4 mt-2 mx-auto">
                 <h3 class="logo-font">Your Order Summary</h3>
                 <!-- Basket total -->
                 <div class="row mt-4">
@@ -118,7 +118,7 @@
                         <span class="float-start">
                             <h5 class="text-left logo-font">Basket Total</h5>
                         </span>
-                        <span class="float-end">€{{ total|floatformat:2 }}</span>
+                        <span class="float-end logo-font fs-5">€{{ total|floatformat:2 }}</span>
                     </div>
                 </div>
                 <!-- Delivery total -->
@@ -127,9 +127,10 @@
                         <span class="float-start">
                             <h5 class="logo-font">Delivery</h5>
                         </span>
-                        <span class="float-end">€{{ delivery|floatformat:2 }}</span>
+                        <span class="float-end logo-font fs-5">€{{ delivery|floatformat:2 }}</span>
                     </div>
                 </div>
+                <!-- if user has not surpassed delivery allowance and under €80 -->
                 {% if free_delivery_difference > 0 %}
                 <div class="row">
                     <div class="col-12">
@@ -139,6 +140,7 @@
                     </div>
                 </div>
                 {% else %}
+                <!-- else display successfull delivery allowance surpass -->
                 <div class="row mt-3">
                     <div class="col-12">
                         <small class="mb-1">

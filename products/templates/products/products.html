@@ -46,15 +46,18 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">
-                            
-                            <!-- To go back to all products if user using filtering and sorting function -->
-                            <span class="small"><a class="text-decoration-none" href="{% url 'home' %}">Back to Home</a> | </span>
-                            
+                        <p class="text-muted mt-3 text-center text-md-left">                                                    
                             <!-- django length template filter used to count all found products -->
                             <!-- displays for filtered and if statement if searched -->
                             Showing <strong class="logo-font">{{ products|length }}</strong> products{% if search_word %} found for <strong>"{{ search_word }}"</strong>{% else %} for your search{% endif %}
                         </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 my-auto text-center mt-2">
+                        <a href="{% url 'home' %}" class="btn btn1 mt-0 mb-4">
+                            Back to Home
+                        </a>
                     </div>
                 </div>
                 

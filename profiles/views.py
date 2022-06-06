@@ -6,6 +6,7 @@ from .models import Profile
 from .forms import ProfileForm
 
 from checkout.models import Order
+from products.models import Product
 
 
 @login_required
@@ -40,6 +41,7 @@ def order_history(request, order_number):
     through context
     """
     order = get_object_or_404(Order, order_number=order_number)
+    products = Product.objects.all()
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
@@ -49,6 +51,7 @@ def order_history(request, order_number):
     template = 'checkout/checkout_confirm.html'
     context = {
         'order': order,
+        'products': products,
         # to check if user is coming from profile page
         'from_profile_page': True,
     }
