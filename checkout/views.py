@@ -60,10 +60,10 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'delivery_instructions': request.POST['delivery_instructions'],
         }
+
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
             order = checkout_form.save(commit=False)
-            # ensure each order is unique using strip pid
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
@@ -89,66 +89,58 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "We're sorry, but there is an issue with a basket item"
-                        f"No payment has been accepted for {order.order_number}"
-                        "We will empty your basket, please try again!")
+                        "One of the products in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
 
+            # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_confirm', args=[order.order_number]))
         else:
-            if checkout_form.errors:
-                for field in checkout_form:
-                    for error in field.errors:
-                        messages.error(request, f'There is an error with your form. \
-                            Please try again. {error}')
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
     else:
         basket = request.session.get('basket', {})
-    if not basket:
-        messages.error(request, "There's nothing in your basket, search our newest products!")
-        return redirect(reverse('products'))
+        if not basket:
+            messages.error(request, "There's nothing in your bag at the moment")
+            return redirect(reverse('products'))
 
-    # to get the current total of session bag for stripe payment
-    current_basket = basket_contents(request)
-    total = current_basket['order_total']
-    # stripe requires amount to be charged as integer so *100
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
-    # to check if user is authenticated and has a profile to prefill
-    if request.user.is_authenticated:
-        try:
-            profile = Profile.objects.get(user=request.user)
-            checkout_form = CheckoutForm(initial={
-                'title': profile.default_title,
-                'first_name': profile.default_first_name,
-                'last_name': profile.default_last_name,
-                'email': profile.user.email,
-                'phone_number': profile.default_phone_number,
-                'house_number': profile.default_house_number,
-                'street_address1': profile.default_street_address1,
-                'street_address2': profile.default_street_address2,
-                'town_city': profile.default_town_city,
-                'county': profile.default_county,
-                'country': profile.default_country,
-                'postcode': profile.default_postcode,
-            })
-        # else if profile does not exist
-        except Profile.DoesNotExist:
-            checout_form = CheckoutForm()
-    # if user is not authenticated
-    else:
-        checout_form = CheckoutForm()
-
+        current_bag = basket_contents(request)
+        total = current_bag['order_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+        # Attempt to prefill the form with any info the user maintains in their profile
+        if request.user.is_authenticated:
+            try:
+                profile = Profile.objects.get(user=request.user)
+                checkout_form = CheckoutForm(initial={
+                    'title': profile.default_title,
+                    'first_name': profile.default_first_name,
+                    'last_name': profile.default_last_name,
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'house_number': profile.default_house_number,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'town_city': profile.default_town_city,
+                    'county': profile.default_county,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                })
+            except Profile.DoesNotExist:
+                checkout_form = CheckoutForm()
+        else:
+            checkout_form = CheckoutForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
-                Please make sure it is set in your envrionment correctly.')
+            Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
