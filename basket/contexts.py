@@ -1,4 +1,3 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
@@ -6,7 +5,12 @@ from products.models import Product
 
 
 def basket_contents(request):
-    """X"""
+    """
+    Basket object which is going to hold all
+    items add within product_details.html form
+    as a submit/post form. The basket items will
+    append product items based on id.
+    """
     basket_items = []
     total = 0
     product_count = 0
@@ -37,15 +41,14 @@ def basket_contents(request):
                     'product': product,
                     'size': size,
                 })
-
-
+    # delivery threshold calculated based on total above
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = settings.STANDARD_DELIVERY_CHARGE
         free_delivery_difference = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
         free_delivery_difference = 0
-
+    # final total is calculated based on delivery and total variable
     order_total = delivery + total
 
     context = {

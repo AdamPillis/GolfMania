@@ -11,7 +11,7 @@ class TestForms(SimpleTestCase):
     def test_profile_form_no_data(self):
         """
         testing if profile form has any errors.
-        The result should be 0 given that the 
+        The result should be 0 given that the
         user can fill in any field within
         profile.html without an error showing.
         The delivery form is the one with required

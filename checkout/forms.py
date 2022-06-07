@@ -19,8 +19,7 @@ class CheckoutForm(forms.ModelForm):
                   'email', 'phone_number', 'house_number',
                   'street_address1', 'street_address2',
                   'town_city', 'county', 'country', 'postcode',
-                  'delivery_instructions'
-              )
+                  'delivery_instructions')
 
     def __init__(self, *args, **kwargs):
         """
@@ -41,9 +40,9 @@ class CheckoutForm(forms.ModelForm):
             'town_city': 'Town or City',
             'county': 'County, State or Locality',
             'postcode': 'Postal Code',
-            'delivery_instructions': 'Please supply a door code if required to access your address and/or preferred alternative delivery location if no answer e.g. leave with neighbour',
+            'delivery_instructions': 'Supply door code etc.',
         }
-
+        # setting autofocus to title and * symbol for required fields
         self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
@@ -52,5 +51,6 @@ class CheckoutForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
+                # stripe's style settings attached as a class
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False

@@ -11,7 +11,7 @@ from .forms import ProductForm
 def all_products(request):
     """
     Renders products.html and displays
-    all products on website. Search and 
+    all products on website. Search and
     filter option will also be included.
     """
     products = Product.objects.all()
@@ -39,22 +39,26 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        # splitting into list after commas and filter list who's 
+        # splitting into list after commas and filter list who's
         # category name is in the list
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             # double underscore for django's built in search
             products = products.filter(category__name__in=categories)
-            # category objects created from search used to display them products.html
+            # category objects created from search
+            # used to display them products.html
             categories = Category.objects.filter(name__in=categories)
 
         if 'search' in request.GET:
             query = request.GET['search']
             if not query:
-                messages.error(request, "No search criteria recognized, please try again.")
+                messages.error(
+                    request,
+                    "No search criteria recognized, please try again.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     chosen_sorting = f'{sort}_{direction}'
@@ -92,7 +96,8 @@ def add_product(request):
     """Add a product to the store"""
     # only superuser can access this function
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you do not have access to this task.')
+        messages.error(
+            request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -120,19 +125,23 @@ def update_product(request, pk_id):
     """Update a product in the store"""
     # only superuser can access this function
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you do not have access to this task.')
+        messages.error(
+            request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, id=pk_id)
 
     if request.method == 'POST':
-        product_form = ProductForm(request.POST, request.FILES, instance=product)
+        product_form = ProductForm(
+            request.POST, request.FILES, instance=product)
         if product_form.is_valid():
             product_form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         product_form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -152,9 +161,10 @@ def delete_product(request, pk_id):
     """Delete a product in the store"""
     # only superuser can access this function
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you do not have access to this task.')
+        messages.error(
+            request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
-
+    # get the product requested using its id and delete it
     product = get_object_or_404(Product, id=pk_id)
 
     if request.method == "POST":

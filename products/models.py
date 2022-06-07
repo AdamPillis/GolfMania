@@ -57,13 +57,14 @@ class Product(models.Model):
     Each need to include essential data such as name, description,
     category type, price and rest is optional.
     """
-    brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    brand = models.ForeignKey(
+        'Brand', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     type = models.CharField(
-    choices=TYPE_STATUS, default=False, max_length=20
-    )
+        choices=TYPE_STATUS, default=False, max_length=20)
     description = models.TextField()
     features = models.TextField(null=True, blank=True)
     hand_type = models.CharField(
@@ -71,12 +72,15 @@ class Product(models.Model):
         )
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     has_quality = models.BooleanField(default=False, null=True, blank=True)
-    old_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    old_price = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2)
+    rating = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        """X"""
+        """returning name of product which is displayed in admin"""
         return self.name

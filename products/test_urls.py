@@ -1,6 +1,7 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from .views import all_products, product_detail, add_product, update_product, delete_product
+from .views import (
+    all_products, add_product, update_product, delete_product)
 
 
 class TestProductUrls(SimpleTestCase):
@@ -23,7 +24,7 @@ class TestProductUrls(SimpleTestCase):
         """Testing products/ update_product url (function = url name)"""
         url = reverse('update_product', args=['product-id'])
         self.assertEquals(resolve(url).func, update_product)
-    
+
     def test_delete_product_url(self):
         """Testing products/ delete_product url (function = url name)"""
         url = reverse('delete_product', args=['product-id'])

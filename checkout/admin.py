@@ -14,7 +14,9 @@ class OrderLineItemAdmin(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     """
     setting fields automatically updated within model
-    to uneditable
+    to uneditable and default settings for admin in
+    admin panel. Setting up orderlineitemadmin with this
+    class. Order is set by date.
     """
     inlines = (OrderLineItemAdmin,)
 
@@ -39,5 +41,3 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Order, OrderAdmin)
-
-# Register your models here.

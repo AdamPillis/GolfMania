@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -20,7 +21,7 @@ import json
 def save_checkout_data(request):
     """
     Function to check if save_info fieldset is
-    set to True or False - ticked/unticked 
+    set to True or False - ticked/unticked
     """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
@@ -38,13 +39,18 @@ def save_checkout_data(request):
 
 
 def checkout(request):
-    """X"""
+    """
+    Function that request data submitted in checkout.html
+    Data sent to Stripe using webhooks and if payment is
+    successfull, the order data is sent back to display in
+    checkout_confirm.html
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
-
+        # data to collect
         form_data = {
             'title': request.POST['title'],
             'first_name': request.POST['first_name'],
@@ -60,8 +66,9 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'delivery_instructions': request.POST['delivery_instructions'],
         }
-
+        # checkout form which is submitted with stripe payment form
         checkout_form = CheckoutForm(form_data)
+        # if form is valid, dont submit unless payment is successfull
         if checkout_form.is_valid():
             order = checkout_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -79,7 +86,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items(
+                        ):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -89,7 +97,8 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag \
+                            wasn't found in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -97,14 +106,19 @@ def checkout(request):
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_confirm', args=[order.order_number]))
+            # return checkout_confirm with order details using its id
+            return redirect(
+                reverse('checkout_confirm', args=[order.order_number]))
         else:
+            # else, reload checkout.html and display form error message
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
+        # if basket is empty, redirect to products.html
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = basket_contents(request)
@@ -115,7 +129,8 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info
+        # the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = Profile.objects.get(user=request.user)
@@ -133,6 +148,7 @@ def checkout(request):
                     'country': profile.default_country,
                     'postcode': profile.default_postcode,
                 })
+            # if profile doesn't exist, open a new checkout form
             except Profile.DoesNotExist:
                 checkout_form = CheckoutForm()
         else:
@@ -143,6 +159,8 @@ def checkout(request):
             Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
+    # using stripe's keys to link delivery
+    # form with stripe and webhooks.py
     context = {
         'checkout_form': checkout_form,
         'stripe_public_key': stripe_public_key,
@@ -161,14 +179,15 @@ def checkout_confirm(request, order_number):
     save_info = request.session.get('save_info')
     products = Product.objects.all()
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.profile = profile
         order.save()
 
-        # Save the user's info
+        # Save the user's info which looks identical
+        # to profile's model structure
         if save_info:
             profile_data = {
                 'default_title': order.title,
@@ -183,10 +202,11 @@ def checkout_confirm(request, order_number):
                 'default_country': order.country,
                 'default_postcode': order.postcode,
             }
+            # set profile form with instance of order data and save
             profile_form = ProfileForm(profile_data, instance=profile)
             if profile_form.is_valid():
                 profile_form.save()
-
+    # success message for successfull order
     messages.success(request, f'Thank you for your order {order.title}. \
         {order.last_name}! We are currently working on your order \
             {order_number}. An email will be sent shortly to {order.email}.')

@@ -11,9 +11,10 @@ class ProductForm(forms.ModelForm):
         """Selecting product as model and to include all fields"""
         model = Product
         fields = '__all__'
-
+    # image field is linked with custom styled widget
     image = forms.ImageField(
         label='Image', required=False, widget=CustomClearableFileInput)
+    # call data using their friendly names
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

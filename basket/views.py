@@ -8,7 +8,8 @@ from products.models import Product
 def view_basket(request):
     """
     View to render basket.html template
-    containing items added by user
+    containing items added by user in
+    product_details.html.
     """
 
     return render(request, 'basket/basket.html')
@@ -24,7 +25,7 @@ def add_to_basket(request, item_id):
     # converting string request data to integer
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    
+
     # setting size to none and checking if size is requested
     size = None
     if 'product_size' in request.POST:
@@ -32,25 +33,39 @@ def add_to_basket(request, item_id):
 
     # create var for basket if doesn't already exist
     basket = request.session.get('basket', {})
-
+    # if the product has size check size by letter and add second if
+    # size matches or add new item if size is different
     if size:
         if item_id in list(basket.keys()):
             if size in basket[item_id]['items_by_size'].keys():
                 basket[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f"Updated: Size '{size.upper()}' {product.name} quantity to {basket[item_id]['items_by_size'][size]}")
+                messages.success(
+                    request,
+                    f"Updated: Size '{size.upper()}' {product.name} \
+                    quantity to {basket[item_id]['items_by_size'][size]}")
             else:
                 basket[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added Size "{size.upper()}" {product.name} to your basket')
+                messages.success(
+                    request,
+                    f'Added Size "{size.upper()}" {product.name} \
+                    to your basket'
+                    )
         else:
             basket[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'Added: Size "{size.upper()}" {product.name} to your basket')
+            messages.success(
+                request,
+                f'Added: Size "{size.upper()}" {product.name} to your basket'
+                )
     else:
         if item_id in list(basket.keys()):
             basket[item_id] += quantity
-            messages.success(request, f"Updated: Quantity of {product.name} to '{basket[item_id]}'")
+            messages.success(
+                request,
+                f"Updated: Quantity of {product.name} to '{basket[item_id]}'")
         else:
             basket[item_id] = quantity
-            messages.success(request, f'Added {quantity} x {product.name} to your basket.')
+            messages.success(
+                request, f'Added {quantity} x {product.name} to your basket.')
 
     request.session['basket'] = basket
 
@@ -67,6 +82,7 @@ def adjust_basket(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
+    # size var set to product_size from POST form
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
@@ -75,20 +91,30 @@ def adjust_basket(request, item_id):
     if size:
         if quantity > 0:
             basket[item_id]['items_by_size'][size] = quantity
-            messages.success(request, f"Updated: Size '{size.upper()}' {product.name} quantity to {basket[item_id]['items_by_size'][size]}")
+            messages.success(
+                request,
+                f"Updated: Size '{size.upper()}' {product.name} quantity \
+                to {basket[item_id]['items_by_size'][size]}")
         else:
             del basket[item_id]['items_by_size'][size]
             # if item id/size is not in bag, remove
             if not basket[item_id]['items_by_size']:
                 basket.pop(item_id)
-                messages.success(request, f"Removed: Size '{size.upper()}' {product.name} from your basket")
+                messages.success(
+                    request,
+                    f"Removed: Size '{size.upper()}' {product.name} \
+                    from your basket")
     else:
         if quantity > 0:
             basket[item_id] = quantity
-            messages.success(request, f"Updated: {product.name} quantity to '{basket[item_id]}'")
+            messages.success(
+                request,
+                f"Updated: {product.name} quantity to '{basket[item_id]}'")
         else:
             basket.pop(item_id)
-            messages.success(request, f"Removed: '{product.name}'' from your basket")
+            messages.success(
+                request,
+                f"Removed: '{product.name}'' from your basket")
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
@@ -109,19 +135,24 @@ def remove_basket_item(request, item_id):
         if 'product_size' in request.POST:
             size = request.POST['product_size']
         basket = request.session.get('basket', {})
-
+        # delete product with size
         if size:
             del basket[item_id]['items_by_size'][size]
             if not basket[item_id]['items_by_size']:
                 basket.pop(item_id)
-                messages.success(request, f"Removed: Size '{size.upper()}' {product.name} from your basket")
+                messages.success(
+                    request,
+                    f"Removed: Size '{size.upper()}' {product.name} \
+                    from your basket")
         else:
+            # else just remove product with no size and update basket
             basket.pop(item_id)
-            messages.success(request, f"Removed: '{product.name}' from your basket")
+            messages.success(request, f"Removed: '{product.name}' \
+            from your basket")
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
-
+    # try catch exceptions and return 500 status
     except Exception as e:
         messages.error(request, f"Error removing item: {e}")
         return HttpResponse(status=500)

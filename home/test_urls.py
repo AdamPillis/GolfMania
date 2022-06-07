@@ -1,11 +1,11 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from .views import index, error_404, error_500
+from .views import index
 
 
 class TestHomeUrls(SimpleTestCase):
     """
-    Testing all urls set up within urls.py and
+    Testing all urls set up within home/urls.py and
     making sure that the url path name matches
     the view function called
     """

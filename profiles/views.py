@@ -12,7 +12,8 @@ from products.models import Product
 @login_required
 def profile(request):
     """
-    Display the user's profile
+    Display the user's profile as a form ready to be
+    updated if submitted. No required fields here.
     """
     profile = get_object_or_404(Profile, user=request.user)
 
@@ -29,6 +30,8 @@ def profile(request):
     context = {
         'profile_form': profile_form,
         'orders': orders,
+        # used to tell app if checkout_confirm.html is opended
+        # via profile to display it differently
         'on_profile_page': True,
     }
     return render(request, template, context)

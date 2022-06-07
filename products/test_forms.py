@@ -10,8 +10,8 @@ class TestForms(SimpleTestCase):
 
     def test_product_form_no_data(self):
         """
-        testing if form was submitted blank, number
-        of error would equal to 4 (4 fields required)
+        testing if product form was submitted blank, number
+        of error would equal to 5 (5 fields required)
         """
         form = ProductForm(data={})
 
