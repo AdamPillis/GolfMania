@@ -69,12 +69,12 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request, product_id):
+def product_detail(request, pk_id):
     """
     Renders product_detail.html to display
     all info regarding each specific product
     """
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, id=pk_id)
 
     products = Product.objects.all()
 
@@ -116,14 +116,14 @@ def add_product(request):
 
 # login decorator used so if user is not logged in, redirect to log in page.
 @login_required
-def update_product(request, product_id):
+def update_product(request, pk_id):
     """Update a product in the store"""
     # only superuser can access this function
     if not request.user.is_superuser:
         messages.error(request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, id=pk_id)
 
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES, instance=product)
@@ -148,14 +148,14 @@ def update_product(request, product_id):
 
 # login decorator used so if user is not logged in, redirect to log in page.
 @login_required
-def delete_product(request, product_id):
+def delete_product(request, pk_id):
     """Delete a product in the store"""
     # only superuser can access this function
     if not request.user.is_superuser:
         messages.error(request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, id=pk_id)
 
     if request.method == "POST":
         product.delete()

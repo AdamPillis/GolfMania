@@ -14,22 +14,17 @@ class TestProductUrls(SimpleTestCase):
         url = reverse('products')
         self.assertEquals(resolve(url).func, all_products)
 
-    # def test_product_detail_url(self):
-    #     """Testing products/ product_detail url (function = url name)"""
-    #     url = reverse('products', kwargs=['product_id'])
-    #     self.assertEquals(resolve(url).func, product_detail)
-
     def test_add_product_url(self):
         """Testing products/ add_product url (function = url name)"""
         url = reverse('add_product')
         self.assertEquals(resolve(url).func, add_product)
 
-    # def test_update_product_url(self):
-    #     """Testing products/ update_product url (function = url name)"""
-    #     url = reverse('update_product', args=['product_id'])
-    #     self.assertEquals(resolve(url).func, update_product)
+    def test_update_product_url(self):
+        """Testing products/ update_product url (function = url name)"""
+        url = reverse('update_product', args=['product-id'])
+        self.assertEquals(resolve(url).func, update_product)
     
-    # def test_delete_product_url(self):
-    #     """Testing products/ delete_product url (function = url name)"""
-    #     url = reverse('delete_product', args=['product_id'])
-    #     self.assertEquals(resolve(url).func, delete_product)
+    def test_delete_product_url(self):
+        """Testing products/ delete_product url (function = url name)"""
+        url = reverse('delete_product', args=['product-id'])
+        self.assertEquals(resolve(url).func, delete_product)
