@@ -4,7 +4,7 @@
 <head>
     {% block meta %}
         <!-- Required meta tags -->
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
@@ -115,9 +115,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="mobile-icon fas fa-bars"></i>
-                 </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
+                 </button>            
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
             </nav>
         </div>
         <div class="col-12 col-md-8 mx-auto py-1 d-block d-lg-none">
@@ -175,7 +175,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mx-sm-auto">
-                    <input class="input-text my-2 px-3 required" type="email" id="" name="" placeholder="Enter your email address">
+                    <input class="input-text my-2 px-3 required" type="email" id="#" name="#" placeholder="Enter your email address">
                     <button class="btn btn1 my-2 text-white" type="submit">Sign Up</button>
                 </div>
                 <div class="col-12 text-center p-2">
@@ -207,31 +207,17 @@
                         aria-label="visit our Youtube channel (opens in a new tab)">
                             <i class="fab fa-youtube-square"></i> 
                     </a>
-                         
+                        
                 </div>
             </div>
             <h2 class="text-white text-center mt-3">Accepted Payment Methods</h2>
             <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 payment-img">
-                <div class="img"></div>
+                <div class="col-xs-12 col-sm-6 col-md-4 payment-img">
+                    <div class="img"></div>
+                </div>
             </div>
-        </div>
             <p class="m-0 text-capitalize text-center text-white py-2">&copy; Golf Mania | Designed by Adam Pillis</p>
+        </div>
     </footer>
-
-    {% block postloadjs %}
-    <!-- javascript to display toast on all html pages when rendered in message container -->
-    <script type="text/javascript">
-        let toast = $('.toast');
-        toast.show()
-    </script>
-    <script type="text/javascript">
-        setTimeout(function() {
-            let messages = document.getElementById("message");
-            let alert= new bootstrap.Alert(messages);
-            alert.close();
-        }, 3000);
-    </script>
-    {% endblock %}
 </body>
 </html>
