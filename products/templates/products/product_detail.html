@@ -17,7 +17,7 @@
                     <!-- if product has no image, display general 'none' image in Media -->
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" id="geeks" GFG="250" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" id="geeks" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                     {% else %}
                         <a href="">

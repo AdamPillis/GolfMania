@@ -72,11 +72,11 @@
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     {% if request.user.is_authenticated %}
                         <li class="list-inline-item dropdown me-5">
-                            <a class="text-decoration-none" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="text-decoration-none" role="button" href="#" id="dropdownAccountMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0 fs-6">My Account</p>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownAccountMenu">
                                 {% if request.user.is_superuser %}
                                     <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
                                     <li><a href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
@@ -219,5 +219,12 @@
             <p class="m-0 text-capitalize text-center text-white py-2">&copy; Golf Mania | Designed by Adam Pillis</p>
         </div>
     </footer>
+    {% block postloadjs %}
+        <!-- javascript to display toast on all html pages when rendered in message container -->
+        <script type="text/javascript">
+            let toast = $('.toast');
+            toast.show()
+        </script>
+    {% endblock %}
 </body>
 </html>

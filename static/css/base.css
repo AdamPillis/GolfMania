@@ -103,8 +103,8 @@ header {
 menu {
   margin-bottom: 0;
 }
-.list-inline-item:not(:last-child) {
-  margin-right: 7rem;
+.list-inline-item.dropdown {
+  margin-right: 3rem;
 }
 
 @keyframes fade-inout {
