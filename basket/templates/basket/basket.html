@@ -79,7 +79,7 @@
                         <h4 class="col-sm-12 logo-font text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h4>
                         <div class="col-12 col-sm-6 d-md-none mt-2">
                             <a href="{% url 'product_detail' item.product.id %}">
-                                <img class="basket-img" src="{{ item.product.image.url }}">
+                                <img class="basket-img" alt="{{ item.product.name }}" src="{{ item.product.image.url }}">
                             </a>
                         </div>
                         <div class="col-12 col-sm-6 d-md-none">
@@ -101,8 +101,10 @@
                             {% if item.product.has_quality %}
                                 <p class="mt-1 small text-muted">Quality: {{ item.product.quality|upper }}</p>
                             {% endif %}
-
-                            <p class="mt-2">{% include "basket/quantity_post_form.html" %}</p>
+                            <div class="col-6 text-center">
+                                {% include "basket/quantity_post_form.html" %}
+                            </div>
+                            
 
                             <h5 class="mt-2 logo-font">Total: <strong>€{{ item.product.price }}</strong></h5>
                         </div>
@@ -115,19 +117,19 @@
                 <!-- Basket total -->
                 <div class="row mt-4">
                     <div class="col-12">
-                        <span class="float-start">
+                        <div class="float-start">
                             <h5 class="text-left logo-font">Basket Total</h5>
-                        </span>
-                        <span class="float-end logo-font fs-5">€{{ total|floatformat:2 }}</span>
+                        </div>
+                        <div class="float-end logo-font fs-5">€{{ total|floatformat:2 }}</div>
                     </div>
                 </div>
                 <!-- Delivery total -->
                 <div class="row mt-3">
                     <div class="col-12">
-                        <span class="float-start">
+                        <div class="float-start">
                             <h5 class="logo-font">Delivery</h5>
-                        </span>
-                        <span class="float-end logo-font fs-5">€{{ delivery|floatformat:2 }}</span>
+                        </div>
+                        <div class="float-end logo-font fs-5">€{{ delivery|floatformat:2 }}</div>
                     </div>
                 </div>
                 <!-- if user has not surpassed delivery allowance and under €80 -->
@@ -152,10 +154,10 @@
                 <!-- Order total -->
                 <div class="row mt-3">
                     <div class="col-12">
-                        <span class="float-start">
+                        <div class="float-start">
                             <h4 class="logo-font"><strong>Order Total</strong></h4>
-                        </span>
-                        <span class="float-end logo-font fs-4"><strong>€{{ order_total|floatformat:2 }}</strong></span>
+                        </div>
+                        <div class="float-end logo-font fs-4"><strong>€{{ order_total|floatformat:2 }}</strong></div>
                     </div>
                 </div>
                 <!-- button to continue shopping -->
@@ -208,7 +210,7 @@
     <!-- Importing quantity_input_js.html to handle
     quantity input in basket.html also -->
     {% include 'products/includes/quantity_input_js.html' %}
-    <script type="text/javascript">
+    <script>
         // Update quantity on click
         $('.update-item').click(function(e) {
             var form = $(this).prev('.update-form');
