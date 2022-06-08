@@ -22,7 +22,6 @@ class ProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'default_title': 'Title',
             'default_first_name': 'First Name',
             'default_last_name': 'Last Name',
             'default_phone_number': 'Phone Number',
@@ -36,7 +35,7 @@ class ProfileForm(forms.ModelForm):
 
         self.fields['default_title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'default_country':
+            if field != 'default_country' and field != 'default_title':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:

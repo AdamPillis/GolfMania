@@ -158,7 +158,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <!-- to scroll back to the top if clicked -->
-    <script type="text/javascript">
+    <script>
         $('.top-btt').click(function(e) {
             window.scrollTo(0,0)
         })
@@ -166,7 +166,7 @@
     <!-- using javascriptcurrent URL's sorting values
     are taken and replaced with value equal to clicked sorting
     method. -->
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function(){
             var selector = $(this);
             var currentUrl = new URL(window.location);
