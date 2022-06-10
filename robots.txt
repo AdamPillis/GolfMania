@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /accounts/
-Disallow: /basket/
+disallow: /accounts/
+disallow: /basket/
 Sitemap: https://golf-mania.herokuapp.com/sitemap.xml

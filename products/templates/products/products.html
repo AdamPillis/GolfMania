@@ -13,7 +13,7 @@
     <div class="container-fluid product-container">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h4 class="fs-1 logo-font">Products</h4>
                 <hr class="w-50 my-4 mx-auto">
                 {% for c in chosen_categories %}
                     <a aria-label="view products in categories" class="btn btn1 text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">                                                    
+                        <p class="text-black mt-3 text-center text-md-left">                                                    
                             <!-- django length template filter used to count all found products -->
                             <!-- displays for filtered and if statement if searched -->
                             Showing <strong class="logo-font">{{ products|length }}</strong> products{% if search_word %} found for <strong>"{{ search_word }}"</strong>{% else %} for your search{% endif %}
@@ -150,7 +150,7 @@
     <!-- js to scroll page back to the top -->
     <!-- css to fix position in bottom right corner -->
     <div class="btt-button shadow-sm">
-        <a aria-label="scroll back to the top" class="top-btt d-flex h-100">
+        <a href="#" class="top-btt d-flex h-100">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>
     </div>
