@@ -19,8 +19,7 @@
                     <h1 class="mb-1 p-2 text-white">Welcome to Golf Mania!</h1>
                     <h3 class="mb-2 p-1 text-white">Spring Season Sale Now On!</h3>
                     
-                    
-                    <a class="btn btn1 mb-3 text-white" href="{% url 'products' %}">Browse Now</a>                 
+                    <a aria-label="view all products" class="btn btn1 mb-3 text-white" href="{% url 'products' %}">Browse Now</a>                 
                 </div>
             </div>
         </div>
@@ -41,22 +40,22 @@
                                     
                                     <h6 class="text-center logo-font fs-5">{{ product.name }}</h6>                     
                                 
-                                {% if product.rating %}
-                                    <!-- if product's rating is higher than 4, show highly recommended message -->
-                                    <small class="text-muted text-center"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
-                                {% endif %}
-                                <h5 class="lead mb-0 text-center logo-font mt-2 font-weight-bold">{% if product.old_price %}<small class="text-danger text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
+                                    {% if product.rating %}
+                                        <!-- if product's rating is higher than 4, show highly recommended message -->
+                                        <small class="text-muted text-center"><i class="fas fa-star mr-1 star-color"></i>{{ product.rating }} / 5 {% if product.rating > 4.00 %}| <small>Highly Recommended</small>{% endif %}</small>
+                                    {% endif %}
+                                    <h5 class="lead mb-0 text-center logo-font mt-2 font-weight-bold">{% if product.old_price %}<small class="text-danger text-decoration-line-through me-3 fs-5">€{{ product.old_price }}</small>{% endif %}€{{ product.price }}</h5>
 
-                                {% if product.image %}
-                                <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                            </div>
+                                    {% if product.image %}
+                                    <a aria-label="view product in product details page" class="text-decoration-none" href="{% url 'product_detail' product.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                    {% else %}
+                                    <a aria-label="view product with no image in product details page" href="{% url 'product_detail' product.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     {% endif %}

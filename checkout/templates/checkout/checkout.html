@@ -78,12 +78,12 @@
                         </fieldset>
 
                         <div class="submit-button text-right mt-3 mb-2">
-                            <a href="{% url 'view_basket' %}" class="btn btn1">
+                            <a aria-label="view basket" href="{% url 'view_basket' %}" class="btn btn1">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                             </a>
-                            <button id="submit-button" class="btn btn1">
+                            <button aria-label="complete order" id="submit-button" class="btn btn1">
                                 <span class="font-weight-bold">Complete Order</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
@@ -106,14 +106,14 @@
                         <h4 class="text-muted logo-font pt-2">Shopping Basket ({{ product_count }})</h4>
                     </div>
                     <div class="float-end">
-                        <a href="{% url 'view_basket' %}"><small class="text-decoration-underline">Edit Basket</small></a>
+                        <a aria-label="edit my basket" href="{% url 'view_basket' %}"><small class="text-decoration-underline">Edit Basket</small></a>
                     </div>
                     <hr class="w-100 my-3 mx-auto">
                     {% for item in basket_items %}
                         <div class="row">
                             <div class="col-2 mb-3">
                                 <!-- image is linked with product_details.html -->
-                                <a href="{% url 'product_detail' item.product.id %}">
+                                <a aria-label="product details page" href="{% url 'product_detail' item.product.id %}">
                                     {% if item.product.image %}
                                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                     {% else %}

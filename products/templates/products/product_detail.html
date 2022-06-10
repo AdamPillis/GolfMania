@@ -16,11 +16,11 @@
                 <div class="image-container my-5">
                     <!-- if product has no image, display general 'none' image in Media -->
                     {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
+                        <a aria-label="{{ product.name }} in product details page" href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" id="geeks" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                     {% else %}
-                        <a href="">
+                        <a aria-label="{{ product.name }} in product details page" href="">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
@@ -42,7 +42,7 @@
                     <h3 class="mt-3 logo-font text-center">{{ product.name }}</h3>
                     {% if product.category %}
                         <p class="small mt-2 mb-2">
-                            <a class="text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
+                            <a aria-label="{{ product.caategory }} products" class="text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
                                 <i class="fas fa-tag tag-icon mr-1"></i>{{ product.category.friendly_name }}
                             </a>
                         </p>
@@ -50,8 +50,8 @@
                     <!-- if user is superuser, display edit and delete options -->
                     {% if request.user.is_superuser %}
                         <p class="ml-3">
-                            <a class="text-info fs-6" href="{% url 'update_product' product.id %}">Update</a> |
-                            <a class="text-danger fs-6" href="{% url 'delete_product' product.id %}">Delete</a>
+                            <a aria-label="update" class="text-info fs-6" href="{% url 'update_product' product.id %}">Update</a> |
+                            <a aria-label="delete" class="text-danger fs-6" href="{% url 'delete_product' product.id %}">Delete</a>
                         </p>
                     {% endif %}
                     {% if product.rating %}
@@ -68,9 +68,9 @@
                     <h5 class="mt-3 logo-font text-decoration-underline">Product Description</h5>
                     <p class="mt-1">{{ product.description }}</p>
                     {% if product.features %}
-                        <button onclick="readMore()" class="btn btn1" id="features-btn">Read more</button>
+                        <button aria-label="read more" onclick="readMore()" class="btn btn1" id="features-btn">Read more</button>
                         <div class="mt-3" id="more">
-                            <h4>Features:</h4>
+                            <h4 class="mt-2">Features:</h4>
                             <p>{{ product.features }}</p>
                         </div>
                     {% endif %}
@@ -112,7 +112,7 @@
                                 <div class="form-group w-50">
                                     <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn1 decrement-qty_{{ product.id }}" 
+                                            <button aria-label="decrease quantity" class="decrement-qty btn btn1 decrement-qty_{{ product.id }}" 
                                                 data-item_id="{{ product.id }}">
                                                 <span class="tag-icon">
                                                     <i class="fas fa-minus"></i>
@@ -123,7 +123,7 @@
                                             name="quantity" value="1" min="1" max="99"
                                             data-item_id="{{ product.id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn1 increment-qty_{{ product.id }}"
+                                            <button aria-label="increase quantity" class="increment-qty btn btn1 increment-qty_{{ product.id }}"
                                                 data-item_id="{{ product.id }}">
                                                 <span class="tag-icon">
                                                     <i class="fas fa-plus"></i>
@@ -135,11 +135,11 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn1 mt-4">
+                                <a aria-label="keep shopping" href="{% url 'products' %}" class="btn btn1 mt-4">
                                     
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <button type="submit" class="btn btn1 text-uppercase ms-2 mt-4" value="Add to Bag">Add to Basket</button>
+                                <button aria-label="add to basket" type="submit" class="btn btn1 text-uppercase ms-2 mt-4" value="Add to Bag">Add to Basket</button>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

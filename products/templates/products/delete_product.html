@@ -21,8 +21,8 @@ really wants to delete from database -->
             <!-- form is linked with booking using its id and submit button set to delete booking if clicked -->
             <form action="{% url 'delete_product' product.id %}" method="POST">
                 {% csrf_token %}
-                <button class="btn btn1" type="submit" name="Confirm">Submit</button>
-                <a class="text-decoration-none btn btn1 ms-2" href="{% url 'products' %}">
+                <button aria-label="submit" class="btn btn1" type="submit" name="Confirm">Submit</button>
+                <a aria-label="cancel" class="text-decoration-none btn btn1 ms-2" href="{% url 'products' %}">
                     Cancel
                 </a>
             </form>

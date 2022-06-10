@@ -102,7 +102,7 @@ select option[value=""] {
 }
 /* on mobile devices, checkout_confirm.html font size changes */
 @media (max-width: 310px) {
-  #email-data {
+  .email-data {
       font-size: 13px;
       text-align: center;
   }

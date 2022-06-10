@@ -1,26 +1,26 @@
 <menu>
 <li class="list-inline-item dropdown">
-    <a class="dropdown-toggle d-block d-lg-none" href="#" role="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+    <a rel="nofollow" aria-label="view account options" class="dropdown-toggle d-block d-lg-none" href="#" role="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
         <div><i class="mobile-icon fas fa-user fa-lg"></i></div>
     </a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
-                <li><a href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
+                <li><a aria-label="add product" href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
+                <li><a aria-label="admin panel" href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
             {% endif %}
-            <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+            <li><a aria-label="my profile" class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+            <li><a aria-label="log out" class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
         {% else %}
-            <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
-            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+            <li><a aria-label="log in" class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+            <li><a aria-label="register" class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
         {% endif %}
     </ul>
 </li>
 
 <li class="list-inline-item">
     <!-- highlighting shopping bag when bag is not empty -->
-    <a class="d-block d-lg-none text-decoration-none {% if total > 0 %}text-info font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_basket' %}">
+    <a rel="nofollow" aria-label="view my basket" class="d-block d-lg-none text-decoration-none {% if total > 0 %}text-info font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_basket' %}">
         <div class="text-center">
             <div><i class="mobile-icon fas fa-shopping-basket fa-lg"></i></div>
             <!-- displaying total cost when product added to the bag -->

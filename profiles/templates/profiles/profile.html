@@ -30,7 +30,7 @@
                         {% csrf_token %}
                         {{ profile_form|crispy }}
                         <div class="col-12 text-center">
-                            <button type="submit" class="btn btn1 my-4">Update Profile</button>
+                            <button aria-label="update profile" type="submit" class="btn btn1 my-4">Update Profile</button>
                         </div>
                         
                     </form>
@@ -53,7 +53,7 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
+                                        <a aria-label="go to order" href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}" class="text-decoration-underline">
                                             {{ order.order_number|truncatechars:8 }}
                                         </a>
@@ -78,7 +78,7 @@
                     </table>
                 </div>
                 <div class="col-12 my-4 text-center">
-                    <a href="{% url 'products' %}" class="btn btn1">
+                    <a aria-label="shop again button" href="{% url 'products' %}" class="btn btn1">
                         <span class="text-uppercase me-1">Shop Again</span>
                         <span class="">
                             <i class="fas fa-shopping-bag"></i>

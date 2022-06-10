@@ -43,7 +43,7 @@
         <!-- Website name only displayed at the top in the middle on medium/small screens -->
         <div class="row d-block d-lg-none">
                 <div class="col-12">
-                    <a href="{% url 'home' %}">
+                    <a href="{% url 'home' %}" aria-label="Reload home page">
                         <h2 class="logo-font mt-2 text-center">Golf|<i class="fas fa-coins"></i>|Mania</h2>
                     </a>
                 </div>
@@ -52,7 +52,7 @@
         <!-- top header on larger screens -->
         <div class="row pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <a href="{% url 'home' %}" aria-label="Reload home page" class="nav-link main-logo-link">
                     <h2 class="logo-font">Golf|<i class="fas fa-coins"></i>|Mania</h2>
                 </a>
             </div>
@@ -75,30 +75,30 @@
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     {% if request.user.is_authenticated %}
                         <li class="list-inline-item dropdown me-5">
-                            <a class="text-decoration-none" role="button" href="#" id="dropdownAccountMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="text-decoration-none" rel="no-follow" aria-label="dropwdown for my account" role="button" href="#" id="dropdownAccountMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0 fs-6">My Account</p>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownAccountMenu">
                                 {% if request.user.is_superuser %}
-                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
-                                    <li><a href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
+                                    <li><a href="{% url 'add_product' %}" aria-label="add product" class="dropdown-item">Add Product</a></li>
+                                    <li><a href="{% url 'admin:index' %}" aria-label="admin panel" class="dropdown-item">Admin Panel</a></li>
                                 {% endif %}
-                                <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                                <li><a class="dropdown-item" aria-label="my profile" href="{% url 'profile' %}">My Profile</a></li>
+                                <li><a class="dropdown-item" aria-label="log out" href="{% url 'account_logout' %}">Log Out</a></li>
                             </ul>
                         </li>
                     {% else %}
                         <li class="list-inline-item">
-                            <a href="{% url 'account_signup' %}" class="btn mb-3 btn1">Register</a>
+                            <a href="{% url 'account_signup' %}" aria-label="register" class="btn mb-3 btn1">Register</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="{% url 'account_login' %}" class="btn mb-3 btn1">Log In</a>
+                            <a href="{% url 'account_login' %}" aria-label="log in" class="btn mb-3 btn1">Log In</a>
                         </li>
                     {% endif %}
                     <li class="list-inline-item">
                         <!-- highlighting shopping bag when bag is not empty -->
-                        <a href="{% url 'view_basket' %}">
+                        <a href="{% url 'view_basket' %}" aria-label="view basket">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-basket fa-lg"></i></div>
                                 <!-- displaying total cost when product added to the bag -->
@@ -115,8 +115,8 @@
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" aria-label="main nav bar button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="mobile-icon fas fa-bars"></i>
                  </button>            
                     {% include 'includes/mobile-top-header.html' %}
@@ -128,7 +128,7 @@
                 <div class="input-group w-100">
                     <input class="form-control border border-black rounded-2" type="text" name="search" placeholder="Search GolfMania">
                     <div class="input-group-append">
-                        <button class="form-control btn btn1" type="submit">
+                        <button class="form-control btn btn1" aria-label="submit button" type="submit">
                             <span>
                                 <i class="fas fa-search"></i>
                             </span>
@@ -201,7 +201,7 @@
                                     <div class="clear foot">
                                         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                                         <p class="brandingLogo">
-                                            <a href="http://eepurl.com/h33bZ9" title="Mailchimp - email marketing made easy and fun">
+                                            <a aria-label="mailchimp link" rel="nofollow" href="http://eepurl.com/h33bZ9" title="Mailchimp - email marketing made easy and fun">
                                                 <img alt="Mailchimp logo" src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
                                             </a>
                                         </p>
