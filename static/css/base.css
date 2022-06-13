@@ -5,6 +5,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  margin-top: 150px;
 }
 /* setting font styles */
 h1, h2, h3, h4, h5, h6 {
@@ -28,10 +29,6 @@ header {
   z-index: 50;
   background: white;
   }
-
-.sticky-top {
-  z-index: 50 !important;
-}
 
 .logo-font {
   color: rgba(0, 114, 0, 1);
@@ -202,7 +199,6 @@ footer i {
   width: 100%;
   overflow: hidden;
   position: relative;
-  
 }
 
 .landing-image .container-fluid {
@@ -219,8 +215,8 @@ footer i {
 .landing-image .container-fluid .text-center {
   background-color: rgba(0, 0, 0, 0.4);
   position: relative;
-  top: 110%;
-  
+  margin: 40px auto;
+  top: 2%;
 }
 /* styling review section */
 .reviews-section {
@@ -423,3 +419,38 @@ custom_clearable_file_input.html */
       font-size: 12px;
  }
 }
+/* media queries for sticky header margin */
+@media (max-width: 991px) {
+  body {
+    margin-top: 230px;
+ }
+}
+
+@media (max-width: 763px) {
+  body {
+    margin-top: 232px;
+ }
+}
+
+@media (max-width: 517px) {
+  body {
+    margin-top: 225px;
+  }
+ }
+
+@media (max-width: 424px) {
+ #delivery-banner h2 {
+   font-size: 18px !important;
+ }
+
+ body {
+   margin-top: 225px;
+ }
+}
+
+@media (max-width: 383px) {
+  body {
+    margin-top: 245px;
+  }
+ }
+
