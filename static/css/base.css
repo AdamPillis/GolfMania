@@ -30,7 +30,7 @@ header {
   }
 
 .sticky-top {
-  z-index: 1050 !important;
+  z-index: 50 !important;
 }
 
 .logo-font {
@@ -107,7 +107,7 @@ header {
 
 .dropdown-menu[data-bs-popper] {
   top: 100%;
-  left: -60% !important;
+  left: 0;
   margin-top: 0.125rem;
 }
 
@@ -198,7 +198,7 @@ footer i {
 
 /* index.html */
 .landing-image {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -218,6 +218,9 @@ footer i {
 
 .landing-image .container-fluid .text-center {
   background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 110%;
+  
 }
 /* styling review section */
 .reviews-section {
