@@ -5,12 +5,13 @@
     </a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
         {% if request.user.is_authenticated %}
+            <li><a aria-label="home page" class="dropdown-item" href="{% url 'home' %}">Home</a></li>
+            <li><a aria-label="my profile" class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+            <li><a aria-label="log out" class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
             {% if request.user.is_superuser %}
                 <li><a aria-label="add product" href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
                 <li><a aria-label="admin panel" href="{% url 'admin:index' %}" class="dropdown-item">Admin Panel</a></li>
             {% endif %}
-            <li><a aria-label="my profile" class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-            <li><a aria-label="log out" class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
         {% else %}
             <li><a aria-label="log in" class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
             <li><a aria-label="register" class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>

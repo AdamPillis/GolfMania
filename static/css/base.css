@@ -26,7 +26,12 @@ a:hover {
 header {
   position: relative;
   z-index: 50;
+  background: white;
   }
+
+.sticky-top {
+  z-index: 1050 !important;
+}
 
 .logo-font {
   color: rgba(0, 114, 0, 1);
@@ -98,6 +103,12 @@ header {
 
 .navbar-nav .dropdown-menu {
     border: none;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -60% !important;
+  margin-top: 0.125rem;
 }
 
 menu {
@@ -187,7 +198,7 @@ footer i {
 
 /* index.html */
 .landing-image {
-  height: 70vh;
+  height: 80vh;
   width: 100%;
   overflow: hidden;
   position: relative;
