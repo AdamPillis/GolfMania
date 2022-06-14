@@ -1060,3 +1060,55 @@ Each section displayed as a page was tested and checked through ***Microsoft Edg
 **Admin Page**
 
 ![Microsoft Edge Admin page]( "Microsoft Edge Admin page")
+
+### **Application Features Test**
+
+#### **Automated Testing**
+
+Some automated testing has been completed on this project. This website consists of **six** separate applications. Within **5** of these, files **urls.py** and **forms.py** have been tested and overall, **18** automated tests are running error free.
+
+**1. profiles application**
+
+**test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields) come back when no data is submitted. 
+
+**test_urls.py**: **Two** automated tests running successfully to check CRUD functionality url paths created for profile view function.
+
+**2. products application**
+
+**test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields) come back when no data is submitted. 
+
+**test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for all products app view functions.
+
+**3. home application**
+
+**test_urls.py**: **One** automated tests running successfully to check if index.html is rendered.
+
+**4. checkout application**
+
+**test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields in checkout form) come back when no data is submitted. 
+
+**test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for checkout app.
+
+**5. basket application**
+
+**test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for basket views urls.
+
+![Screenshot of 18 automated tests running successfully]()
+
+#### **Manual Testing**
+
+While the developer is fully aware of the advantages of full automated testing, he made a decisions to test the rest of the project manually in detail as result of the **upcoming due date**.
+
+### **1. index.html features**
+### **2. products.html features**
+### **3. product_detail.html features**
+### **4. basket.html features**
+### **5. checkout.html features**
+### **6. checkout_confirm.html features**
+### **7. add_product.html features**
+### **8. update_product.html features**
+### **9. delete_product.html features**
+### **10. profile.html features**
+### **11. signup.html features**
+### **12. login.html features**
+### **13. logout.html features**
