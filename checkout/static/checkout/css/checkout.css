@@ -92,6 +92,7 @@ select option[value=""] {
 
 #overlay-screen h1 i {
   font-size: 5rem;
+  color:rgba(0, 114, 0, 1);
 }
 
 /* fixed top navbar only on medium and up */
