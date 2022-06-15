@@ -1,6 +1,6 @@
 # [Golf Mania](https://golf-mania.herokuapp.com/)
 
-![Landing Page](static/images/landing-page-screenshot.png "HighDunes Landing Page")
+![Landing Page](static/images/welcome-image.PNG "HighDunes Landing Page")
 [LANDING PAGE SCREENSHOT]
 
 ### **What is Golf Mania?**
@@ -1100,15 +1100,653 @@ Some automated testing has been completed on this project. This website consists
 While the developer is fully aware of the advantages of full automated testing, he made a decisions to test the rest of the project manually in detail as result of the **upcoming due date**.
 
 ### **1. index.html features**
-### **2. products.html features**
-### **3. product_detail.html features**
-### **4. basket.html features**
-### **5. checkout.html features**
-### **6. checkout_confirm.html features**
-### **7. add_product.html features**
-### **8. update_product.html features**
-### **9. delete_product.html features**
-### **10. profile.html features**
-### **11. signup.html features**
-### **12. login.html features**
-### **13. logout.html features**
+
+- **Header**
+    - **Header logo and club name** reloads index.html = **true**
+    - **Search Bar** finds products related to typed in key words = **true**
+    - **Register Button** only visible if logged out = **true**
+    - **Log In** only visibile if logged out = **true**
+    - **My Account Icon** only visibile if logged in = **true**
+    - **Home Dropdown** only visibile if logged in = **true**
+    - **Home Dropdown** reloads index.html = **true**
+    - **My Profile** only visibile if logged in = **true**
+    - **My Profile** loads profile.html = **true**
+    - **Log Out** only visibile if logged in = **true**
+    - **Log Out** loads logout.html = **true**
+    - **Add Product** only visibile if logged in as ADMIN = **true**
+    - **Add Product** loads add_product.html = **true**
+    - **Admin Panel** only visibile if logged in as ADMIN= **true**
+    - **Admin Panel** loads /admin/ = **true**
+    - **Basket Icon** loads basket.html = **true**
+    - **Basket Icon Message** changes to total if Not empty = **true**
+
+- **Main Nav**
+    - **All Products** loads dropdown list = **true**
+        - **By Price** filters products by price = **true**
+        - **By Rating** filters products by rating = **true**
+        - **By Category** filters products by category = **true**
+        - **By Brand** filters products by brand = **true**
+        - **By Condition** filters products by condition = **true**
+        - **All Products** displays all product = **true**
+
+    - **Golf Clubs** loads dropdown list = **true**
+        - **Putters** filters products by category "putters" = **true**
+        - **Irons** filters products by category "irons" = **true**
+        - **Sandwedges** filters products by category "sandwedges" = **true**
+        - **Woods** filters products by category "woods" = **true**
+        - **Drivers** filters products by category "drivers" = **true**
+        - **All Clubs** filters products by ALL categories = **true**
+
+    - **Accessories** loads dropdown list = **true**
+        - **Tees** filters products by category "tees" = **true**
+        - **Gloves** filters products by category "gloves" = **true**
+        - **Golf Balls** filters products by category "balls" = **true**
+        - **Caps** filters products by category "caps" = **true**
+        - **All Accessories** filters products by ALL above categories = **true**
+
+    - **Best Offers** loads dropdown list = **true**
+        - **New In** filters products by category "new_in" = **true**
+        - **Deals** filters products by category "deals" = **true**
+        - **Clearance** filters products by category "clearance" = **true**
+        - **All Offers** filters products by ALL above categories = **true**
+
+- **Delivery Banner**
+    - **Delivery Text** fades out and in upon reload = **true**
+
+- **Landing Image**
+    - "Browse Now" button hover effect = **true**
+    - "Browse Now" button redirects to *products.html* = **true**
+    - Landing Image fixed for better UX Design = **true**
+
+- **Clearance Section**
+    - Displays clearance cateogry products = **true**
+    - Each product loads *product_detail.html* when clicked on = **true**
+    - *Highly Recommended Rating* only displays if rating > 4 = **true**
+
+- **Review Section**
+    - Correct Data displayed as expected = **true**
+    - 2 reviews per paginated page = **true**
+
+- **Footer Section**
+    - Signup Newsletter correctly set up with Mailchimp = **true**
+    - Signup Newsletter email input validation = **true**
+    - Success Message if using Sign Up feature = **true**
+    - Social Media Icons equally positioned = **true**
+    - Icons background color match buttons = **true**
+    - Icons hover effect match anchor hover effect in terms of colour = **true**
+    - *Facebook* icon visible = **true**
+    - *Facebook* icon linked with Golf Mania's Facebook URL = **true**
+    - Facebook URL opens in new tab = **true**
+
+    - *Twitter* icon visible = **true**
+    - *Twitter* icon linked with Twitter URL = **true**
+    - Twitter URL opens in new tab = **true**
+
+    - *Instagram* icon visible = **true**
+    - *Instagram* icon linked with Instagram URL = **true**
+    - Instagram URL opens in new tab = **true**
+
+    - *Youtube* icon visible = **true**
+    - *Youtube* icon linked with Youtube URL = **true**
+    - Youtube URL opens in new tab = **true**
+
+    - **Payment Method** image responsive = **true**
+    
+- ### **2. products.html features**
+    - *Search criteria message* displays number of products found = **true**
+    - *Search criteria message* search key word if search bar used = **true**
+
+    - **Sort Features**
+        - Price high to low function working = **true**
+        - Price low to high function working = **true**
+        - Rating high to low function working = **true**
+        - Rating low to high function working = **true**
+        - Name high to low function working = **true**
+        - Name low to high function working = **true**
+        - Category high to low function working = **true**
+        - Category low to high function working = **true**
+        - Brand high to low function working = **true**
+        - Brand low to high function working = **true**
+        - Type high to low function working = **true**
+        - Type low to high function working = **true**
+        - Each function working **instantly** - **true**
+
+    - *Back to Home* button reloads index.html = **true**
+    - Products displayed in rows of 4 on large screens = **true**
+    - Products displayed in rows of 2 on medium screens = **true**
+    - Products displayed in rows of 1 on smaller screens = **true**
+    - product_details.html opens when **clicked** on specific product = **true**
+    - Product category internal link filters *category type* = **true**
+    - **Update Button** only visible to ADMIN = **true**
+    - **Update Button** renders update_product.html = **true**
+    - **Delete Button** only visible to ADMIN = **true**
+    - **Delete Button** renders delete_product.html = **true**
+    - **Back To the Top Button** scrolls to the top when *clicked* = **true**
+    - **Back To the Top Button** visible and working on all screens = **true**
+
+- ### **3. product_detail.html features**
+    - Product Image opens in external file when clicked = **true**
+    - **Zoom In +** button zooms in image by 50px = **true**
+    - **Zoom Out -** button zooms out image by 50px = **true**
+    - Product category internal link filters *category type* on the right = **true**
+    - **Update Button** only visible to ADMIN = **true**
+    - **Update Button** renders update_product.html = **true**
+    - **Delete Button** only visible to ADMIN = **true**
+    - **Delete Button** renders delete_product.html = **true**
+    - **Read More** only visible if feature field is filled in for product = **true**
+    - **Read More** opens dropdown features as text = **true**
+    - **Read Less Button** appears when opened = **true**
+    - **Read Less Button** closes additional features = **true**
+    - **Hand Size Input** function works as expected = **true**
+    - **Hand Size Input** function works POST data sent successfully = **true**
+    - **Quantity Input** cannot be < 1 = **true**
+    - **Quantity Input** cannot be > 99 = **true**
+    - **Quantity Input -** button hover effect = **true**
+    - **Quantity Input -** updates quantity correctly = **true**
+    - **Quantity Input +** button hover effect = **true**
+    - **Quantity Input +** updates quantity correctly = **true**
+    - "Keep Shopping" button hover effect = **true**
+    - "Keep Shopping" button redirects to *products.html* = **true**
+    - "Add To Basket" button hover effect = **true**
+    - "Add To Basket" button adds product to basket as item = **true**
+    - "Success" toast confirms basket update = **true**
+
+    - **Newest Products Section**
+        - Displays new_in cateogry products = **true**
+        - Each product loads *product_detail.html* when clicked on = **true**
+        - *Highly Recommended Rating* only displays if rating > 4 = **true**
+
+- ### **4. basket.html features**
+    - Display correct number of items in basket above list of products = **true**
+    - Product image opens *product_detail.html* = **true**
+    - Product image opens *product_detail.html* = **true**
+    - **Quantity Input** cannot be < 1 = **true**
+    - **Quantity Input** cannot be > 99 = **true**
+    - **Quantity Input -** button hover effect = **true**
+    - **Quantity Input -** updates quantity correctly = **true**
+    - **Quantity Input +** button hover effect = **true**
+    - **Quantity Input +** updates quantity correctly = **true**
+    - *Update Button* updates quantity selected = **true**
+    - *Remove Button* removes basket items selected = **true**
+    - DATA displayed correctly under Order Summary = **true**
+    - "Keep Shopping" button hover effect = **true**
+    - "Keep Shopping" button redirects to *products.html* = **true**
+    - "Sign In To Continue" button hover effect = **true**
+    - "Sign In To Continue" button displayed when logged out = **true**
+    - "Secure Checkout" button hover effect = **true**
+    - "Secure Checkout" button displayed when logged in = **true**
+
+- ### **5. checkout.html features**
+    - checkout_form displayed as crispy form on the left = **true**
+    - checkout_form does NOT submit if required fields empty = **true**
+    - checkout_form validated before submission = **true**
+    - checkout_form prefilled if profile exists = **true**
+    - checkout_form save delivery info feature working = **true**
+    - stripe payment form validated = **true**
+    - **left arrow button** hover effect = **true**
+    - **left arrow button** loads basket.html = **true**
+    - **Complete Order button** hover effect = **true**
+    - **Complete Order button** submits checkout/payment form to stripe = **true**
+    - **Complete Order button** renders spinning icon = **true**
+    - Spinning Icon darkens background = **true**
+    - **"Edit Basket"** hover effect = **true**
+    - **"Edit Basket"** loads basket.html = **true**
+
+- ### **6. checkout_confirm.html features**
+    - DATA rendered as expected = **true**
+    - **Shop Again Button** hover effect = **true**
+    - **Shop Again Button** loads *products.html* = **true**
+    - **Email** sent with order data = **true**
+    - **Newest Products Section**
+        - Displays new_in cateogry products = **true**
+        - Each product loads *product_detail.html* when clicked on = **true**
+        - *Highly Recommended Rating* only displays if rating > 4 = **true**
+
+- ### **7. add_product.html features**
+    This form has one automated test which is test the number of required fields. If not data was entered, 5 errors would occur for category, name, type description and price so statement is **true**
+    - product form displayed as crispy = **true**
+    - **Choose Image** button hover effect = **true**
+    - **Choose Image** button opens computer files = Yes **BUT** not when **pointing**... only on the side of button!
+    - Upload image from computer using **Choose Image** = **true**
+    - Name of image file displayed under button = **true**
+    - product form validation when **Add Product** pressed = **true**
+    - **Cancel** button hover effect = **true**
+    - **Cancel** button loads products.html = **true**
+    - **Add Product** button hover effect = **true**
+    - **Add Product** button saves and loads product_detail.html = **true**
+    - IF no image uploaded - default image displayed = **true**
+    
+
+- ### **8. update_product.html features**
+    The update product form is using the same product form as add _product so therefore the number of errors when no data is 5 also and is validated the same way. 
+    - **Testing Changes**
+        - Product form instance data prefilled = **true**
+        - Image Field display "Current Image" = **true**
+        - **Remove Check Box** removes image when form update = **true**
+        - *Choose Image* button upload new image if requested = **true**
+        - **Add Product** button hide = **true**
+        - **Update Product** displayed = **true**
+        - **Update Product** button hover effect = **true**
+        - **Update Product** button saves and loads product_detail.html = **true**
+        - **User feedback** toast displayed = **true**
+
+- ### **9. delete_product.html features**
+    - **Warning Message** includes product name and SKU = **true**
+
+    - **Submit** button displayed = **true**
+    - **Submit** button hover effect = **true**
+    - **Submit** button submits delete request = **true**
+    - **Submit** button reloads products.html = **true**
+    - **User feedback** toast displayed = **true**
+
+    - **Cancel** button displayed = **true**
+    - **Cancel** button hover effect = **true**
+    - **Cancel** button reloads view_bookings.html = **true**
+
+- ### **10. profile.html features**
+    - **Delivery Form Section**
+        - Profile form displaying instance of user info, if ANY = **true**
+        - Empty profile form if no data = **true**
+        - No required fields = **true**
+        - Form Validation = **true**
+        - **Update Profile Button** updating profile data in database = **true**
+        - **Update Profile Button** hover effect = **true**
+        - **Update Profile Button** always overwrites data = **true**
+
+    - **Order History Section**
+        - Orders in rows and scroll bar appear = **true**
+        - **Order number** loads checkout_confirm.html = **true**
+        - IN CHECKOUT_CONFIRM.html(everything else the same)
+            - *Header* changes to "Order History" = **true**
+            - **Back to MY Profile Button** display = **true**
+            - **Shop Again Button** hide = **true**
+            - **Back to MY Profile Button** hover effect = **true**
+            - **Toast** warning user of action = **true**
+
+- ### **11. signup.html features**
+    - *Log In* header link hover effect = **true**
+    - *Log In* loads login.html = **true**
+    - *Username field* required = **true**
+    - *Email field* required = **true**
+    - Password required and validated = **true**
+    - Email verification via AllAuth = **true**
+    - Email verification link SUCCESS = **true**
+    - User feedback message "Successfully signed in displayed" = **true**
+    - "Back Home" button hover effect = **true**
+    - "Back Home" button load index.html = **true**
+    - "Sign Up" button hover effect = **true**
+    - "Sign Up" button submit allauth user form = **true**
+
+- ### **12. login.html features**
+    - *Sign up now* header link hover effect = **true**
+    - *Sign up now* loads signup.html = **true**
+    - *Username/Email field* required = **true**
+    - Password required and validated = **true**
+    - Remember Me feature visible = **true**
+    - **Forgot Password** loads reset_password.html = **true**
+    - "Sign In" button hover effect = **true**
+    - "Sign In" button submits allauth user sign in form = **true**
+    - User feedback message "Successfully signed in as username" = **true**
+
+- ### **13. logout.html features**
+    - *Cancel* link hover effect = **true**
+    - *Cancel* loads index.html = **true**
+    - "Sign Out" button hover effect = **true**
+    - "Sign Out" button submits allauth user sign in form = **true**
+    - User feedback message "You have signed out" = **true**
+
+### **Testing Responsiveness**
+
+[Am I Responsive](http://ami.responsivedesign.is/) website was used to test the responsiveness of Golf Mania's E-Commerce Web Application on several devices deferring in sizes "from small to large".
+
+This website was also used to test the **web features on all screen sizes**.
+
+**Landing Page**
+
+![Am I Respnsive Landing page](static/images/amiresponsive-register-page.png "Am I Respnsive Landing page")
+
+**Products Page**
+
+![Am I Respnsive Products page]( "Am I Respnsive Products page")
+
+**Product Detail Page**
+
+![Am I Respnsive Product Detail page]( "Am I Respnsive Product Detail page")
+
+**Basket Page**
+
+![Am I Respnsive Basket page]( "Am I Respnsive Basket page")
+
+**Checkout Page**
+
+![Am I Respnsive Checkout page]( "Am I Respnsive Checkout page")
+
+**Checkout Confirm Page**
+
+![Am I Respnsive Checkout Confirm page]( "Am I Respnsive Checkout Confirm page")
+
+**Profile Page**
+
+![Am I Respnsive Profile page]( "Am I Respnsive Profile page")
+
+**Add Product Page**
+
+![Am I Respnsive Add Product page]( "Am I Respnsive Add Product page")
+
+**Update Product Page**
+
+![Am I Respnsive Update Product page]( "Am I Respnsive Update Product page")
+
+**Delete Product Page**
+
+![Am I Respnsive Delete Product page]( "Am I Respnsive Delete Product page")
+
+**Register Page**
+
+![Am I Respnsive register page](s "Am I Respnsive register page")
+
+**Log In Page**
+
+![Am I Respnsive Log In page](s "Am I Respnsive Log In page")
+
+**Log Out Page**
+
+![Am I Respnsive Log Out page]( "Am I Respnsive Log Out page")
+
+### **Other ways of testing responsiveness and features**
+
+Multiple family members and friends were asked to test this new application on their mobile phones and overall, the only mobile identifying some margin/padding errors and payment image size error in the footer was the **Samsung Galaxy SE**. 
+
+Another issue identified by one tester was that the account dropdown caused an overlay on their device so they could scroll a bit to the right. Fixed by adding right margin to the [data bs element] in base.css
+
+### **Fixed Bugs**
+
+1. The margin issue which caused the screen size width to be more than 100% was identified and fixed.
+
+2. The developer had issues with the dropdown list displaying correctly in the top header. He wanted to reuse a piece of code which did not work as expected. Discovered the **Bootstrap5** update and following documentation, issue was fixed and displaying correctly. 
+
+3. Issues with zoom in and zoom out functionality. ZoomIn and ZoomOutdid not work. Fixed issue by changing maximum-size of img-fluid class to allow zoom in option to work. Issue solved efficiently using INSPECT given that the JS function to work it was set correctly. 
+
+4. Issues setting up toast. Toast did not display card filled with data. Bootstrap5 update included changes so fixed issue using *documentation*. 
+
+5. Z-Index issues with data displayed on index.html. Header did not hide landing image when set fixed. Fixed issue by reading into Z-Index documentation. 
+
+6. Top Margin issues with fixed header. Issue fixed using **Media Queries**.
+
+### **Unfixed Bugs**
+
+The only identified unfixed bug currently is the **Mouse Pointer** but in image field of product_form. The button functions and works fine but not when mouse is pointing at it. The **button** is clickable in some areas so it is useable and does not affect the overall application feature from customer/site user's point of view but will need to be fixed.
+
+No other issues identified during automated or manual testing. 
+
+## 4. Deployment
+
+For deployment, GitHub is used to push data from production environment and HEROKU is used to run the web application and POSTGREs database. 
+
+The steps needed to take to deploy this project are as follows: 
+
+**In Gitpod** - After project set up and libraries required installed to workspace.
+
+**1.** Create **requirements.txt** file and ensure it is **up to date** before deployment.
+
+**In Heroku**
+
+**2.** Create the **Heroku app**.
+
+**3.** Attach the **POSTGRES database** to the app **through *Resources* tab**.
+
+**4.** Copy DATABASE_URL value which is located in the Settings Tab, click reveal Config Vars, Copy Text.
+
+**In Gitpod**
+
+##### *env.py*
+
+**5.** Create new **env.py file** on top level directory.
+
+**6.** **Import os library**.
+
+**7.** Set **environment variables** to "**os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link**".
+
+**8.** Add in **secret key** - **os.environ["SECRET_KEY"] = "Golf Mania's own secret key"**.
+
+**In Heroku**
+
+**9.** Add Secret Key to ** - **SECRET_KEY, “GolfManiaSecretKey”**.
+
+**In Gitpod**
+
+##### *settings.py*
+
+**10.** Reference **env.py** like below.
+
+**import os**
+**import dj_database_url**
+
+**if os.path.isfile("env.py"):**
+   **import env**
+
+**11.** **Remove** the insecure **secret key** and replace - links to the **SECRET_KEY variable on Heroku**
+
+**SECRET_KEY = os.environ.get('SECRET_KEY')**
+
+**12.** **Comment out** the old DataBases Section
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+**13.** Add **new DATABASES** Section (links to the DATATBASE_URL variable on Heroku)
+
+DATABASES = {
+   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+**14.** In terminal, save all files using **git push** and **migrate** all data models to make they're up to date.
+
+**In Amazon Web Services.com(AWS)**
+
+- Register/Create an account.
+- Create a new S3 Bucket using **changes sheet**.
+- Set up Bucket settings as showns in **changes sheet**
+- Bucket Policy unchanged. 
+- For Access Control list, select **Public**
+- In Identify and Access Management (IAM)
+    - Create a new group.
+    - Create a new policy and click to *review policy* page.
+    - In User Groups, select **Permissions Tab**, **Add Permission** and attach policies.
+- Install **boto3**
+- Install **django_storages** and add to installed apps in *Settings.py*.
+- Freeze requirements.txt
+- In settings.py set up variables
+    1. AWS_S3_OBJECT_PARAMETERS = 
+    2. AWS_STORAGE_BUCKET_NAME = 
+    3. AWS_S3_REGION_NAME =
+    4. AWS_ACCESS_KEY_ID = os.environ.get('')
+    5. AWS_SECRET_ACCESS_KEY = os.environ.get('')
+    6. AWS_S3_CUSTOM_DOMAIN = 
+
+**In Heroku**
+
+**17.** Add **AWS URL Variables** to Heroku through app **settings tab**, **Config Vars** (AWS_SECRET_ACCESS_KEY) and (AWS_ACCESS_KEY_ID)
+
+**18.** Add **DISABLE_COLLECTSTATIC** to Heroku **Config Vars** (temporary) (**DISABLE_COLLECTSTATIC, 1**)
+
+**In settings.py**
+
+**19.** Set variables for (EMAIL_HOST_USER) and (EMAIL_HOST_PASS) to allow for real emails.
+
+**In Heroku**
+
+- Set variables for email as above with correct email and password. 
+
+**20.** In **settings.py** tell django to **use custom_storages to store media and static files**.
+
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    STATIC_URL = f'https://{}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{}/{MEDIAFILES_LOCATION}/'
+
+**21.** Link file to the templates directory in Heroku (place under the BASE_DIR line).
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, **'templates'**)
+
+**22.** Change the templates directory to TEMPLATES_DIR (place within the TEMPLATES array).
+
+TEMPLATES = [
+    {
+        …,
+        'DIRS': **[TEMPLATES_DIR]**,
+       …,
+            ],
+        },
+    },
+]
+
+**23.** Add **Heroku Hostname to ALLOWED_HOSTS**.
+
+ALLOWED_HOSTS = [**"PROJ_NAME.herokuapp.com"**, "localhost"]
+
+**24.** Create **3 new folders** on top level directory (**media, static, templates**).
+
+**25.** Create **procfile** on the top level directory called **Procfile**.
+
+**In Procfile**
+
+**26.** Add the following: **web: gunicorn PROJ_NAME.wsgi**.
+
+**27.** **Git Add, Commit and Push** to save files.
+
+**28.** Once project is complete:
+
+- In Heroku, **config var**s, remove **DISABLE STATIC**.
+
+- In GitPod, go to **settings.py** and set **DEBUG** to **False**.
+
+**29.** Add Stripe Public, Secret and Webhook key to **Heroku** config variables in settings.py.
+
+**30.** **update requirements.txt** (pip3 freeze....).
+
+**31.** Finally, **save** files again. (**Git add, commit, push**).
+
+**32.** In Heroku, go to the **Deploy tab** and *link* github project with Heroku app.
+
+**33.** Scroll to the bottom, **enable automatic deploys** for further changes.
+
+**34.** Click on **Deploy Branch**.
+
+**35.** Go to **Actions Tab** and monitor deployment.
+
+## 5. Credits
+
+### **Content**
+
+#### **Images**
+
+**Main Landing Image**
+
+**owner** = Me and my golf
+
+**Link**: [https://meandmygolf.com/wp-content/uploads/2021/03/Woflie-Preset-0439-min-scaled.jpg ](https://meandmygolf.com/wp-content/uploads/2021/03/Woflie-Preset-0439-min-scaled.jpg )
+
+**Footer Payment Image**
+
+**owner** = Zazzle Help Center
+
+**Link**: [https://help.zazzle.com/hc/article_attachments/360023193074/payment_Capture.JPG ](https://help.zazzle.com/hc/article_attachments/360023193074/payment_Capture.JPG  )
+
+**Callaway Glove One**
+
+**owner** = Amazon
+
+**Link**: [ https://images-na.ssl-images-amazon.com/images/I/514tS9U+zkL.jpg ](https://images-na.ssl-images-amazon.com/images/I/514tS9U+zkL.jpg  )
+
+**Callaway Glove Two**
+
+**owner** = Hotukdeals
+
+**Link**: [https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/P-SR7H201SRICABRETTALEATHGLOVEWHITEGRH___L.jpg ](https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/P-SR7H201SRICABRETTALEATHGLOVEWHITEGRH___L.jpg )
+
+**footjoy gloves**
+
+**owner** = WCS Store
+
+**Link**: [https://www.tgw.com/wcsstore/CatalogAssetStore/Attachment/images/products/golf/P122061/white-2-f.jpg ](https://www.tgw.com/wcsstore/CatalogAssetStore/Attachment/images/products/golf/P122061/white-2-f.jpg  )
+
+**titleist gloves**
+
+**owner** = Left Handed Golf
+
+**Link**: [https://www.lefthandedgolf.co.uk/content/images/thumbs/0006012_titleist-players-gloves-for-the-left-handed-golfer-3-pack_600.jpeg ](https://www.lefthandedgolf.co.uk/content/images/thumbs/0006012_titleist-players-gloves-for-the-left-handed-golfer-3-pack_600.jpeg  )
+
+**Ping Gloves**
+
+**owner** = Ping Media Stage
+
+**Link**: [https://pingmediastage.azureedge.net/mediastorage/mediastorage/ping-na/medialibrary/ecommerce/2020/gloves/ping_tour-back_h__0673_708x708.jpg  ](https://pingmediastage.azureedge.net/mediastorage/mediastorage/ping-na/medialibrary/ecommerce/2020/gloves/ping_tour-back_h__0673_708x708.jpg   )
+
+**Pride professional tees**
+
+**owner** = onlineEUgolf.eu
+
+**Link**: [https://www.onlinegolf.eu/dw/image/v2/AAKY_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5bed8f1e/images-square/zoom/344047-Pride-Professional-Tees-2.jpg?sw=635 ](https://www.onlinegolf.eu/dw/image/v2/AAKY_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5bed8f1e/images-square/zoom/344047-Pride-Professional-Tees-2.jpg?sw=635  )
+
+**Pride professional pro-length-plus**
+
+**owner** = Google Images
+
+**Link**: [https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/CL3H902BLUE%20314___1___L.jpg ](https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/CL3H902BLUE%20314___1___L.jpg  )
+
+**Pride mini tees**
+
+**owner** = www.golfonline.co.uk
+
+**Link**: [https://static.golfonline.co.uk/media/img/tewpt10_ex1.600x600.jpg ](https://static.golfonline.co.uk/media/img/tewpt10_ex1.600x600.jpg  )
+
+**Pro-length 2-3/4**
+
+**owner** = Google Images
+
+**Link**: [https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/CL3H902YELLO234___5___L.jpg ](https://abclive1.s3.amazonaws.com/a636a571-361b-4659-a8dc-bf75b5a14aac/productimage/CL3H902YELLO234___5___L.jpg  )
+
+**CG Long Cushion Top Tees – 72mm**
+
+**owner** = www.colegolf.ie
+
+**Link**: [https://colegolf.ie/rubber_golf_tees.jpg ](https://colegolf.ie/rubber_golf_tees.jpg  )
+
+**Golf plastic tees**
+
+**owner** = www.colgansports.ie
+
+**Link**: [https://www.colgansports.ie/wp-content/uploads/2022/03/image-asset-e1648040805831.jpeg ](https://www.colgansports.ie/wp-content/uploads/2022/03/image-asset-e1648040805831.jpeg  )
+
+**Taylormade black cap**
+
+**owner** = www.sportsdirect.ie
+
+**Link**: [https://images.sportsdirect.com/images/products/36810003_l.jpg ](https://images.sportsdirect.com/images/products/36810003_l.jpg  )
+
+****
+
+**owner** = 
+
+**Link**: [ ](  )
+
+****
+
+**owner** = 
+
+**Link**: [ ](  )
+
+****
+
+**owner** = 
+
+**Link**: [ ](  )
