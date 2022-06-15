@@ -39,7 +39,7 @@ header {
 }
 .navbar,
 .reviews-section {
-  background-color: rgba(0, 114, 0, 0.9);
+  background-color: rgba(0, 114, 0, 1);
 }
 
 .navbar .dropdown-toggle {
@@ -50,7 +50,7 @@ header {
 
 #delivery-banner,
 .new-products {
-  background-color: rgba(0, 114, 0, 0.6);
+  background-color: rgba(0, 114, 0, 0.8);
 }
 
 .mobile-icon {

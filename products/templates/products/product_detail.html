@@ -65,12 +65,12 @@
 
                     <p class="mb-0 mt-3 text-left font-weight-bold">Our price: <strong class="logo-font">€{{ product.price }}</strong> {% if product.old_price %}| was <small class="text-danger text-decoration-line-through fs-5">€{{ product.old_price }}</small>{% endif %}</p>
 
-                    <h5 class="mt-3 logo-font text-decoration-underline">Product Description</h5>
+                    <h3 class="mt-3 fs-5 logo-font text-decoration-underline">Product Description</h3>
                     <p class="mt-1">{{ product.description }}</p>
                     {% if product.features %}
                         <button aria-label="read more" onclick="readMore()" class="btn btn1" id="features-btn">Read more</button>
                         <div class="mt-3" id="more">
-                            <h4 class="mt-2">Features:</h4>
+                            <h3 class="mt-2">Features:</h3>
                             <p>{{ product.features }}</p>
                         </div>
                     {% endif %}
@@ -108,7 +108,7 @@
                              {% endif %}
                              {% endwith %}
                             <div class="col-12">
-                                <h6 class="mt-3 text-uppercase"><strong>Quantity</strong></h6>
+                                <h4 class="mt-3 fs-6 text-uppercase"><strong>Quantity</strong></h4>
                                 <div class="form-group w-50">
                                     <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
@@ -150,7 +150,7 @@
         <!-- Newest products advertising area under product description -->
         <div class="row product-container">
             <div class="col-12 my-4 text-center">
-                <h3 class="fs-2 logo-font">Check out our newest products!</h3>
+                <h5 class="fs-2 logo-font">Check out our newest products!</h5>
             </div>
                 {% for product in products %}
                     {% if product.category.name == 'new_in' %}
