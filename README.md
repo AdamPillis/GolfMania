@@ -1733,20 +1733,132 @@ ALLOWED_HOSTS = [**"PROJ_NAME.herokuapp.com"**, "localhost"]
 
 **Link**: [https://images.sportsdirect.com/images/products/36810003_l.jpg ](https://images.sportsdirect.com/images/products/36810003_l.jpg  )
 
-****
+**Callaway rogue st ls fairway wood**
 
-**owner** = 
+**owner** = www.golfonline.co.uk
 
-**Link**: [ ](  )
+**Link**: [https://static.golfonline.co.uk/media/img/rogue-st-ls-fairway-2022-sole-b.600x600.jpg  ](https://static.golfonline.co.uk/media/img/rogue-st-ls-fairway-2022-sole-b.600x600.jpg   )
 
-****
+**Titleist vokey sm4 single 54**
 
-**owner** = 
+**owner** = Google Images
 
-**Link**: [ ](  )
+**Link**: [https://trademe.tmcdn.co.nz/photoserver/full/1614648863.jpg ](https://trademe.tmcdn.co.nz/photoserver/full/1614648863.jpg  )
 
-****
+**Srixon ZX5 Driver**
 
-**owner** = 
+**owner** = GolfDigest
 
-**Link**: [ ](  )
+**Link**: [https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2021/hotlist-2021/drivers/revised-hero-images/EDIT_CLUBS_0007_GD0221_HL_DRIVER_SRIXON_ZX7_HERO.jpg.rend.hgtvcom.1850.1850.suffix/1612884822586.jpeg ](https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2021/hotlist-2021/drivers/revised-hero-images/EDIT_CLUBS_0007_GD0221_HL_DRIVER_SRIXON_ZX7_HERO.jpg.rend.hgtvcom.1850.1850.suffix/1612884822586.jpeg  )
+
+**Used color golf balls image**
+
+**owner** = www.twoguyswithballs.com
+
+**Link**: [https://twoguyswithballs.com/wp-content/uploads/color-used-golf-balls-mix.jpg ](https://twoguyswithballs.com/wp-content/uploads/color-used-golf-balls-mix.jpg  )
+
+**Titleist pro v1 balls**
+
+**owner** = www.onlinegolf.eu
+
+**Link**: [https://www.onlinegolf.eu/on/demandware.static/-/Sites-master-catalog/default/dw5ae6ee14/images-square/zoom/369394-White-Titleist-Pro-V1-12-Ball-Pack-2021-1.jpg  ](https://www.onlinegolf.eu/on/demandware.static/-/Sites-master-catalog/default/dw5ae6ee14/images-square/zoom/369394-White-Titleist-Pro-V1-12-Ball-Pack-2021-1.jpg   )
+
+**Callaway golf bag**
+
+**owner** = www.americangolf.eu
+
+**Link**: [https://www.americangolf.eu/on/demandware.static/-/Sites-master-catalog/default/dw67459810/images-square/zoom/317894-1.jpg ](https://www.americangolf.eu/on/demandware.static/-/Sites-master-catalog/default/dw67459810/images-square/zoom/317894-1.jpg  )
+
+**Ping g410 hybrid**
+
+**owner** = Google Images
+
+**Link**: [https://pingmediastage.azureedge.net/mediastorage/mediastorage/ping-na/medialibrary/clubs/hybrids/g410/g410_hybrid_3-19_sole_708x708.jpg  ](https://pingmediastage.azureedge.net/mediastorage/mediastorage/ping-na/medialibrary/clubs/hybrids/g410/g410_hybrid_3-19_sole_708x708.jpg   )
+
+**Players 4+ StaDry Stand Bag Charcoal**
+
+**owner** = Google Images
+
+**Link**: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mcguirksgolf.com%2Fp%2Ftitleist-players-4-stadry-stand-bag--charcoal---white---red%2Ftb21sx3003&psig=AOvVaw2ZIb_a2k4SbPlfUxm1araa&ust=1654162325889000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMiSgLD5i_gCFQAAAAAdAAAAABAG  ](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mcguirksgolf.com%2Fp%2Ftitleist-players-4-stadry-stand-bag--charcoal---white---red%2Ftb21sx3003&psig=AOvVaw2ZIb_a2k4SbPlfUxm1araa&ust=1654162325889000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMiSgLD5i_gCFQAAAAAdAAAAABAG   )
+
+**Ping Classic Lite Bright Golf Cap**
+
+**owner** = Google Images
+
+**Link**: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.expressgolf.co.uk%2Fproduct%2Fping-classic-lite-bright-golf-cap%2F&psig=AOvVaw0HIIz1Lr_2CTRrINiyuFqH&ust=1654163373184000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCJDknI_9i_gCFQAAAAAdAAAAABAa  ](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.expressgolf.co.uk%2Fproduct%2Fping-classic-lite-bright-golf-cap%2F&psig=AOvVaw0HIIz1Lr_2CTRrINiyuFqH&ust=1654163373184000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCJDknI_9i_gCFQAAAAAdAAAAABAa   )
+
+**Z-star XV Golf Balls**
+
+**owner** = Google Images
+
+**Link**: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.srixon.com%2Fen%2Fballs%2Fgolf-balls%2Fz-star-xv-golf-balls%2F&psig=AOvVaw1cj0Rbk4hH735dco0PRtnJ&ust=1654165223742000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMjVvuWDjPgCFQAAAAAdAAAAABAF ](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.srixon.com%2Fen%2Fballs%2Fgolf-balls%2Fz-star-xv-golf-balls%2F&psig=AOvVaw1cj0Rbk4hH735dco0PRtnJ&ust=1654165223742000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMjVvuWDjPgCFQAAAAAdAAAAABAF  )
+
+**Callaway Waterproof Jacket**
+
+**owner** = Google Images
+
+**Link**: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.golfonline.co.uk%2Fcallaway-mens-corporate-waterproof-jacket&psig=AOvVaw0rO2oGvjub4_cSxJbq0IKd&ust=1654165884967000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKjNl6GGjPgCFQAAAAAdAAAAABAq ](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.golfonline.co.uk%2Fcallaway-mens-corporate-waterproof-jacket&psig=AOvVaw0rO2oGvjub4_cSxJbq0IKd&ust=1654165884967000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKjNl6GGjPgCFQAAAAAdAAAAABAq  )
+
+**Taylormade Double Canopy Umbrella**
+
+**owner** = Google Images
+
+**Link**: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.taylormadegolf.eu%2FDouble-Canopy-Umbrella-68-In%2FB1600701.html%3Flang%3Den_DK&psig=AOvVaw3Odiduy3QylLGblH2MZnvh&ust=1654166286923000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCNDa3uCHjPgCFQAAAAAdAAAAABAG  ](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.taylormadegolf.eu%2FDouble-Canopy-Umbrella-68-In%2FB1600701.html%3Flang%3Den_DK&psig=AOvVaw3Odiduy3QylLGblH2MZnvh&ust=1654166286923000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCNDa3uCHjPgCFQAAAAAdAAAAABAG   )
+
+## **Product Information**
+Product information was taken from the official top golf brand websites.
+1. [https://www.callawaygolf.com/](https://www.callawaygolf.com/)
+2. [https://www.footjoy.com/](https://www.footjoy.com/)
+3. [https://www.titleist.com/](https://www.titleist.com/)
+4. [https://ping.com/](https://ping.com/)
+5. [https://www.srixon.com/](https://www.srixon.com/)
+
+### **Website Icons**
+
+[https://fontawesome.com](https://fontawesome.com/v5/search) was used to download all of the icons displayed within this project.
+
+### **Add read more option for product features**
+[https://www.w3schools.com/howto/howto_js_read_more.asp](https://www.w3schools.com/howto/howto_js_read_more.asp)
+
+### **Website Structure Layout**
+
+[https://startbootstrap.com](https://startbootstrap.com/) 
+
+Code Institute's **Blog Project** was also taken into consideration when designing ideas such as the dropdown menu option and the **feedback** application within this project. 
+
+### **Website Workflow Logic**
+
+Code Institute's **Boutique Ado** was closely monitored and full credits given for anything included in this project that has been implemented in this project. For example, setting things like a basket, basket items, sessions, payment system, linking and writing webhook/ stripe related code enable payment intent's to function correctly.
+
+### **Button design**
+
+[https://codepen.io](https://codepen.io/annguyn/pen/xNVprL) provided with CSS button style code. 
+
+### **Stack Overflow**
+
+- There was an issue diplaying form related error issues to which the fix was found through 
+[https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django](https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django)
+
+
+#### **Slack Community**
+- There was an issue diplaying form related error issues to which the fix was found through [https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django](https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django)
+
+#### **YouTube**
+- This video web application also helped to learn about automated testing and how to implement it.
+
+**Youtube channel**: The Dumbfounds - **Automated Testing**
+
+**To implement 404.html and check if working**
+[https://www.youtube.com/watch?v=fEoQsPvcZGs](https://www.youtube.com/watch?v=fEoQsPvcZGs)
+
+[https://www.youtube.com/watch?v=28zdhLPZ1Zk](https://www.youtube.com/watch?v=28zdhLPZ1Zk)
+
+#### **Code Institute Project 4 and Project 5 (SEO) study material**
+
+**Agile module** was re watched to learn exactly how to use and implement several Agile tools.
+
+**Automated Testing module** was also very handy for this project as well as **Bootstrap** module.
+
+**Boutique Ado** project used to guide this project towards a successfully deployed e-commerce custom designed site. 
+
+All **other** modules towards this project were also used to help create this project. 
