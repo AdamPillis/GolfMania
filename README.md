@@ -977,59 +977,59 @@ Each section displayed as a page was tested and checked through ***Mozilla Firef
 
 **Landing Page**
 
-![Mozilla Firefox landing page](static/images/devtools-report-landing_page.html.png "Mozilla Firefox landing page")
+![Mozilla Firefox landing page](static/images/firefox-landing-page.PNG "Mozilla Firefox landing page")
 
 **Products Page**
 
-![Mozilla Firefox Products page]( "Mozilla Firefox Products page")
+![Mozilla Firefox Products page](static/images/firefox-products-page.PNG "Mozilla Firefox Products page")
 
 **Product Detail Page**
 
-![Mozilla Firefox Product Detail page]( "Mozilla Firefox Product Detail page")
+![Mozilla Firefox Product Detail page](static/images/firefox-product-details-page.PNG "Mozilla Firefox Product Detail page")
 
 **Basket Page**
 
-![Mozilla Firefox Basket page]( "Mozilla Firefox Basket page")
+![Mozilla Firefox Basket page](static/images/firefox-basket-page.PNG "Mozilla Firefox Basket page")
 
 **Checkout Page**
 
-![Mozilla Firefox Checkout page]( "Mozilla Firefox Checkout page")
+![Mozilla Firefox Checkout page](static/images/firefox-checkout-page.PNG "Mozilla Firefox Checkout page")
 
 **Checkout Confirm Page**
 
-![Mozilla Firefox Checkout Confirm page]( "Mozilla Firefox Checkout Confirm page")
+![Mozilla Firefox Checkout Confirm page](static/images/firefox-checkout-confirm-page.PNG "Mozilla Firefox Checkout Confirm page")
 
 **Add Product Page**
 
-![Mozilla Firefox Add Product page]( "Mozilla Firefox Add Product page")
+![Mozilla Firefox Add Product page](static/images/firefox-add-product-page.PNG "Mozilla Firefox Add Product page")
 
 **Update Product Page**
 
-![Mozilla Firefox Update Product page]( "Mozilla Firefox Update Product page")
+![Mozilla Firefox Update Product page](static/images/firefox-update-product-page.PNG "Mozilla Firefox Update Product page")
 
 **Delete Product Page**
 
-![Mozilla Firefox Delete Product page]( "Mozilla Firefox Delete Product page")
+![Mozilla Firefox Delete Product page](static/images/firefox-delete-product-page.PNG "Mozilla Firefox Delete Product page")
 
 **Profile Page**
 
-![Mozilla Firefox Profile Page]( "Mozilla Firefox Profile Page")
+![Mozilla Firefox Profile Page](static/images/firefox-profile-page.PNG "Mozilla Firefox Profile Page")
 
 **Register Page**
 
-![Mozilla Firefox Register Page]( "Mozilla Firefox Register Page")
+![Mozilla Firefox Register Page](static/images/firefox-signup-page.PNG "Mozilla Firefox Register Page")
 
 **Log In Page**
 
-![Mozilla Firefox Log In page]( "Mozilla Firefox Log In page")
+![Mozilla Firefox Log In page](static/images/firefox-login-page.PNG "Mozilla Firefox Log In page")
 
 **Log Out Page**
 
-![Mozilla Firefox Log Out page]( "Mozilla Firefox Log Out page")
+![Mozilla Firefox Log Out page](static/images/firefox-logout-page.PNG "Mozilla Firefox Log Out page")
 
 **Admin Page**
 
-![Mozilla Firefox Admin Page]( "Mozilla Firefox Admin Page")
+![Mozilla Firefox Admin Page](static/images/firefox-admin-panel-page.PNG "Mozilla Firefox Admin Page")
 
 3. **Microsoft Edge**
 
@@ -1037,59 +1037,59 @@ Each section displayed as a page was tested and checked through ***Microsoft Edg
 
 **Landing Page**
 
-![Microsoft Edge landing page](static/images/devtools-report-landing_page.html.png "Microsoft Edge landing page")
+![Microsoft Edge landing page](static/images/edge-landing-page.PNG "Microsoft Edge landing page")
 
 **Products Page**
 
-![Microsoft Edge Products page]( "Microsoft Edge Products page")
+![Microsoft Edge Products page](static/images/edge-products-page.PNG "Microsoft Edge Products page")
 
 **Product Detail Page**
 
-![Microsoft Edge Product Detail page]( "Microsoft Edge Product Detail page")
+![Microsoft Edge Product Detail page](static/images/edge-product-detail-page.PNG "Microsoft Edge Product Detail page")
 
 **Basket Page**
 
-![Microsoft Edge Basket page]( "Microsoft Edge Basket page")
+![Microsoft Edge Basket page](static/images/edge-basket-page.PNG "Microsoft Edge Basket page")
 
 **Checkout Page**
 
-![Microsoft Edge Checkout page]( "Microsoft Edge Checkout page")
+![Microsoft Edge Checkout page](static/images/edge-checkout-page.PNG "Microsoft Edge Checkout page")
 
 **Checkout Confirm Page**
 
-![Microsoft Edge Checkout Confirm page]( "Microsoft Edge Checkout Confirm page")
+![Microsoft Edge Checkout Confirm page](static/images/edge-checkout-confirm-page.PNG "Microsoft Edge Checkout Confirm page")
 
 **Add Product Page**
 
-![Microsoft Edge Add Product page]( "Microsoft Edge Add Product page")
+![Microsoft Edge Add Product page](static/images/edge-add-product-page.PNG "Microsoft Edge Add Product page")
 
 **Update Product Page**
 
-![Microsoft Edge Update Product page]( "Microsoft Edge Update Product page")
+![Microsoft Edge Update Product page](static/images/edge-update-product-page.PNG "Microsoft Edge Update Product page")
 
 **Delete Product Page**
 
-![Microsoft Edge Delete Product page]( "Microsoft Edge Delete Product page")
+![Microsoft Edge Delete Product page](static/images/edge-delete-product-page.PNG "Microsoft Edge Delete Product page")
 
 **Profile Page**
 
-![Microsoft Edge Profile Page]( "Microsoft Edge Profile Page")
+![Microsoft Edge Profile Page](static/images/edge-profile-page.PNG "Microsoft Edge Profile Page")
 
 **Register Page**
 
-![Microsoft Edge Register Page]( "Microsoft Edge Register Page")
+![Microsoft Edge Register Page](static/images/edge-signup-page.PNG "Microsoft Edge Register Page")
 
 **Log In Page**
 
-![Microsoft Edge Log In page]( "Microsoft Edge Log In page")
+![Microsoft Edge Log In page](static/images/edge-login-page.PNG "Microsoft Edge Log In page")
 
 **Log Out Page**
 
-![Microsoft Edge Log Out page]( "Microsoft Edge Log Out page")
+![Microsoft Edge Log Out page](static/images/edge-logout-page.PNG "Microsoft Edge Log Out page")
 
 **Admin Page**
 
-![Microsoft Edge Admin page]( "Microsoft Edge Admin page")
+![Microsoft Edge Admin page](static/images/edge-admin-panel-page.PNG "Microsoft Edge Admin page")
 
 ### **Application Features Test**
 
@@ -1123,7 +1123,7 @@ Some automated testing has been completed on this project. This website consists
 
 **test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for basket views urls.
 
-![Screenshot of 18 automated tests running successfully]()
+![Screenshot of 18 automated tests running successfully](static/images/automated-tests-screenshot.PNG)
 
 #### **Manual Testing**
 
@@ -1435,55 +1435,55 @@ This website was also used to test the **web features on all screen sizes**.
 
 **Landing Page**
 
-![Am I Respnsive Landing page](static/images/amiresponsive-register-page.png "Am I Respnsive Landing page")
+![Am I Respnsive Landing page](static/images/am-i-resp-landing-page.PNG "Am I Respnsive Landing page")
 
 **Products Page**
 
-![Am I Respnsive Products page]( "Am I Respnsive Products page")
+![Am I Respnsive Products page](static/images/am-i-resp-products-page.PNG "Am I Respnsive Products page")
 
 **Product Detail Page**
 
-![Am I Respnsive Product Detail page]( "Am I Respnsive Product Detail page")
+![Am I Respnsive Product Detail page](static/images/am-i-resp-product-detail-page.PNG "Am I Respnsive Product Detail page")
 
 **Basket Page**
 
-![Am I Respnsive Basket page]( "Am I Respnsive Basket page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application. Howver, this page has been testing on several devices of different screen sizes.
 
 **Checkout Page**
 
-![Am I Respnsive Checkout page]( "Am I Respnsive Checkout page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application. Howver, this page has been testing on several devices of different screen sizes.
 
 **Checkout Confirm Page**
 
-![Am I Respnsive Checkout Confirm page]( "Am I Respnsive Checkout Confirm page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application. Howver, this page has been testing on several devices of different screen sizes.
 
 **Profile Page**
 
-![Am I Respnsive Profile page]( "Am I Respnsive Profile page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application given that the user is not logged in and unable to log in using this testing platform. Howver, this page has been testing on several devices of different screen sizes.
 
 **Add Product Page**
 
-![Am I Respnsive Add Product page]( "Am I Respnsive Add Product page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application given that the user is not logged in and unable to log in using this testing platform. Howver, this page has been testing on several devices of different screen sizes.
 
 **Update Product Page**
 
-![Am I Respnsive Update Product page]( "Am I Respnsive Update Product page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application given that the user is not logged in and unable to log in using this testing platform. Howver, this page has been testing on several devices of different screen sizes.
 
 **Delete Product Page**
 
-![Am I Respnsive Delete Product page]( "Am I Respnsive Delete Product page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application given that the user is not logged in and unable to log in using this testing platform. Howver, this page has been testing on several devices of different screen sizes.
 
 **Register Page**
 
-![Am I Respnsive register page](s "Am I Respnsive register page")
+![Am I Respnsive register page](static/images/am-i-resp-signup-page.PNG "Am I Respnsive register page")
 
 **Log In Page**
 
-![Am I Respnsive Log In page](s "Am I Respnsive Log In page")
+![Am I Respnsive Log In page](static/images/am-i-resp-login-page.PNG "Am I Respnsive Log In page")
 
 **Log Out Page**
 
-![Am I Respnsive Log Out page]( "Am I Respnsive Log Out page")
+Unable to present a screenshot given that *Am I Responsve* does not have access to go further within this e-commerce application given that the user is not logged in and unable to log in using this testing platform. Howver, this page has been testing on several devices of different screen sizes.
 
 ### **Other ways of testing responsiveness and features**
 
