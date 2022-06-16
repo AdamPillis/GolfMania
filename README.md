@@ -578,6 +578,8 @@ Given that this is the very first e-commerce project developed by the author, he
 
 - For now, products can be purchased unlimited. However, when quantity of products are limited i.e. may only have one used driver, the **quantity of a product should be set** and minus any purchases so when it reaches zero, the specific product can longer be sold again to prevent **over-buying** products.
 
+- As the developer progressed with this project, he realised that the overall design could be further improved to make the website more appealing. For example, one idea is to change the style of the **main nav** section by creating a more appealing dropdown list for all the category types, just like the dropdown headings are displayed instead of a white box appearing with the categories within. 
+
 ## 3. Testing and Bugs Fixed/Unfixed 
 
 Golf Mania E-Commerce Web manual and automated testing has been broken down into several stages, given its complexity, length and reliance on a database and deployment.
@@ -609,6 +611,8 @@ All of the testing below was done through the source code of each page on the **
 ![basket.html validation]()
 
 **checkout.html**
+
+One warning showing for empty heading. **The loading spinner icon** is included within the h1 header to center, style and make it larger. No **errors** however. 
 
 ![checkout.html validation]()
 
@@ -674,6 +678,8 @@ All of the testing below was done through the source code of each page on the **
 
 **base.html JS File**
 
+Apart from the toast function, this js script was pasted from mailchimp set up process which was followed through the guide provided in P5 study material. 
+
 ![base.html JS File validation]()
 
 **add_product/update_product.html JS File**
@@ -689,6 +695,8 @@ All of the testing below was done through the source code of each page on the **
 ![products.html JS File validation]()
 
 **quantity_input_js.html JS File**
+
+Overall, 7 warnings are displayed but these warnings are okay given that the outside scope deactivated the minus button function as you cannot add less than 1 or more than 99 to the basket. And some variables are defined twice one for **increment** and one to **decrement**.
 
 ![quantity_input_js.html JS File validation]()
 
@@ -880,15 +888,14 @@ Testing every custom python file within this application.
 
 **settings.py**
 
+Five errors show for this file on PEP8. Four of these is shown within PEP8 which was automatic and unable to break into several lines.
+The fifth one a static var which is similar to the above four.
+
 ![settings.py validation]()
 
 **urls.py**
 
 ![urls.py validation]()
-
-**wsgi.py**
-
-![wsgi.py validation]()
 
 **custom_storages.py**
 
