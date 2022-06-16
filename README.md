@@ -550,6 +550,12 @@ The developer of this website created a nav bar element called **Admin** which o
 
 ![Admin panel page](static/images/admin-panel-page.PNG)
 
+### 13. **Custom 404 error Page**
+
+A custom 404.html page has been created with a **Home Button** incase a site user accesses the page due to deny to a certain feature. The developer demonstrated it by typing in a random url to the deployed project and it is displayed as:
+
+![Custom 404 error page](static/images/custom_404_error.PNG)
+
 ### **Toasts**
 
 Toasts have been set up as includes in templates folder to display four types of toasts in the top right hand corner. **Success**, **Warning**, **Info** and **Error**. Every action taken by any user on Golf Mania's web application is displayed using toasts to ensure every site user is kept up to date of their actions. 
