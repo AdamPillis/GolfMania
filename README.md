@@ -53,13 +53,13 @@ The developer of this project has taken an Agile approach when planning out this
 
 **Epic User Stories**
 
-![Epic User Stories One]()
+![Epic User Stories One](static/images/epic-stories-one.PNG)
 
-![Epic User Stories Two]()
+![Epic User Stories Two](static/images/epic-stories-two.PNG)
 
 He started off by created an **Issue Template** on Golf Mania's Github page and used it to implement each user story broken down. Each of them included a precise explanation of what the user wants followed by **Acceptance Criteria** and **Tasks** for the developer's use. *Example is shown below*.
 
-![Full User Story, Acceptance Criteria and Tasks]()
+![Full User Story, Acceptance Criteria and Tasks](static/images/full-user-story.PNG)
 
 Another **Agile tool** used to proceed with these issues was to implement the **MOSCOW Prioratization** and split these *User Stories* into 4 categories. *Must-have*, *Should-have*, *Could-have* and *Would-have* issues. A **label** for each was created and each issue was labelled in order of importance during development i.e, what features are essential for release and what features can wait until further updates.
 
@@ -67,13 +67,13 @@ A **Milestone** called *GolfMania E-Site* was then created where the developer p
 
 **Milestone Review**
 
-![Milestone Project (open issues)]() 
+![Milestone Project (open issues)](static/images/milestone-open-issues.PNG) 
 
-![Milestone Project (closed issues)]()
+![Milestone Project (closed issues)](static/images/milestone-closed-issues.PNG)
 
 The developer then created a Project called **GolfMania E-Commerce Site User Stories** where he set up three columns **To Do**, **In Progress** and **Done**. This is where he moved each user story across and monitored what user stories have been completed, are in progress and what still needs to be done. The labels helped to identify the important user stories which needed to moved across first followed by should have's and etc. 
 
-![GitHub Project Layout]()
+![GitHub Project Layout](static/images/github-project-layout.PNG)
 
 Overall, given the Epic Stories provided at the start, a total of 35 Issues were identified and further broken down into tasks. A total of **129 tasks** were created. Once each issue was labelled by the developer, out of 35, **19** issues/user stories were identified as **Must-Have** features (just under 60%) which consisted of 75 tasks out of 129 not surpassing the **60% mark** given that an **Agile Timeboxing Approach** is considered to estimate the length of the project.
 
@@ -87,13 +87,13 @@ The developer has also researched the Google Search Engine for key words that he
 
 Below are examples of what the developer was researching and where the key words used in the meta tags were discovered. 
 
-![Meta Google Search Key Words Image One]()
+![Meta Google Search Key Words Image One](static/images/meta-key-words-one.PNG)
 
-![Meta Google Search Key Words Image Two]()
+![Meta Google Search Key Words Image Two](static/images/meta-key-words-two.PNG)
 
 **Keyword** brainstorming in progress
 
-![Meta Google Search Key Word Brainstorm]()
+![Meta Google Search Key Word Brainstorm](static/images/meta-brainstorm.PNG)
 
 ### **Marketing Strategies Planning**
 
@@ -101,11 +101,11 @@ The developer came up with a **Customer Persona** i.e, the ideal customer for th
 
 **Customer Persona**
 
-![Marketing Customer Persona]()
+![Marketing Customer Persona](static/images/customer-persona.PNG)
 
 **Marketing Strategies**
 
-![Marketing Strategies Planning Process]()
+![Marketing Strategies Planning Process](static/images/marketing-strategies.PNG)
 
 ### **Further Planning**
 
@@ -115,7 +115,7 @@ The style of writing was decided through **Google Fonts**. The main writing is k
 
 The main theme colors were chosen on [coolors.co](https://coolors.co/palette/004b23-006400-007200-008000-38b000-70e000-9ef01a-ccff33) in order to find colours which work together very well and hence, provide a better visual experience for site users.
 
-![Main color theme chosen](static/images/coolors-color-theme.png)
+![Main color theme chosen](static/images/coolors-color-theme.PNG)
 
 **Bootstrap** is used to design the overall strucuture of the website on screens of all sizes. 
 [startbootstrap.com](https://startbootstrap.com/previews/landing-page) was used to choose the main strucuture of this golf web app. The link above is linked with the specific theme used for this project. 
@@ -138,91 +138,89 @@ The landing page was planned and designed by reviewing several applications with
 
 The main header was re-designed by the developer for mobile views to ensure all features are displayed well and look aesthetically pleasing. 
 
-![Landing page mobile view sketch]()
+![Landing page mobile view sketch](static/images/landing-page-mobile-sketch.jpg)
 
 **2. Products Page** 
 
 This is where all products can be viewed in rows of 4 on larger screens and rows of one for smaller screen. Sorting can specify the user's search. This page can accessed via the header or the landing image.
 
-![Products page sketch]()
+![Products page sketch](static/images/products-page-sketch.jpg)
 
 **3. Product Detail Page**
 
 When the user click on a specific product in any of the pages, they are taken to this page where product data is displayed.
 
-![Product details page sketch]()
+![Product details page sketch](static/images/product-details-sketch.jpg)
 
 **4. Basket Page**
 
 When the user adds a product into their basket from the product details page, a session is created within her where the list of items added are stored and ready to interact with CRUD function created in views.py
 
-![Basket page sketch]()
+![Basket page sketch](static/images/basket-page-sketch.jpg)
 
 **5. Checkout Page**
 
 Once logged in, the user can access this page through their basket page when they are ready with their basket to make a payment.
 
-![Checkout page sketch]()
+![Checkout page sketch](static/images/checkout-page-sketch.jpg)
 
 **6. Checkout Confirm Page**
 
 Once a payment is received via Stripe, webhooks confirm the payment and this page is rendered with the order details sent back to the database with it.
 
-![Checkout confirm page sketch]()
+![Checkout confirm page sketch](static/images/checkout-confirm-page-sketch.jpg)
 
 **7. Add Product Page**
 
 Only accessibly by the superuser/admin. Accessible via the header where products can easily be added to the page.
 
-![Add Product page sketch]()
+![Add Product page sketch](static/images/add-product-page-sketch.jpg)
 
 **8. Profile Page**
 
 Once the user is logged in, this page also accessible via the header where delivery profile can be set up and order history can also be viewed.
 
-![Profile page sketch]()
+![Profile page sketch](static/images/profile-page-sketch.jpg)
 
 **9. Delete product page**
 
 Instead of automatically deleting a product with one click, this page will work as defense to ensure the admin wants this CRUD funcitonality to proceed, as it cannot be reversed.
 
-![Delete product page sketch]()
+![Delete product page sketch](static/images/delete-product-page-sketch.jpg)
 
 **10. Update product page**
 
 Accessible within each product and feature is only available to the admin.
 
-![Update product page sketch]()
+![Update product page sketch](static/images/update-product-page-sketch.jpg)
 
 **11. AllAuth custom design for Account html pages**
 
 All of these html pages provided by allauth include different forms so therefore, the styling of all these can also be identical. 
 
-![AllAuth Form page sketches]()
+![AllAuth Form page sketches](static/images/allauth-pages-sketch.jpg)
 
 #### **Workflow Process**
 
 The workflow process for **New Users** and **Returning Users** when interacting with the features included within this e-commerce site. 
 
-![E-Commerce App Workflow Process]()
+![E-Commerce App Workflow Process](static/images/workflow-process-sketch.jpg)
 
 #### **Project Apps and Relationships**
 
 Overall, **five main applications** were built the very least while using *Django AllAuth's user model* also. 
 
-![Project Apps and Relationships]()
+![Project Apps and Relationships](static/images/apps-relationships-sketch.jpg)
 
 **Seven different models** were also planned within these five applications and how they will be linked to each other. 
 
-![Model Sketches]()
+![Model Sketche One](static/images/model-sketch-one.PNG)
 
-**Four different models** were also planned within these three applications and how they will be linked to each other. 
-
-![Model Sketches](static/images/models-sketch.png)
+![Model Sketche Two](static/images/model-sketch-two.PNG)
 
 The **CRUD** functionality was also planned for each application. i.e. to what extent can a Site User or Admin manipulate data built from the models as shown above. 
 
-![CRUD APP Function sketch]()
+![CRUD APP Function sketch](static/images/crud-function-sketch.jpg)
 
 ## 2. **Features (existing)**
 
