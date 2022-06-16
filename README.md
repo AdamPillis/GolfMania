@@ -596,57 +596,57 @@ All of the testing below was done through the source code of each page on the **
 
 **index.html**
 
-![index.html validation]()
+![index.html validation](static/images/html-index-validation.PNG)
 
 **products.html**
 
-![products.html validation]()
+![products.html validation](static/images/html-products-validation.PNG)
 
 **product_detail.html**
 
-![product_detail.html validation]()
+![product_detail.html validation](static/images/html-product-detail-validation.PNG)
 
 **basket.html**
 
-![basket.html validation]()
+![basket.html validation](static/images/html-basket-validation.PNG)
 
 **checkout.html**
 
 One warning showing for empty heading. **The loading spinner icon** is included within the h1 header to center, style and make it larger. No **errors** however. 
 
-![checkout.html validation]()
+![checkout.html validation](static/images/html-checkout-validation.PNG)
 
 **checkout_confirm.html**
 
-![checkout_confirm.html validation]()
+![checkout_confirm.html validation](static/images/html-checkout-confirm-validation.PNG)
 
 **add_product.html**
 
-![add_product.html validation]()
+![add_product.html validation](static/images/html-add-product-validation.PNG)
 
 **profile.html**
 
-![profile.html validation]()
+![profile.html validation](static/images/html-profile-validation.PNG)
 
 **update_product.html**
 
-![update_product.html validation]()
+![update_product.html validation](static/images/html-update-product-validation.PNG)
 
 **delete_product.html**
 
-![delete_product.html validation]()
+![delete_product.html validation](static/images/html-delete-product-validation.PNG)
 
 **signup.html**
 
-![signup.html validation]()
+![signup.html validation](static/images/html-signup-validation.PNG)
 
 **login.html**
 
-![login.html validation]()
+![login.html validation](static/images/html-login-validation.PNG)
 
 **logout.html**
 
-![logout.html validation]()
+![logout.html validation](static/images/html-logout-validation.PNG)
 
 **Validating CSS file**
 
@@ -654,15 +654,15 @@ One warning showing for empty heading. **The loading spinner icon** is included 
 
 **static/css/base.css**
 
-![static/css/base.css validation]()
+![static/css/base.css validation](static/images/css-base-validation.PNG)
 
 **profiles/static/css/profile.css**
 
-![profiles/static/css/profile.css validation]()
+![profiles/static/css/profile.css validation](static/images/css-profile-validation.PNG)
 
 **checkout/static/css/checkout.css**
 
-![checkout/static/css/checkout.css validation]()
+![checkout/static/css/checkout.css validation](static/images/css-checkout-validation.PNG)
 
 **Validating JavaScript file**
 
@@ -670,39 +670,39 @@ One warning showing for empty heading. **The loading spinner icon** is included 
 
 **profiles/static/js/countryoption.js**
 
-![profiles/static/js/countryoption.js validation]()
+![profiles/static/js/countryoption.js validation](static/images/js-countryoption-validation.PNG)
 
 **checkout/static/js/stripe_elements.js**
 
-![checkout/static/js/stripe_elements.js validation]()
+![checkout/static/js/stripe_elements.js validation](static/images/js-stripe-elements-validation.PNG)
 
 **base.html JS File**
 
 Apart from the toast function, this js script was pasted from mailchimp set up process which was followed through the guide provided in P5 study material. 
 
-![base.html JS File validation]()
+![base.html JS File validation](static/images/js-base-validation.PNG)
 
 **add_product/update_product.html JS File**
 
-![add_product/update_product.html JS File validation]()
+![add_product/update_product.html JS File validation](static/images/js-add-update-product-validation.PNG)
 
 **product_detail.html JS File**
 
-![product_detail.html JS File validation]()
+![product_detail.html JS File validation](static/images/js-product-detail-validation.PNG)
 
 **products.html JS File**
 
-![products.html JS File validation]()
+![products.html JS File validation](static/images/js-products-validation.PNG)
 
 **quantity_input_js.html JS File**
 
 Overall, 7 warnings are displayed but these warnings are okay given that the outside scope deactivated the minus button function as you cannot add less than 1 or more than 99 to the basket. And some variables are defined twice one for **increment** and one to **decrement**.
 
-![quantity_input_js.html JS File validation]()
+![quantity_input_js.html JS File validation](static/images/js-quantity-input-js-validation.PNG)
 
 **basket.html JS File**
 
-![basket.html JS File validation]()
+![basket.html JS File validation](static/images/js-basket-validation.PNG)
 
 **Validating Python files**
 
@@ -714,19 +714,19 @@ Testing every custom python file within this application.
 
 **admin.py**
 
-![admin.py validation]()
+![admin.py validation](static/images/pep8-reviews-admin-valid.PNG)
 
 **models.py**
 
-![models.py validation]()
+![models.py validation](static/images/pep8-reviews-models-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-reviews-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-reviews-views-valid.PNG)
 
 2. #### profiles Application
 
@@ -734,31 +734,31 @@ Testing every custom python file within this application.
 
 **admin.py**
 
-![admin.py validation]()
+![admin.py validation](static/images/pep8-profiles-admin-valid.PNG)
 
 **forms.py**
 
-![forms.py validation]()
+![forms.py validation](static/images/pep8-profiles-forms-valid.PNG)
 
 **models.py**
 
-![models.py validation]()
+![models.py validation](static/images/pep8-profiles-models-valid.PNG)
 
 **test_forms.py**
 
-![test_forms.py validation]()
+![test_forms.py validation](static/images/pep8-profiles-testforms-valid.PNG)
 
 **test_urls.py**
 
-![test_urls.py validation]()
+![test_urls.py validation](static/images/pep8-profiles-testurls-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-profiles-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-profiles-views-valid.PNG)
 
 3. #### products Application
 
@@ -766,35 +766,35 @@ Testing every custom python file within this application.
 
 **admin.py**
 
-![admin.py validation]()
+![admin.py validation](static/images/pep8-products-admin-valid.PNG)
 
 **forms.py**
 
-![forms.py validation]()
+![forms.py validation](static/images/pep8-products-forms-valid.PNG)
 
 **models.py**
 
-![models.py validation]()
+![models.py validation](static/images/pep8-products-models-valid.PNG)
 
 **test_forms.py**
 
-![test_forms.py validation]()
+![test_forms.py validation](static/images/pep8-products-testforms-valid.PNG)
 
 **test_urls.py**
 
-![test_urls.py validation]()
+![test_urls.py validation](static/images/pep8-products-testurls-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-products-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-products-views-valid.PNG)
 
 **widgets.py**
 
-![widgets.py validation]()
+![widgets.py validation](static/images/pep8-products-widgets-valid.PNG)
 
 4. #### home Application
 
@@ -802,15 +802,15 @@ Testing every custom python file within this application.
 
 **test_urls.py**
 
-![test_urls.py validation]()
+![test_urls.py validation](static/images/pep8-home-testurls-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-home-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-home-views-valid.PNG)
 
 5. #### checkout Application
 
@@ -818,47 +818,47 @@ Testing every custom python file within this application.
 
 **admin.py**
 
-![admin.py validation]()
+![admin.py validation](static/images/pep8-checkout-admin-valid.PNG)
 
 **apps.py**
 
-![apps.py validation]()
+![apps.py validation](static/images/pep8-checkout-app-valid.PNG)
 
 **forms.py**
 
-![forms.py validation]()
+![forms.py validation](static/images/pep8-checkout-forms-valid.PNG)
 
 **models.py**
 
-![models.py validation]()
+![models.py validation](static/images/pep8-checkout-models-valid.PNG)
 
 **signals.py**
 
-![signals.py validation]()
+![signals.py validation](static/images/pep8-checkout-signals-valid.PNG)
 
 **test_forms.py**
 
-![test_forms.py validation]()
+![test_forms.py validation](static/images/pep8-checkout-testforms-valid.PNG)
 
 **test_urls.py**
 
-![test_urls.py validation]()
+![test_urls.py validation](static/images/pep8-checkout-testurls-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-checkout-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-checkout-views-valid.PNG)
 
 **webhooks.py**
 
-![webhooks.py validation]()
+![webhooks.py validation](static/images/pep8-checkout-webhooks-valid.PNG)
 
 **webhook_handler.py**
 
-![webhook_handler.py validation]()
+![webhook_handler.py validation](static/images/pep8-checkout-webhook-handler-valid.PNG)
 
 6. #### basket Application
 
@@ -866,23 +866,23 @@ Testing every custom python file within this application.
 
 **basket_tools.py**
 
-![basket_tools.py validation]()
+![basket_tools.py validation](static/images/pep8-basket-basket-tools-valid.PNG)
 
 **contexts.py**
 
-![contexts.py validation]()
+![contexts.py validation](static/images/pep8-basket-context-valid.PNG)
 
 **test_urls.py**
 
-![test_urls.py validation]()
+![test_urls.py validation](static/images/pep8-basket-testurls-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-basket-urls-valid.PNG)
 
 **views.py**
 
-![views.py validation]()
+![views.py validation](static/images/pep8-basket-views-valid.PNG)
 
 7. #### golfmania main Application
 
@@ -891,15 +891,15 @@ Testing every custom python file within this application.
 Five errors show for this file on PEP8. Four of these is shown within PEP8 which was automatic and unable to break into several lines.
 The fifth one a static var which is similar to the above four.
 
-![settings.py validation]()
+![settings.py validation](static/images/pep8-settings-valid.PNG)
 
 **urls.py**
 
-![urls.py validation]()
+![urls.py validation](static/images/pep8-project-urls-valid.PNG)
 
 **custom_storages.py**
 
-![custom_storages.py validation]()
+![custom_storages.py validation](static/images/pep8-custom-storages-valid.PNG)
 
 **Light-house Report**
 
@@ -909,55 +909,55 @@ Performance has been categorised and is the only element not above 90% given tha
 
 **Landing Page**
 
-![Light-house Report landing page](static/images/devtools-report-landing_page.html.png "Light-house Report landing page")
+![Light-house Report landing page](static/images/light-house-landing-page.PNG "Light-house Report landing page")
 
 **Products Page**
 
-![Light-house Report Products page]( "Light-house Report Products page")
+![Light-house Report Products page](static/images/light-house-products-page.PNG "Light-house Report Products page")
 
 **Product Detail Page**
 
-![Light-house Report Product Detail page]( "Light-house Report Product Detail page")
+![Light-house Report Product Detail page](static/images/light-house-product-detail-page.PNG "Light-house Report Product Detail page")
 
 **Basket Page**
 
-![Light-house Report Basket page]( "Light-house Report Basket page")
+![Light-house Report Basket page](static/images/light-house-basket-page.PNG "Light-house Report Basket page")
 
 **Checkout Page**
 
-![Light-house Report Checkout page]( "Light-house Report Checkout page")
+![Light-house Report Checkout page](static/images/light-house-checkout-page.PNG "Light-house Report Checkout page")
 
 **Checkout Confirm Page**
 
-![Light-house Report Checkout Confirm page]( "Light-house Report Checkout Confirm page")
+![Light-house Report Checkout Confirm page](static/images/light-house-checkout-confirm-page.PNG "Light-house Report Checkout Confirm page")
 
 **Add Product Page**
 
-![Light-house Report Add Product page]( "Light-house Report Add Product page")
+![Light-house Report Add Product page](static/images/light-house-add-product-page.PNG "Light-house Report Add Product page")
 
 **Update Product Page**
 
-![Light-house Report Update Product page]( "Light-house Report Update Product page")
+![Light-house Report Update Product page](static/images/light-house-update-product-page.PNG "Light-house Report Update Product page")
 
 **Delete Product Page**
 
-![Light-house Report Delete Product page]( "Light-house Report Delete Product page")
+![Light-house Report Delete Product page](static/images/light-house-delete-product-page.PNG "Light-house Report Delete Product page")
 
 **Profile Page**
 
-![Light-house Report Profile Page]( "Light-house Report Profile Page")
+![Light-house Report Profile Page](static/images/light-house-profile-page.PNG "Light-house Report Profile Page")
 
 **Register Page**
 
-![Light-house Report Register Page]( "Light-house Report Register Page")
+![Light-house Report Register Page](static/images/light-house-signup-page.PNG "Light-house Report Register Page")
 
 **Log In Page**
 
-![Light-house Report Log In page]( "Light-house Report Log In page")
+![Light-house Report Log In page](static/images/light-house-login-page.PNG "Light-house Report Log In page")
 
 **Log Out Page**
 
-![Light-house Report Log Out page]( "Light-house Report Log Out page")
+![Light-house Report Log Out page](static/images/light-house-logout-page.PNG "Light-house Report Log Out page")
 
 ### **Testing colour contrast**
 
