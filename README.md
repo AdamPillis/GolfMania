@@ -248,11 +248,11 @@ It consists of three sections:
 
 If the user is not signed in, only three features are visible.
 
-1. **Register Link**
-2. **Log in Link**
-3. **Basket Link**
+1. **Register Button**
+2. **Log in Button**
+3. **Basket Icon**
 
-![Header Not Logged In]()
+![Header Not Logged In](static/images/header-not-logged-in.PNG)
 
 Signed In as Site User
 
@@ -262,37 +262,39 @@ Once the user signs in, the two buttons are replaced with an My Account and icon
 2. **My Profile**
 3. **Log Out**
 
-![Header Not Logged In as Site User]()
+![Header Logged In as Site User](static/images/header-user-logged-in.PNG)
 
 **Signed In as Admin**
 
 If signed in as Admin, two additional features are available to the **superuser** which are the **Admin Panel** and **Add Product**. Through the admin panel, the superuser has *full control* of Golf Mania database. The Add Product feature tells it function and it terms of style, it matches the overall theme of Golf Mania's website.
 
-![Header Logged In As Admin]()
+![Header Logged In As Admin](static/images/header-admin-logged-in.PNG)
 
 #### **Main Nav Bar**
 
 Contains **4** main **dropdown lists**. The first dropdown focuses on sorting products using their *model field data* such as *price*, *rating*, *brand* etc. The other two offer the main products while the final dropdown list consists of special offers which are displayed throughout the website.
 
-![Main Nav Bar]()
+![Main Nav Bar](static/images/main-nav.PNG)
+
+![Main Nav Bar Dropdown](static/images/main-nav-dropdown.PNG)
 
 #### **Delivery Banner**
 
 Contains a delivery message telling the site user that over the delivery threshold, Golf Mania offers *free next day delivery* which fades in and out using **CSS in static/base.css**.
 
-![Delivery Banner]()
+![Delivery Banner](static/images/delivery-banner.PNG)
 
 #### **Header (mobile view)**
 
 In mobile view, all features within the header are rearranged for an enhanced visual look. The *website logo* is displayed at the top with a *direct home link*. The Main Nav dropdown lists are placed in another dropdown lists as *clickable icon*. All of the account features are now placed within in icon as a dropdown. The *log in and register buttons* are also replaced with a **dropable list**. The *search bar* is given full width as well as the *delivery banner*.
 
-![Mobile view of Header]()
+![Mobile view of Header](static/images/header-mobile-view.PNG)
 
 #### **Landing Image**
 
 The landing image covers 100VH to visually attract the site users attention to the *Welcome Message and some ear catching info about the Spring Sale*. This section also contains a **View All Products** feature as a **button**.
 
-![Landing Image]()
+![Landing Image](static/images/landing-image.PNG)
 
 #### **Clearance Section**
 
@@ -300,7 +302,7 @@ In this section, a list of category **"clearance"** products are advertised whic
 
 In terms of view, this section display **4** products on *large* screens, **2** on *medium* and **1** on *smaller* screens to maintain the size of photo for better visual design. 
 
-![Clearance Section]()
+![Clearance Section](static/images/clearance-section.PNG)
 
 #### **Reviews Section**
 
@@ -308,7 +310,7 @@ In this section, two reviews would be allowed to be viewed and after that, they 
 
 In terms of view, this section displays **2** products on *larger* screens and **1** on smaller screens.
 
-![Reviews Section]()
+![Reviews Section](static/images/reviews-section.PNG)
 
 #### **Footer Section**
 
@@ -318,15 +320,15 @@ In the middle, four external social media page icons are equally alligned starti
 
 In case, the page gets deleted by Facebook, the following three images are screenshot of Golf Mania's facebook page.
 
-![Facebook Image One]()
+![Facebook Image One](static/images/facebook-page-one.png)
 
-![Facebook Image Two]()
+![Facebook Image Two](static/images/facebook-page-two.png)
 
-![Facebook Image Three]()
+![Facebook Image Three](static/images/facebook-page-three.png)
 
 At the bottom of the footer, a **payment** image is displayed which tells the user what payment types are accepted on Golf Mania's website followed by the developer's signature. The **payment image** is wrapped in an **anchor** tag which is linked with *PayPals* home page with the attribute **rel=nofollow** as it is *unrelated to the site*. 
 
-![Footer]()
+![Footer](static/images/footer.PNG)
 
 
 ### 2. **Products Page**
@@ -341,17 +343,17 @@ Accross, a filter feature is available to the site user to filter products by a 
 
 Below the above features is a Back to Home button that the site user can use to go back to the index page and clear any sorting/filtering options. 
 
-![Products page top section]()
+![Products page top section](static/images/products-page-top-section.PNG)
 
 #### **Products Section**
 
 The products are listed in rows of **4** on *larger screens*, **2** on *media screens* and **1** on mobile screens. Each product is **clickable** to view each product **in detail** using *product_detail.html*. From a site user's point of view, the most important data is displayed here to spark their interest within the products. Examples, are **price**, **rating** and whether its *new* or *used*. The category type of each product is also displayed which works as a **link** if the user wants to be redirected to view a *clicked* category. 
 
-![Products section as Site User]()
+![Products section as Site User](static/images/products-page-site-user.PNG)
 
 As a site admin, two additional features are available. To **update** and **delete** a specific product.
 
-![Products section as Site Admin]()
+![Products section as Site Admin](static/images/products-page-admin.PNG)
 
 As seen in the screenshots above, their is a *see-through up-arrow* **button** which takes the user **back to the top** of the page with a click given that all products are listed on the one page. This button is visible and available to the user through all screen sizes and works using *Javascript* at the bottom of this page.
 
@@ -362,7 +364,7 @@ As seen in the screenshots above, their is a *see-through up-arrow* **button** w
 
 On the left hand side, the product image is 400px by 400px. When clicked, the image is opened in a separate tab for the site user to view. Below the image, Zoom In and Zoom Out features are available to the site user to maintain a good level of interactivity. 
 
-![Products page top section]()
+![Product Detail page image section](static/images/product_detail_image.PNG)
 
 #### **Product Details Section**
 
@@ -373,13 +375,19 @@ The user has full control of the quantity that the can add to the basket using t
 
 Once the product is added to the basket, the user would assumingly continue shopping so a Keep Shopping button is also displayed. At this point, the basket can either be viewed using the button displayed within a **successfully added toast** or the basket icon in the main header where the total is calculated and displayed. 
 
+![Product Detail page details section](static/images/product_detail_details.PNG)
+
+![Product Detail page features section](static/images/product_detail_details_features.PNG)
+
+![Product Detail page success toast](static/images/product_detail_success_toast.PNG)
+
 #### **Newest Products Section**
 
 In this section, a list of category **"new in"** products are advertised and each product is *clickable* to **view in full detail** and add to their basket if they so wish. Only vital, eye-catching data is displayed to maintain a large image size.
 
 In terms of view, this section display **4** products on *large* screens, **2** on *medium* and **1** on *smaller* screens to maintain the size of photo for better visual design. 
 
-![Newest Products Section]()
+![Newest Products Section](static/images/product_detail_newest.PNG)
 
 ### 4. **Basket Page**
 
@@ -387,17 +395,19 @@ The shopping basket page is split into two sections.
 
 On the left hand side, all of the products within the basket are displayed in rows. The product image is smaller and also **clickable** to go back to view the product in detail again. The **quanity** can be **adjusted** by the user along with **removing** items from the basket. 
 
-![Shopping Basket Product Details]()
+![Shopping Basket Product Details](static/images/basket-product-details.PNG)
 
 On the right hand side, the order summary is displayed with the *basket total* and a *delivery total* of €10.00 if basket total is under €80.00. An *alert message* is displayed under the delivery total if it is **chargable** while a **pleasing message** is displayed if the basket total is above €80.00. The order total is styled to stand out which is important for the user to know before proceeding. 
 
 The feature buttons available under order summary are **Keep Shopping** which takes the user back to the products page and **Secure Checkout** if logged in or **Sign In to Continue** otherwise. The workflow process cannot continue to *checkout* unless the user is logged in.
 
 **Shopping Basket Order Summary Logged In**
-![Shopping Basket Order Summary Logged In]()
+
+![Shopping Basket Order Summary Logged In](static/images/basket-summary-logged-in.PNG)
 
 **Shopping Basket Order Summary Logged Out**
-![Shopping Basket Order Summary Logged Out]()
+
+![Shopping Basket Order Summary Logged Out](static/images/basket-summary-logged-out.PNG)
 
 ### 5. **Checkout Page**
 
@@ -405,13 +415,13 @@ The checkout page is also split into two sections.
 
 On the *right hand side*, the shopping basket details are displayed for the last time followed by the order summary. The user can still go back to the basket and edit it using the **edit basket** internal link to go back to **basket.html**. The product image is also **clickable** in this section to view the product in **product_details.html** again to be sure. 
 
-![Checkout Shopping Basket]()
+![Checkout Shopping Basket](static/images/checkout-shopping-basket.PNG)
 
 On the *left hand side*, the checkout form is displayed and validated using django forms and required fields set for vitals information for delivery purposes. 
 
 The developer has included a field for additional information that the site user may want to share in terms of delivery. Required fields are labelled with **"*"** and a short message under the form explains this feature. If the user does not have a profile set up yet or if they need to update their profile using the typed in delivery data, there is a **Save Delivery Information** checkbox that is checked and calls a function using the Stripe payment system's webhooks. 
 
-![Checkout Form]()
+![Checkout Form](static/images/checkout-delivery-form.PNG)
 
 At the bottom of this section, the "Payment section" is imported using Stripe where payment details are entered and validated.
 
@@ -420,7 +430,7 @@ Below, two buttons are displayed.
 1. Back to **Basket Button**
 2. **Complete Order** Button to send Stripe the validated data and take payment and a small message underneath telling the user how much they are going to be charged as a final **alert message**
 
-![Checkout Buttons]()
+![Checkout Buttons](static/images/checkout-form-buttons.PNG)
 
 For responsive design, the **Shopping Basket and Order Summary** is displayed first on smaller screens followed by the **checkout and payment form** to maintain the workflow.
 
@@ -431,17 +441,17 @@ For responsive design, the **Shopping Basket and Order Summary** is displayed fi
 
 The checkout confirm page is rendered if the payment intent is successfull. It offers a **personal Thank You message** followed by and **Shop Again Button** linked with the *products page*. At this point, a confirmation email is sent to the user confirming the order and the email receiving this is displayed at the top of the page also. 
 
-![Checkout Confirm Top of the page from Checkout]()
+![Checkout Confirm Top of the page from Checkout](static/images/checkout-confirm-top.PNG)
 
 The user has access to view order histories through their profile page. As a result, the message at the top is changed as well as the **button** to **Back to My Profile**. An *info toast* is also rendered to keep the user up to date in case they clicked into it by accident. 
 
-![Checkout Confirm Top of the page from Profile]()
+![Checkout Confirm Top of the page from Profile](static/images/checkout-confirm-top-from-profile.PNG)
 
 #### **Order Summary Section**
 
 Below, the order summary is broken into three sections when displaying order data. **Personal**, **Delivery** and **Cost Summary** details. 
 
-![Checkout Confirm Order summary]()
+![Checkout Confirm Order summary](static/images/checkout-confirm-order-summary.PNG)
 
 #### **Newest Products Section**
 
@@ -449,13 +459,13 @@ In this section, a list of category **"new in"** products are advertised and eac
 
 In terms of view, this section display **4** products on *large* screens, **2** on *medium* and **1** on *smaller* screens to maintain the size of photo for better visual design. 
 
-![Checkout Confirm Newest Product Section]()
+![Checkout Confirm Newest Product Section](static/images/checkout-confirm-newest-section.PNG)
 
 ### 7. **Add Product Page**
 
 This page is only available to the admin. A warm welcome message greets the superuser and below, it displays the product form using crispy forms to enhance the visual look of the form itself so that products can be instantly added to the products page and its a feature doable in an environment that matches the overall theme of the website rather than logging into the admin panel. 
 
-![Add Product Top of page]()
+![Add Product Top of page](static/images/add-product-top.PNG)
 
 The image field has been styled to match the general button style while the image file name is also displayed when one is selected. If not image is selected, the standard **no image** file will replace the empty field.
 
@@ -463,19 +473,19 @@ At the bottom of the form, two buttons are displayed:
 1. **Cancel** - to bring the admin back to the products page.
 2. **Add Product** - to add the new product to the database.
 
-![Add Product Bottom of page]()
+![Add Product Bottom of page](static/images/add-product-bottom.PNG)
 
 ### 8. **Update Product Page**
 
 The update product page is quite identical to the add product page. The title at the top changes to **Update Product** and an *instance* of a specific product is displayed that is changeable.
 
-![Update Product Top of page]()
+![Update Product Top of page](static/images/update-product-top.PNG)
 
 The image field displays the current image saved with an additional feature to remove the image altogether or upload a new one instead.
 
 In terms of the buttons at the bottom, instead of the Add Product, an **Update Button** is displayed. 
 
-![Update Product Bottom of page]()
+![Update Product Bottom of page](static/images/update-product-bottom.PNG)
 
 ### 9. **Delete Product Page**
 
@@ -484,7 +494,7 @@ It acts as an additional level of defense in case the delete function was called
 1. **Cancel button** - to cancel delete function and return to products.html
 2. **Submit Button** - to confirm and delete product. 
 
-![Delete Product Page]()
+![Delete Product Page](static/images/delete-product.PNG)
 
 ### 10. **Profile Page**
 
@@ -492,11 +502,11 @@ The profile can be opended via the fixed top header. This page is also split int
 
 The profile form on the left hand side which can be empty or an instance of *saved delivery information*. Using the **Update Button** at the bottom of the page will update the profile at any point instantly.
 
-![Profile Form]()
+![Profile Form](static/images/profile-form.PNG)
 
 If the site user has made an order using the logged in account, the previous orders will be displayed which are linked with the **Order History checkout confirm** html page as mentioned above in checkout confirm features. Only the first 7 digits of the order number are visible for each previous order and **clickable** to view them in full detail. If the orders exceed a certain amount, the order history turns into a scrollable list for better visual looks followed by a **Shop Again** button to return the user to the product page. 
 
-![Profile Order History]()
+![Profile Order History](static/images/profile-order-history.PNG)
 
 When displayed on smaller screen, the profile form is shown first followed by the Order History section.
 
@@ -510,7 +520,7 @@ The user is asked to enter their **email twice** followed by a **username** and 
 
 The new user only needs to provide a username and a strong password which is validated through AllAuth.
 
-![Sign up page]()
+![Sign up page](static/images/register-page.PNG)
 
 **Log In Page**
 
@@ -520,7 +530,7 @@ The **Remember Me** feature is available to the user to *tick* so that their log
 
 The **Sign In** button logs the user in and the *nav bar elements* displayed change accordingly.
 
-![Log in page]()
+![Log in page](static/images/log-in-page.PNG)
 
 **Log Out Page**
 
@@ -530,7 +540,7 @@ A **cancel** link is displayed to the user if they have changed their or if they
 
 However, if the user wishes to continue, they just have to simply click on the styled **Sign Out Button**.
 
-![Log out page]()
+![Log out page](static/images/log-out-page.PNG)
 
 The **rest of the AllAuth html pages** have also been *custom designed* to maintain the overall theme in terms of style and color.
 
@@ -538,7 +548,7 @@ The **rest of the AllAuth html pages** have also been *custom designed* to maint
 
 The developer of this website created a nav bar element called **Admin** which only appears if the user logged in is the superuser (manager). This element is linked with Django's admin panel through which the manager is granted all of the CRUD functionality of all custom applications created as well as allauth's **user model**. They are given the ability to return to the website at any point through the link in the top right corner.
 
-![Admin panel page]()
+![Admin panel page](static/images/admin-panel-page.PNG)
 
 ### **Toasts**
 

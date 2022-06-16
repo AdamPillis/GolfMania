@@ -111,8 +111,8 @@
                                             <!-- if user is superuser, display edit and delete options -->
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a aria-label="update" class="text-info fs-6" href="{% url 'update_product' product.id %}">Update</a> |
-                                                    <a aria-label="delete" class="text-danger fs-6" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                    <a aria-label="update" class="text-info fs-6" href="{% url 'update_product' product.id %}"><strong>Update</strong></a> |
+                                                    <a aria-label="delete" class="text-danger fs-6" href="{% url 'delete_product' product.id %}"><strong>Delete</strong></a>
                                                 </small>
                                             {% endif %}
                                         </div>
