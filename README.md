@@ -1,7 +1,6 @@
 # [Golf Mania](https://golf-mania.herokuapp.com/)
 
 ![Landing Page](static/images/welcome-image.PNG "HighDunes Landing Page")
-[LANDING PAGE SCREENSHOT]
 
 ### **What is Golf Mania?**
 
@@ -52,6 +51,12 @@ As a returning user, the site user can **log in**, **add items** to their bag, p
 
 The developer of this project has taken an Agile approach when planning out this e-commerce web application. He created and reviewed a list of **Epic Stories** which he further broke down into smaller user stories to give himself a more precise estimate of the length of time it is going to take to create the project.
 
+**Epic User Stories**
+
+![Epic User Stories One]()
+
+![Epic User Stories Two]()
+
 He started off by created an **Issue Template** on Golf Mania's Github page and used it to implement each user story broken down. Each of them included a precise explanation of what the user wants followed by **Acceptance Criteria** and **Tasks** for the developer's use. *Example is shown below*.
 
 ![Full User Story, Acceptance Criteria and Tasks]()
@@ -93,6 +98,12 @@ Below are examples of what the developer was researching and where the key words
 ### **Marketing Strategies Planning**
 
 The developer came up with a **Customer Persona** i.e, the ideal customer for the e-commerce site followed by *forms of essential marketing* that Golf Mania's project is to include. 
+
+**Customer Persona**
+
+![Marketing Customer Persona]()
+
+**Marketing Strategies**
 
 ![Marketing Strategies Planning Process]()
 
@@ -205,6 +216,10 @@ Overall, **five main applications** were built the very least while using *Djang
 
 ![Model Sketches]()
 
+**Four different models** were also planned within these three applications and how they will be linked to each other. 
+
+![Model Sketches](static/images/models-sketch.png)
+
 The **CRUD** functionality was also planned for each application. i.e. to what extent can a Site User or Admin manipulate data built from the models as shown above. 
 
 ![CRUD APP Function sketch]()
@@ -311,7 +326,7 @@ In case, the page gets deleted by Facebook, the following three images are scree
 
 ![Facebook Image Three]()
 
-At the bottom of the footer, a **payment** image is displayed which tells the user what payment types are accepted on Golf Mania's website followed by the developer's signature.
+At the bottom of the footer, a **payment** image is displayed which tells the user what payment types are accepted on Golf Mania's website followed by the developer's signature. The **payment image** is wrapped in an **anchor** tag which is linked with *PayPals* home page with the attribute **rel=nofollow** as it is *unrelated to the site*. 
 
 ![Footer]()
 
@@ -1191,6 +1206,8 @@ While the developer is fully aware of the advantages of full automated testing, 
     - Youtube URL opens in new tab = **true**
 
     - **Payment Method** image responsive = **true**
+    - **Payment Method** image opens in new page = **true**
+    - **Payment Method** image open Paypal home page = **true**
     
 - ### **2. products.html features**
     - *Search criteria message* displays number of products found = **true**
