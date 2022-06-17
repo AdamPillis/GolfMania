@@ -16,7 +16,7 @@ def profile(request):
     updated if submitted. No required fields here.
     """
     profile = get_object_or_404(Profile, user=request.user)
-
+    # if profile form submitted, validate and update
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST, instance=profile)
         if profile_form.is_valid():

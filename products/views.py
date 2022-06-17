@@ -99,7 +99,7 @@ def add_product(request):
         messages.error(
             request, 'Sorry but you do not have access to this task.')
         return redirect(reverse('home'))
-
+    # if product form submitted, validate and send toast feedback
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
         if product_form.is_valid():
@@ -130,7 +130,7 @@ def update_product(request, pk_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, id=pk_id)
-
+    # if product form submitted, validate and send toast feedback
     if request.method == 'POST':
         product_form = ProductForm(
             request.POST, request.FILES, instance=product)

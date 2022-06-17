@@ -10,7 +10,6 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from products.models import Product
-# attaching profile model once profile app created
 
 # attaching profile model once profile app created
 from profiles.models import Profile

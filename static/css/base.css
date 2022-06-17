@@ -217,6 +217,7 @@ footer i {
   position: relative;
   margin: 40px auto;
   top: 2%;
+  border-radius: 8px;
 }
 /* styling review section */
 .reviews-section {

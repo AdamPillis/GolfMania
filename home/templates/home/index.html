@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- landing image section -->
 <div class="landing-image">
     <div class="container-fluid col-lg-12">
         <div class="row justify-content-end">
@@ -25,6 +26,7 @@
         </div>
     </div>
 </div>
+<!-- clearance products section -->
 <section class="mx-auto">
     <div class="container-fluid product-container">
         <!-- Clearance products advertising area under landing image to catch user's attention with best deals -->
@@ -32,6 +34,7 @@
             <div class="col-12 text-center mt-3">
                 <h2 class="logo-font">Clearance Offers now Available!</h2>
             </div>
+                <!-- style and structure for each product displayed -->
                 {% for product in products %}
                     {% if product.category.name == 'clearance' %}
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3 mx-auto my-3">

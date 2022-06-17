@@ -4,42 +4,42 @@
 
 ### **What is Golf Mania?**
 
-Golf Mania is an online e-commerce, web application designed to sell golf related products from Ireland. The website sells several brands in many categories and also offers an easy navigation system to allow the user to have full control of their actions during their site visit and buying experience. The web applications main aim is to sell new and used golf products from Ireland.
+Golf Mania is an online B2C(business to customer) e-commerce web application designed to sell golf related products from Ireland. The website sells several brands in many categories and also offers an easy navigation system to allow the user to have full control of their actions during their site visit and buying experience. The web applications main aim is to sell new and used golf products from Ireland.
 - Site users can browse the website and add products to their basket without the need to **register** or **log in**.
 - Once logged in, the user has the **ability** to proceed to checkout and purchase items followed by confirmation.
 - As a logged in user, a profile can be saved using the billing information which eases future purchases.
 - Descriptive golf products with lots of interactive features throughout the purchasing experience.
 - Email verification/confirmation included.
 
-Currently, Golf Mania's website only consists of example products that can potentially be sold on the website. However, the **Project Aim** is to demonstrate how a business of any size can buy and sell products online while maintaining a high *Search Engine Optimization*. This kind of website could work with any theme/category/brand etc. This particular project focuses on selling cheap, golf equipments to its online customers.
+Currently, Golf Mania's website only consists of example products that can potentially be sold on the website. However, the **Project Aim** is to demonstrate how a business of any size can buy and sell products online while maintaining a high *Search Engine Optimization*. This kind of website could work with any theme/category/brand etc. This particular project focuses on selling cheap, golf equipments to its online customers. Given some given features such as uploading products could mean that this *Project* could also develop further into **Buy and Sell**.
 
-Golf Mania currently has a low number of products and product types but given the database models, this can be expanded on quite easily from any perspective which makes it an ideal project to start off with. The project is set it up with **Stripe payment system** and billing information is saved to the project's database through **Stripe webhook** for safer online data transfer.
+Golf Mania currently has a low number of products and product types but given the database models, this can be expanded on quite easily from any perspective which makes it an ideal project to start off with. The project is set it up with **Stripe payment system** and billing information is saved to the project's database through **Stripe webhooks** for safer online data transfer and to **prevent** an order being generated without a *valid payment*.
 
 A review app has been included which can also be expanded by implementing more CRUD functionality which would be beneficial for building **customer confidence**.
 
 ### **How it works?**
 
-1. The header offers lots of features to the site user that they have access to at all times, from the moment they land on the site. They can search for specific items, register, log in, filter/sort specific product or browse all products. 
+1. The **header** offers lots of features to the site user that they have access to at all times, from the moment they land on the site. They can search for specific items, register, log in, filter/sort specific product, read customer reviews or browse products. 
 
-2. The landing page offers a large image that is fixed under the header with a **Welcome Message** with a button that takes the user to view all of the products, which is the key function of the site and the reason the site user landed on the site. 
+2. The landing page offers a large image that is fixed under the header with a **Welcome Message** and **eye-catching** information regarding a *Spring Sale* followed by a **button** that takes the user to view all of the products, which is the key function of the site and the reason the site user landed on the site. 
 
-3. Site users can view special deals on the landing page and reviews. From the products page which is *accessible* through the sticky header or the landing image button. 
+3. Site users can view **special deals** on the landing page and **reviews**. From the products page which is *accessible* through the sticky header or the landing image button. 
 
-4. From the moment the site user starts clicking on product to view them in detail, they can use features such as *zoom in/out* or *read more* features. Products can also be added to the basket that is created as a session for them as well as **opening the basket** and **edit** it given all four CRUD functionalities *available* to them *without* the need to **log in**.
+4. From the moment the site user starts clicking on product to view them in detail, they can use features such as *zoom in/out* or *read more* features. Products can also be added to the basket that is created as a session for them as well as **opening the basket** and **view**, **edit**, **update** and **delete** it, given all four CRUD functionalities *available* to them *without* the need to **log in**.
 
 5. If the site wishes to proceed to check out, the **log in button** appears on the basket page. If logged in already, the continue to **secure checkout** button is available instead. 
 
-6. As a logged in user, the site user has access to their personal profile which they can either set up *before purchasing products* or *when filling out their delivery details*, they tick the box to save their delivery information for future purchases.
+6. As a logged in user, the site user has access to their personal profile which they can either set up *before purchasing products* or *when filling out their delivery details*, they **tick the box** to *save* their delivery information for future purchases.
 
-7. Once the checkout form is filled out and submitted, the site user is directed to the **checkout confirm** page where they can review their order details. However, this only happens **if the payment intent is successful** to ensure no order goes through without a payment. The order data is transferred to stripe *via webhooks* and if the payment is successfull, the data is safely transferred back to Golf Mania's database as an *order*.
+7. Once the checkout form is filled out and submitted, the site user is directed to the **checkout confirm** page where they can review their order details. However, this only happens **if the payment intent is successful** to ensure no order goes through without a payment. The order data is transferred to stripe *via webhooks* and if the payment is successfull, the data is *safely* transferred back to Golf Mania's database as an *order*.
 
 ### **Who is it for?**
 
-Ireland is home to over 200 golf courses. As a result, it has become a popular region for global golfers to visit for the 66 million golfers worldwide and it also attracts more locals to start playing the sport. Golf Mania currently next day delivery over the delivery allowance of €80. This gives confidence for **tourists** to make cheap orders which they can receive the next day during their holiday as well as being a great online golf store for **Irish golfers** to buy cheaper products from, **used** and **new**.
+Ireland is home to over 200 golf courses. As a result, it has become a popular region for global golfers to visit for the *66 million* golfers worldwide and it also attracts more locals to start playing the sport. Golf Mania currently next day delivery over the delivery allowance of €80. This gives confidence for **tourists** to make cheap orders which they can receive the next day during their holiday as well as being a great online golf store for **Irish golfers** to buy cheaper products from, **used** and **new**.
 
 **New Users**
 
-New Users have the ability to view the website and all of its products in detail without the need to enter any data. However, if they wish to make full use and make a purchase, an account needs to be registered first which is either available through the top header or the view basket html page. Once an account is registered and email is verified, the site user has the ability to either create a profile for themselves for each future purchase or they can just save their delivery details during their first purchase. 
+New Users have the ability to view the website and all of its products in detail *without* the need to enter any data. However, if they wish to make full use and make a purchase, an account needs to be **registered** first which is either available through the top header or the view basket html page. Once an account is registered and **email** is *verified*, the site user has the ability to either create a profile for themselves for each future purchase or they can just **save** their delivery details during their first purchase. 
 
 **Returning Users**
 
@@ -63,11 +63,15 @@ He started off by created an **Issue Template** on Golf Mania's Github page and 
 
 Another **Agile tool** used to proceed with these issues was to implement the **MOSCOW Prioratization** and split these *User Stories* into 4 categories. *Must-have*, *Should-have*, *Could-have* and *Would-have* issues. A **label** for each was created and each issue was labelled in order of importance during development i.e, what features are essential for release and what features can wait until further updates.
 
-A **Milestone** called *GolfMania E-Site* was then created where the developer prioratized the user stories in order of importance which offered a clean direction in terms of the overall, project workflow.
+A **Milestone** called *GolfMania E-Site* was then created on this project's Github repository where the developer **prioratized** the user stories in order of importance which offered a *clean direction* in terms of the overall, project workflow.
 
 **Milestone Review**
 
+**Open Issues**
+
 ![Milestone Project (open issues)](static/images/milestone-open-issues.PNG) 
+
+**Closed Issues**
 
 ![Milestone Project (closed issues)](static/images/milestone-closed-issues.PNG)
 
@@ -91,7 +95,7 @@ Below are examples of what the developer was researching and where the key words
 
 ![Meta Google Search Key Words Image Two](static/images/meta-key-words-two.PNG)
 
-**Keyword** brainstorming in progress
+**Keyword** brainstorming in progress with the help of Search Engine Screenshots.
 
 ![Meta Google Search Key Word Brainstorm](static/images/meta-brainstorm.PNG)
 
@@ -126,7 +130,7 @@ The main theme colors were chosen on [coolors.co](https://coolors.co/palette/004
 
 [codepen.io](https://codepen.io/annguyn/pen/xNVprL) was used to select an overall button style for this project.
 
-##### **HTML page structure sketches**
+### **HTML page structure sketches**
 
 **1. Landing Page** 
 
@@ -142,7 +146,7 @@ The main header was re-designed by the developer for mobile views to ensure all 
 
 **2. Products Page** 
 
-This is where all products can be viewed in rows of 4 on larger screens and rows of one for smaller screen. Sorting can specify the user's search. This page can accessed via the header or the landing image.
+This is where all products can be viewed in rows of 4 on larger screens and rows of one for smaller screen. Sorting can specify the user's search. This page can accessed via the **header** or the **landing image button**.
 
 ![Products page sketch](static/images/products-page-sketch.jpg)
 
@@ -178,7 +182,7 @@ Only accessibly by the superuser/admin. Accessible via the header where products
 
 **8. Profile Page**
 
-Once the user is logged in, this page also accessible via the header where delivery profile can be set up and order history can also be viewed.
+Once the user is logged in, this page is also accessible via the header where delivery profile can be set up and *order history* can also be viewed.
 
 ![Profile page sketch](static/images/profile-page-sketch.jpg)
 
@@ -190,7 +194,7 @@ Instead of automatically deleting a product with one click, this page will work 
 
 **10. Update product page**
 
-Accessible within each product and feature is only available to the admin.
+Accessible within each product and feature is only available to the **admin**.
 
 ![Update product page sketch](static/images/update-product-page-sketch.jpg)
 
@@ -254,7 +258,7 @@ If the user is not signed in, only three features are visible.
 
 ![Header Not Logged In](static/images/header-not-logged-in.PNG)
 
-Signed In as Site User
+**Signed In as Site User**
 
 Once the user signs in, the two buttons are replaced with an My Account and icon which acts as a dropdown list for more features such as viewing and creating My Profile. My is used as it is from a user's point of view.
 
@@ -266,7 +270,7 @@ Once the user signs in, the two buttons are replaced with an My Account and icon
 
 **Signed In as Admin**
 
-If signed in as Admin, two additional features are available to the **superuser** which are the **Admin Panel** and **Add Product**. Through the admin panel, the superuser has *full control* of Golf Mania database. The Add Product feature tells it function and it terms of style, it matches the overall theme of Golf Mania's website.
+If signed in as Admin, **two** additional features are available to the **superuser** which are the **Admin Panel** and **Add Product**. Through the admin panel, the superuser has *full control* of Golf Mania database. The Add Product feature tells it function and it terms of style, it matches the overall theme of Golf Mania's website.
 
 ![Header Logged In As Admin](static/images/header-admin-logged-in.PNG)
 
@@ -274,7 +278,11 @@ If signed in as Admin, two additional features are available to the **superuser*
 
 Contains **4** main **dropdown lists**. The first dropdown focuses on sorting products using their *model field data* such as *price*, *rating*, *brand* etc. The other two offer the main products while the final dropdown list consists of special offers which are displayed throughout the website.
 
+**Main Nav Closed**
+
 ![Main Nav Bar](static/images/main-nav.PNG)
+
+**Main Nav Open**
 
 ![Main Nav Bar Dropdown](static/images/main-nav-dropdown.PNG)
 
@@ -306,7 +314,7 @@ In terms of view, this section display **4** products on *large* screens, **2** 
 
 #### **Reviews Section**
 
-In this section, two reviews would be allowed to be viewed and after that, they would paginate which is built into index.html. For now, the two reviews were added via the *admin panel* to demonstrate what they would look like once the CRUD functionality of the reviews app is developed further to allow customers leave their on reviews which can then be approved by the admin. This is an area where external reviews could also be imported or included as images. For example, **Trustpilot** reviews.
+In this section, two reviews would be allowed to be viewed and after that, they would paginate which is built into index.html. For now, the two reviews were added via the *admin panel* to demonstrate what they would look like once the CRUD functionality of the reviews app is *developed further* to allow customers leave their on reviews which can then be approved by the admin. This is an area where external reviews could also be imported or included as images. For example, **Trustpilot** reviews.
 
 In terms of view, this section displays **2** products on *larger* screens and **1** on smaller screens.
 
@@ -337,11 +345,11 @@ As every page, the products page includes the header and footer features.
 
 #### **Top Section**
 
-When the products.html page is loaded, depending on whether a search criteria was entered or a category through the main nav bar, a message on the top right displays the number of products found for the category or the search typo.
+When the products.html page is loaded, depending on whether a *search criteria* was entered or a *category type* through the main nav bar, a **message** on the **top right** displays the *number of products found* for the category or the *search criteria*.
 
-Accross, a filter feature is available to the site user to filter products by a specific field such as by price, brand etc. All of these options will also list the filtered products in price/alphabetical order and reversed to offer as many filtering options to the user as possible. Each function works instantly using some *Javascript at the bottom of the page*. 
+Accross, a **filter** feature is available to the site user to filter products by a specific field such as by price, brand etc. All of these options will also list the filtered products in price/alphabetical order and reversed to offer **as many** filtering options to the user **as possible**. Each function works **instantly** using some *Javascript at the bottom of the page*. 
 
-Below the above features is a Back to Home button that the site user can use to go back to the index page and clear any sorting/filtering options. 
+Below the above features is a **Back to Home** button that the site user can use to go back to the index page and clear any sorting/filtering options. 
 
 ![Products page top section](static/images/products-page-top-section.PNG)
 
@@ -362,13 +370,13 @@ As seen in the screenshots above, their is a *see-through up-arrow* **button** w
 
 #### **Image Section**
 
-On the left hand side, the product image is 400px by 400px. When clicked, the image is opened in a separate tab for the site user to view. Below the image, Zoom In and Zoom Out features are available to the site user to maintain a good level of interactivity. 
+On the left hand side, the product image is 400px by 400px. When clicked, the **image** is opened in a **separate tab** for the site user to view. Below the image,** Zoom In** and **Zoom Out** features are available to the site user to maintain a good level of interactivity. 
 
 ![Product Detail page image section](static/images/product_detail_image.PNG)
 
-#### **Product Details Section**
+### **Product Details Section**
 
-The product details sections displays all the data stored for each product including the category icon which is linked with the product's specific category. To maintain a visually appealing view, only the productt description is displayed with an additional features section if the user clicks the Read More button. If signed in as *Admin*, the **update** and **delete** functions are available in this page also.
+The product details sections displays all the data stored for each product including the category icon which is linked with the product's specific category. To maintain a visually appealing view, only the product description is displayed with an additional features section if the user clicks the **Read More** button. If signed in as *Admin*, the **update** and **delete** functions are available in this page also.
 The **rating** row is set so that any product with a *rating better than 4* will display the message **"Highly Recommended"**.
 
 The user has full control of the quantity that the can add to the basket using the Add to Basket button. This feature is validated to ensure that at least 1 product needs to be added but no more than 99 and this is controlled with the Minus and Plus button.
@@ -447,7 +455,7 @@ The user has access to view order histories through their profile page. As a res
 
 ![Checkout Confirm Top of the page from Profile](static/images/checkout-confirm-top-from-profile.PNG)
 
-#### **Order Summary Section**
+### **Order Summary Section**
 
 Below, the order summary is broken into three sections when displaying order data. **Personal**, **Delivery** and **Cost Summary** details. 
 
@@ -656,7 +664,7 @@ One warning showing for empty heading. **The loading spinner icon** is included 
 
 **Validating CSS file**
 
-[https://validator.w3.org/](https://jigsaw.w3.org/css-validator/) is used to test CSS files and their code to ensure high coding standards.
+[https://validator.w3.org/](https://jigsaw.w3.org/css-validator/) is used to test **CSS files** and their code to ensure high coding standards.
 
 **static/css/base.css**
 
@@ -672,7 +680,7 @@ One warning showing for empty heading. **The loading spinner icon** is included 
 
 **Validating JavaScript file**
 
-[https://jshint.com/](https://jshint.com/) is used to test js files and their code to ensure high coding standards.
+[https://jshint.com/](https://jshint.com/) is used to test **JS** files and their code to ensure high coding standards.
 
 **profiles/static/js/countryoption.js**
 
@@ -714,9 +722,9 @@ Overall, 7 warnings are displayed but these warnings are okay given that the out
 
 [http://pep8online.com/](http://pep8online.com/) is used to test Python files and their code to ensure high coding standards.
 
-1. #### reviews Application
+1. ### **reviews Application**
 
-Testing every custom python file within this application.
+Testing every custom **python file** within this application.
 
 **admin.py**
 
@@ -734,7 +742,7 @@ Testing every custom python file within this application.
 
 ![views.py validation](static/images/pep8-reviews-views-valid.PNG)
 
-2. #### profiles Application
+2. ### **profiles Application**
 
 Testing every custom python file within this application.
 
@@ -802,7 +810,7 @@ Testing every custom python file within this application.
 
 ![widgets.py validation](static/images/pep8-products-widgets-valid.PNG)
 
-4. #### home Application
+4. ### **home Application**
 
 Testing every custom python file within this application.
 
@@ -818,7 +826,7 @@ Testing every custom python file within this application.
 
 ![views.py validation](static/images/pep8-home-views-valid.PNG)
 
-5. #### checkout Application
+5. ### **checkout Application**
 
 Testing every custom python file within this application.
 
@@ -866,7 +874,7 @@ Testing every custom python file within this application.
 
 ![webhook_handler.py validation](static/images/pep8-checkout-webhook-handler-valid.PNG)
 
-6. #### basket Application
+6. ### **basket Application**
 
 Testing every custom python file within this application.
 
@@ -890,7 +898,7 @@ Testing every custom python file within this application.
 
 ![views.py validation](static/images/pep8-basket-views-valid.PNG)
 
-7. #### golfmania main Application
+7. ### **golfmania main Application**
 
 **settings.py**
 
@@ -911,7 +919,7 @@ The fifth one a static var which is similar to the above four.
 
 Within DevTools, the lighthouse report is used to test overall performance of the website.
 
-Performance has been categorised and is the only element not above 90% given that some of the images take much longer to load given their size i.e. main landing image which is essential to be good quality and big to attract new site visitors.
+Performance has been categorised and is one element not above 90% in some pages given that some of the images take much longer to load given their size i.e. main landing image which is essential to be good quality and big to attract new site visitors. 
 
 **Landing Page**
 
@@ -969,7 +977,7 @@ Performance has been categorised and is the only element not above 90% given tha
 
 [Coolors.co/palette](https://coolors.co/palette/004b23-006400-007200-008000-38b000-70e000-9ef01a-ccff33) site was used to chose the color theme for the project as it provides a set of colors which work well together and the contrast perfect.
 
-![Coolors color theme]( "Coolors color theme")
+![Coolors color theme](static/images/coolors-color-theme.PNG "Coolors color theme")
 
 ### **Search Engine Testing**
 
@@ -998,6 +1006,8 @@ Each section displayed as a page was tested and checked through ***Mozilla Firef
 ![Mozilla Firefox Basket page](static/images/firefox-basket-page.PNG "Mozilla Firefox Basket page")
 
 **Checkout Page**
+
+Some issues identified regarding rows and columns via Mozilla Firefox. The developer has identified this issue. However, in order to ensure that it does not conflic with original project which is tested, this will only be fixed during another update.
 
 ![Mozilla Firefox Checkout page](static/images/firefox-checkout-page.PNG "Mozilla Firefox Checkout page")
 
@@ -1059,6 +1069,8 @@ Each section displayed as a page was tested and checked through ***Microsoft Edg
 
 **Checkout Page**
 
+No problem with this page on Microsoft Edge.
+
 ![Microsoft Edge Checkout page](static/images/edge-checkout-page.PNG "Microsoft Edge Checkout page")
 
 **Checkout Confirm Page**
@@ -1103,29 +1115,29 @@ Each section displayed as a page was tested and checked through ***Microsoft Edg
 
 Some automated testing has been completed on this project. This website consists of **six** separate applications. Within **5** of these, files **urls.py** and **forms.py** have been tested and overall, **18** automated tests are running error free.
 
-**1. profiles application**
+### **1. profiles application**
 
 **test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields) come back when no data is submitted. 
 
 **test_urls.py**: **Two** automated tests running successfully to check CRUD functionality url paths created for profile view function.
 
-**2. products application**
+### **2. products application**
 
 **test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields) come back when no data is submitted. 
 
 **test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for all products app view functions.
 
-**3. home application**
+### **3. home application**
 
 **test_urls.py**: **One** automated tests running successfully to check if index.html is rendered.
 
-**4. checkout application**
+### **4. checkout application**
 
 **test_forms.py**: **One** automated tests running successfully to test for correct number of errors (required fields in checkout form) come back when no data is submitted. 
 
 **test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for checkout app.
 
-**5. basket application**
+### **5. basket application**
 
 **test_urls.py**: **Four** automated tests running successfully to check ALL CRUD functionality url paths for basket views urls.
 
@@ -1190,8 +1202,8 @@ While the developer is fully aware of the advantages of full automated testing, 
     - **Delivery Text** fades out and in upon reload = **true**
 
 - **Landing Image**
-    - "Browse Now" button hover effect = **true**
-    - "Browse Now" button redirects to *products.html* = **true**
+    - **"Browse Now"** button hover effect = **true**
+    - **"Browse Now"** button redirects to *products.html* = **true**
     - Landing Image fixed for better UX Design = **true**
 
 - **Clearance Section**
@@ -1206,7 +1218,7 @@ While the developer is fully aware of the advantages of full automated testing, 
 - **Footer Section**
     - Signup Newsletter correctly set up with Mailchimp = **true**
     - Signup Newsletter email input validation = **true**
-    - Success Message if using Sign Up feature = **true**
+    - *Success Message* if using Sign Up feature = **true**
     - Social Media Icons equally positioned = **true**
     - Icons background color match buttons = **true**
     - Icons hover effect match anchor hover effect in terms of colour = **true**
@@ -1249,7 +1261,7 @@ While the developer is fully aware of the advantages of full automated testing, 
         - Type low to high function working = **true**
         - Each function working **instantly** - **true**
 
-    - *Back to Home* button reloads index.html = **true**
+    - **Back to Home** button reloads index.html = **true**
     - Products displayed in rows of 4 on large screens = **true**
     - Products displayed in rows of 2 on medium screens = **true**
     - Products displayed in rows of 1 on smaller screens = **true**
@@ -1283,11 +1295,11 @@ While the developer is fully aware of the advantages of full automated testing, 
     - **Quantity Input -** updates quantity correctly = **true**
     - **Quantity Input +** button hover effect = **true**
     - **Quantity Input +** updates quantity correctly = **true**
-    - "Keep Shopping" button hover effect = **true**
-    - "Keep Shopping" button redirects to *products.html* = **true**
-    - "Add To Basket" button hover effect = **true**
-    - "Add To Basket" button adds product to basket as item = **true**
-    - "Success" toast confirms basket update = **true**
+    - **"Keep Shopping"** button hover effect = **true**
+    - **"Keep Shopping"** button redirects to *products.html* = **true**
+    - **"Add To Basket"** button hover effect = **true**
+    - **"Add To Basket"** button adds product to basket as item = **true**
+    - *"Success"* toast confirms basket update = **true**
 
     - **Newest Products Section**
         - Displays new_in cateogry products = **true**
@@ -1304,15 +1316,15 @@ While the developer is fully aware of the advantages of full automated testing, 
     - **Quantity Input -** updates quantity correctly = **true**
     - **Quantity Input +** button hover effect = **true**
     - **Quantity Input +** updates quantity correctly = **true**
-    - *Update Button* updates quantity selected = **true**
-    - *Remove Button* removes basket items selected = **true**
+    - **Update Button** updates quantity selected = **true**
+    - **Remove Button** removes basket items selected = **true**
     - DATA displayed correctly under Order Summary = **true**
-    - "Keep Shopping" button hover effect = **true**
-    - "Keep Shopping" button redirects to *products.html* = **true**
-    - "Sign In To Continue" button hover effect = **true**
-    - "Sign In To Continue" button displayed when logged out = **true**
-    - "Secure Checkout" button hover effect = **true**
-    - "Secure Checkout" button displayed when logged in = **true**
+    - "Keep Shopping" **button** hover effect = **true**
+    - "Keep Shopping" **button** redirects to *products.html* = **true**
+    - **"Sign In To Continue"** button hover effect = **true**
+    - **"Sign In To Continue"** button displayed when logged out = **true**
+    - **"Secure Checkout"** button hover effect = **true**
+    - **"Secure Checkout"** button displayed when logged in = **true**
 
 - ### **5. checkout.html features**
     - checkout_form displayed as crispy form on the left = **true**
@@ -1515,6 +1527,8 @@ Another issue identified by one tester was that the account dropdown caused an o
 
 The only identified unfixed bug currently is the **Mouse Pointer** but in image field of product_form. The button functions and works fine but not when mouse is pointing at it. The **button** is clickable in some areas so it is useable and does not affect the overall application feature from customer/site user's point of view but will need to be fixed.
 
+The structure issue identified above within the **checkout page** using **Mozilla Firefox** but it will not be solved until next update given the time it takes to retest features again if *restructuring* is necessary.
+
 No other issues identified during automated or manual testing. 
 
 ## 4. Deployment
@@ -1681,11 +1695,11 @@ ALLOWED_HOSTS = [**"PROJ_NAME.herokuapp.com"**, "localhost"]
 
 **35.** Go to **Actions Tab** and monitor deployment.
 
-## 5. Credits
+## 5. **Credits**
 
-### **Content**
+## Content
 
-#### **Images**
+### **Images**
 
 **Main Landing Image**
 
@@ -1879,9 +1893,11 @@ Code Institute's **Boutique Ado** was closely monitored and full credits given f
 
 
 #### **Slack Community**
+
 - There was an issue diplaying form related error issues to which the fix was found through [https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django](https://stackoverflow.com/questions/56187339/how-to-display-form-errors-message-properly-in-django)
 
 #### **YouTube**
+
 - This video web application also helped to learn about automated testing and how to implement it.
 
 **Youtube channel**: The Dumbfounds - **Automated Testing**

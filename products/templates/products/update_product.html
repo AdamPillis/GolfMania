@@ -24,6 +24,7 @@
 
                 <div class="col-12- col-lg-8 mx-auto">
                     <!-- enctype attr to upload image -->
+                    <!-- product form with product instance updatable data -->
                     <form method="POST" action="{% url 'update_product' product.id %}" id="product-form" class="form mb-2" enctype="multipart/form-data">
                         {% csrf_token %}
                         <!-- To hide image label and load everything else as crispy form -->

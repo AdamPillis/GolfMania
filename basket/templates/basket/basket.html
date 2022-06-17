@@ -18,7 +18,7 @@
                 <hr class="w-50 my-4 mx-auto">
             </div>
         </div>
-
+        <!-- list of basket items on the left as a table -->
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto">
                 {% if basket_items %}
@@ -52,10 +52,11 @@
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-2 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    <!-- if produce has size option-->
+                                    <!-- if product has size option-->
                                     {% if item.product.has_sizes %}
                                         <p class="my-2 small text-muted">Size: <strong>{{ item.size|upper }}</strong></p>
                                     {% endif %}
+                                    <!-- if product has hand type-->
                                     {% if item.product.hand_type %}
                                         <p class="my-0 small">Hand Type: <strong>{{ item.product.hand_type }}</strong></p>
                                     {% endif %}
@@ -63,17 +64,18 @@
                                 <td class="py-3">
                                     <p class="my-0"><strong>€{{ item.product.price }}</strong></p>
                                 </td>
+                                <!-- quantity update function included -->
                                 <td class="py-3 w-25">
                                     {% include "basket/quantity_post_form.html" %}
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0 fs-4">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0 fs-4">€{{ item.product.price | calc_subtotal:item.quantity }}</p>  
                                 </td>
                             </tr>
                         {% endfor %}
                     </table>
                 </div>
-                <!-- only visible up to smaller sized screens -->
+                <!-- only visible up to smaller sized screens structure change for mobile -->
                 {% for item in basket_items %}
                     <div class="row mt-3">
                         <h3 class="col-sm-12 logo-font text-center d-block d-sm-none"><strong>{{ item.product.name }}</strong></h3>
@@ -112,6 +114,7 @@
                 
                 {% endfor %}
             </div>
+            <!-- order summary section (right) -->
             <div class="col-12 col-lg-4 mt-2 mx-auto">
                 <h4 class="logo-font">Your Order Summary</h4>
                 <!-- Basket total -->
@@ -191,6 +194,7 @@
         {% else %}
         <div class="row">
             <div class="col-6 text-center mx-auto">
+                <!-- if nothing is in the basket, display the following -->
                 <p>Your bag is currently empty.</p>
                 <a aria-label="view all products" href="{% url 'products' %}" class="btn btn1 mb-3">
                     <span class="icon">

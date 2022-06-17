@@ -1,5 +1,6 @@
 {% if widget.is_initial %}
     <p>{{ widget.initial_text }}:</p>
+    <!-- styling the image include field using general theme and document to style and customise django widgets -->
     <a aria-label="product image link" href="{{ widget.value.url }}">
         <img width="96" height="96" alt="product image" class="rounded shadow-sm" src="{{ widget.value.url }}">
     </a>
@@ -12,6 +13,7 @@
     <br>
     {{ widget.input_text }}
 {% endif %}
+<!-- button to choose image -->
 <span class="btn btn1 btn-file">
     Choose Image <input class="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
 </span>

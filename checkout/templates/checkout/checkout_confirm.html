@@ -15,6 +15,7 @@
 
 {% block content %}
     <div class="container-fluid product-container">
+        <!-- if page is accessed using profile page, change top section of the page -->
         {% if from_profile_page %}
             <div class="row">
                 <div class="col-12 text-center mt-3">
@@ -35,6 +36,7 @@
                 </div>
             </div>
         {% else %}
+            <!-- else display the default top section followed by checkout -->
             <div class="row">
                 <div class="col-12 text-center mt-3">
                     <h2 class="logo-font">Thank you for your order {{ order.first_name }}! <i id="confirm-icon" class="fas fa-check-circle"></i></h2>
@@ -59,7 +61,7 @@
                 </div>
             </div>
         {% endif %}
-
+        <!-- Order Details section where all order data are displayed neatly -->
         <div class="row">
             <div class="col-12 col-lg-6 text-center mx-auto">
                 <div class="order-info-container p-3 my-3">
@@ -155,6 +157,7 @@
                             <div class="float-end">
                                 <p class="fs-6">
                                     <strong>
+                                        <!-- non required field, only if exists -->
                                         {% if order.house_number %}
                                             {{ order.house_number }}
                                         {% endif %}, {{ order.street_address1 }}
@@ -163,6 +166,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- non required field, only if exists -->
                     {% if order.street_address2 %}
                     <div class="row">
                         <div class="col-12">
@@ -193,6 +197,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- non required field, only if exists -->
                     {% if order.county %}
                     <div class="row">
                         <div class="col-12">
@@ -223,6 +228,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- non required field, only if exists -->
                     {% if order.postcode %}
                     <div class="row">
                         <div class="col-12">
@@ -239,6 +245,7 @@
                         </div>
                     </div>
                     {% endif %}
+                    <!-- non required field, only if exists -->
                     {% if order.delivery_instructions %}
                     <div class="row">
                         <div class="col-12">

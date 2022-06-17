@@ -15,6 +15,7 @@
             <div class="col text-center mt-4">
                 <h4 class="fs-1 logo-font">Products</h4>
                 <hr class="w-50 my-4 mx-auto">
+                <!-- displaying category type as a clickable button to filter category type -->
                 {% for c in chosen_categories %}
                     <a aria-label="view products in categories" class="btn btn1 text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 text-black">{{ c.friendly_name }}</span>
@@ -23,6 +24,8 @@
                 
             </div>
         </div>
+        <!-- sorting feature sections -->
+        <!-- sorting urls set up in option tags -->
         <div class="row">
             <div class="col-10 offset-1">
                 <div class="row mt-1 mb-2">
@@ -47,12 +50,13 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-black mt-3 text-center text-md-left">                                                    
-                            <!-- django length template filter used to count all found products -->
+                            <!-- django length template filter used to count all found landing page -->
                             <!-- displays for filtered and if statement if searched -->
                             Showing <strong class="logo-font">{{ products|length }}</strong> products{% if search_word %} found for <strong>"{{ search_word }}"</strong>{% else %} for your search{% endif %}
                         </p>
                     </div>
                 </div>
+                <!-- Back to Home button at the top for user to return to landing page -->
                 <div class="row">
                     <div class="col-12 my-auto text-center mt-2">
                         <a aria-label="home page" href="{% url 'home' %}" class="btn btn1 mt-0 mb-4">
@@ -60,7 +64,7 @@
                         </a>
                     </div>
                 </div>
-                
+                <!-- structure and styling of products displaying -->
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -111,7 +115,7 @@
                                             <!-- if user is superuser, display edit and delete options -->
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a aria-label="update" class="text-info fs-6" href="{% url 'update_product' product.id %}"><strong>Update</strong></a> |
+                                                    <a aria-label="update" class="logo-font fs-6" href="{% url 'update_product' product.id %}"><strong>Update</strong></a> |
                                                     <a aria-label="delete" class="text-danger fs-6" href="{% url 'delete_product' product.id %}"><strong>Delete</strong></a>
                                                 </small>
                                             {% endif %}
@@ -120,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- full width for each product on smaller screen -->
+                        <!-- full width for each product on smaller screen, two/three on medium and four on large -->
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>

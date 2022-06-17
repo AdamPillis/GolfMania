@@ -27,7 +27,8 @@
             <div class="col-12 col-md-6 col-lg-7 text-center mx-auto order-2 order-md-1">
                 <h3 class="logo-font">Delivery</h3>
                 <hr class="w-75 my-4 mx-auto">
-
+                <!-- checkout form displaying all fields as crispy -->
+                <!-- imported from forms.py and split into personal and delivery -->
                 <div class="col-12- col-lg-8 mx-auto">
                     <form action="{% url 'checkout' %}" method="POST" id="delivery-form">
                         {% csrf_token %}
@@ -76,13 +77,14 @@
                             <!-- Pass the client secret to the view so we can get the payment intent id -->
                             <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </fieldset>
-
+                        <!-- button to cancel order and return to basket -->
                         <div class="submit-button text-right mt-3 mb-2">
                             <a aria-label="view basket" href="{% url 'view_basket' %}" class="btn btn1">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                             </a>
+                            <!-- checkout form submit button to display spinner icon and send data to Stripe -->
                             <button aria-label="complete order" id="submit-button" class="btn btn1">
                                 <span class="font-weight-bold">Complete Order</span>
                                 <span class="icon">

@@ -105,12 +105,14 @@ def adjust_basket(request, item_id):
                     f"Removed: Size '{size.upper()}' {product.name} \
                     from your basket")
     else:
+        # else if qty is not 0, update qty
         if quantity > 0:
             basket[item_id] = quantity
             messages.success(
                 request,
                 f"Updated: {product.name} quantity to '{basket[item_id]}'")
         else:
+            # if it is 0, pop it out of the basket
             basket.pop(item_id)
             messages.success(
                 request,

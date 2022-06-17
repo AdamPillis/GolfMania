@@ -14,7 +14,8 @@
         <div class="row">
             <div class="col text-center my-3">
                 <h2 class="logo-font mt-3">Golf Mania Product Management</h2>
-                <hr class="w-50 my-4 mx-auto">       
+                <hr class="w-50 my-4 mx-auto">
+                <!-- Welcoming user using their username -->
                 <h3>Welcome back {{ request.user.username}}! </h3>
             </div>
         </div>
@@ -23,7 +24,7 @@
             <div class="col-12 col-md-6 col-lg-7 mb-4 mx-auto product-form-border">
 
                 <div class="col-12- col-lg-8 mx-auto">
-                    <!-- enctype attr to upload image -->
+                    <!-- form enctype attr to upload image -->
                     <form method="POST" action="{% url 'add_product' %}" id="product-form" class="form mb-2" enctype="multipart/form-data">
                         {% csrf_token %}
                         <!-- To hide image label and load everything else as crispy form -->
@@ -34,6 +35,7 @@
                                 {{ field }}
                             {% endif %}
                         {% endfor %}
+                        <!-- submit button and cancel button for product_form -->
                         <div class="text-center my-3">
                             <a class="btn btn1 me-2" href="{% url 'products' %}">Cancel</a>
                             <button class="btn btn1" type="submit">Add Product</button>

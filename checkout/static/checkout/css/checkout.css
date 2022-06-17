@@ -1,7 +1,7 @@
 .container {
   background-color:rgba(0, 114, 0, 0.1);
 }
-
+/* setting default style for checkout form elements */
 #delivery-form input,
 #delivery-form select,
 #delivery-form textarea {
@@ -64,7 +64,7 @@ select option[value=""] {
   color: #aab7c4 !important;
 }
 
-/* checkout_confirm.html */
+/* checkout_confirm.html tick icon */
 #confirm-icon {
   font-size: 3rem !important;
   color: rgba(0, 114, 0, 1) !important;
@@ -81,7 +81,7 @@ select option[value=""] {
   background: rgba(169, 174, 169, 0.8);
   z-index: 999999;
 }
-
+/* setting size and position of header in which spinning icon is */
 #overlay-screen h1 {
   display: flex;
   align-items: center;

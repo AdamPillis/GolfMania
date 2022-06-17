@@ -4,7 +4,10 @@ from products.models import Product
 
 
 def index(request):
-    """View to render index.html template"""
+    """
+    View to render index.html template
+    Finds and sends reviews data to index.html
+    """
     products = Product.objects.all()
 
     context = {

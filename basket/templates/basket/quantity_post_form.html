@@ -1,4 +1,6 @@
 <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+    <!-- form used to control input of quantity -->
+    <!-- classes used instead of IDs because this function is called twice, once on large and once on small screens -->
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
@@ -24,11 +26,13 @@
                     </span>
                 </button>
             </div>
+            <!-- if product has size data included -->
             {% if item.product.has_sizes %}
                 <input type="hidden" name="product_size" value="{{ item.size }}">
             {% endif %}
         </div>
     </div>
 </form>
+<!-- update and remove button -->
 <a aria-label="update item" href="#" class="update-item logo-font me-4"><small><strong>Update</strong></small></a>
 <a aria-label="remove item" href="#" class="remove-item text-danger float-right remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><strong>Remove</strong></small></a>

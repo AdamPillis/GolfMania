@@ -23,7 +23,7 @@
         }
     }
 
-    // Ensure proper enabling/disabling of all inputs on page load
+    // Ensure proper enabling/disabling of all quantity inputs using ID and size data
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
         var itemId = $(allQtyInputs[i]).data('item_id');
@@ -38,7 +38,8 @@
         handleEnableDisable(itemId, size);
     });
 
-    // Increment quantity
+    // Increment quantity and prevent from happening right away.
+    // Checks if item has size included
     $('.increment-qty').click(function(e) {
        e.preventDefault();
        var itemId = $(this).data('item_id');
@@ -54,7 +55,8 @@
        handleEnableDisable(itemId, size);
     });
 
-    // Decrement quantity
+    // Decrement quantity using Size and Item ID
+    // Checks if item has size included
     $('.decrement-qty').click(function(e) {
        e.preventDefault();
        var itemId = $(this).data('item_id');

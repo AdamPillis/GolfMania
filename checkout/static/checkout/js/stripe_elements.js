@@ -23,7 +23,7 @@ card.mount('#card-element');
 
 
 // Handle validation errors using event listener
-// if error, it is displayed by creating an html snap
+// if error found, an html section is created to display error.
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
@@ -39,7 +39,7 @@ card.addEventListener('change', function (event) {
     }
 });
 
-// Handle form submit
+// variable handles checkout form submission
 var form = document.getElementById('delivery-form');
 
 form.addEventListener('submit', function(ev) {
@@ -55,7 +55,7 @@ form.addEventListener('submit', function(ev) {
 
     // capture all form data, especially the safe info check fieldset
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
-    // From using {% csrf_token %} in the form
+    // From using {% csrf_token %} in the checkout form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
@@ -70,7 +70,7 @@ form.addEventListener('submit', function(ev) {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
-                // retrieve form data 
+                // retrieve form data from webhook sent information
                 billing_details: {
                     name: $.trim(form.last_name.value),
                     phone: $.trim(form.phone_number.value),
@@ -84,7 +84,7 @@ form.addEventListener('submit', function(ev) {
                     }
                 }
             },
-            // shipping excludes email and includes post code
+            // shipping excludes email data as it is not needed and includes post code
             shipping: {
                 name: $.trim(form.last_name.value),
                 phone: $.trim(form.phone_number.value),
@@ -99,6 +99,7 @@ form.addEventListener('submit', function(ev) {
             }
         }).then(function(result) {
             if (result.error) {
+                // if any card detail errors, display in an html section at the button 
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
@@ -110,8 +111,10 @@ form.addEventListener('submit', function(ev) {
                 $('#delivery-form').fadeToggle(100);
                 $('#overlay-screen').fadeToggle(100);
                 card.update({ 'disabled': false});
+                // enabling submit button again
                 $('#submit-button').attr('disabled', false);
             } else {
+                // if all is good, just submit the form
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
                 }

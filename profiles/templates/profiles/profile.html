@@ -22,10 +22,12 @@
             </div>
         </div>
         <div class="row">
-            <!-- Profile update form -->
+            <!-- Profile update form 
+            Instance of checkout_form data if saved-->
             <div class="col-sm-12 col-lg-7">
                 <h4 class="logo-font text-center mb-2">Your Delivery Information</h4>
                 <div class="col-12 col-lg-8 mx-auto">
+                    <!-- form can be updated instantly at any point by the requesting user -->
                     <form action="{% url 'profile' %}" method="POST" id="default-profile-form">
                         {% csrf_token %}
                         {{ profile_form|crispy }}
@@ -36,7 +38,7 @@
                     </form>
                 </div>
             </div>
-            <!-- Order History Section -->
+            <!-- Order History Section displayed as table-->
             <div class="col-12 col-lg-5">
                 <h4 class="logo-font text-center mb-2">Your Order History</h4>
                 <div class="order-history-section table-responsive">
@@ -53,6 +55,7 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
+                                        <!-- order number shortened and linked with checkout_confirm page displaying particular order -->
                                         <a aria-label="go to order" href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}" class="text-decoration-underline">
                                             {{ order.order_number|truncatechars:8 }}
@@ -77,6 +80,7 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- Button to return to products page -->
                 <div class="col-12 my-4 text-center">
                     <a aria-label="shop again button" href="{% url 'products' %}" class="btn btn1">
                         <span class="text-uppercase me-1">Shop Again</span>
